@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Aq+S9d8U2+M=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\LaserControllerApp.Packaging\\LaserControllerApp.Packaging (Package)\\LaserControllerApp.Packaging (Package).wapproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nabeel Hyder\\.nuget\\packages\\microsoft.web.webview2\\1.0.2903.40\\microsoft.web.webview2.1.0.2903.40.nupkg.sha512",
+    "C:\\Users\\Nabeel Hyder\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.26100.4948\\microsoft.windows.sdk.buildtools.10.0.26100.4948.nupkg.sha512",
+    "C:\\Users\\Nabeel Hyder\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\microsoft.windowsappsdk.1.7.250606001.nupkg.sha512"
+  ],
+  "logs": []
+}

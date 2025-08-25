@@ -1,0 +1,14 @@
+﻿<Page x:Class="LaserControllerApp.EnergyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="Voltage (V):" FontSize="16" />
+            <Slider x:ConnectionId='2' x:Name="VoltageSlider" Minimum="0" Maximum="1000" Value="350" Width="200" Margin="0,0,0,10" />
+            <Button x:ConnectionId='3' Content="Set Voltage"                          />
+            <TextBlock x:ConnectionId='4' x:Name="VoltageStatus" Text="Current Voltage: 350V" FontSize="14" />
+        </StackPanel>
+    </Grid>
+</Page>
+

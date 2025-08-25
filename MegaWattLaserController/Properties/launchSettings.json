@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MegaWattLaserController (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "MegaWattLaserController (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
