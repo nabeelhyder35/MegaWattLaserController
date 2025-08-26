@@ -4,28 +4,116 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Title="KALD-20-10 Laser Controller">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-        <!-- Navigation Pane -->
-        <NavigationView x:Name="NavView" Grid.Column="0" PaneDisplayMode="Left" IsBackButtonVisible="Collapsed">
+        <!-- Connection Bar -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10" VerticalAlignment="Center">
+            <!-- Connection Status Indicator -->
+            <Ellipse x:Name="ConnectionStatusEllipse" 
+                     Width="12" 
+                     Height="12" 
+                     Fill="Red" 
+                     Margin="0,0,10,0"
+                     ToolTipService.ToolTip="Connection status"/>
+
+            <!-- Port Selection -->
+            <ComboBox x:Name="PortComboBox" 
+                      ItemsSource="{x:Bind AvailablePorts}"
+                      PlaceholderText="Select Port" 
+                      Width="150"
+                      ToolTipService.ToolTip="Available serial ports"/>
+
+            <!-- Baud Rate Selection -->
+            <ComboBox x:Name="BaudRateComboBox"
+                      ItemsSource="{x:Bind BaudRates}"
+                      SelectedIndex="0"
+                      Width="100"
+                      Margin="10,0,0,0"
+                      SelectionChanged="BaudRateComboBox_SelectionChanged"
+                      ToolTipService.ToolTip="Communication speed"/>
+
+            <!-- Connection Controls -->
+            <Button x:Name="ConnectButton" 
+                    Content="Connect" 
+                    Click="Connect_Click" 
+                    ToolTipService.ToolTip="Connect to selected port"/>
+
+            <Button x:Name="DisconnectButton" 
+                    Content="Disconnect" 
+                    Click="Disconnect_Click" 
+                    IsEnabled="False"
+                    ToolTipService.ToolTip="Disconnect from port"/>
+
+            <Button x:Name="RefreshPortsButton" 
+                    Content="Refresh Ports" 
+                    Click="RefreshPorts_Click" 
+                    ToolTipService.ToolTip="Refresh available serial ports"/>
+        </StackPanel>
+
+        <!-- Main Navigation -->
+        <NavigationView x:Name="NavigationViewControl" 
+                        Grid.Row="1" 
+                        PaneDisplayMode="Left" 
+                        IsBackButtonVisible="Collapsed"
+                        SelectionChanged="NavigationViewControl_SelectionChanged"
+                        IsSettingsVisible="False"
+                        PaneTitle="Laser Control">
+
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Shutter Settings" Tag="ShutterPage" />
-                <NavigationViewItem Content="Energy/Voltage" Tag="EnergyPage" />
-                <NavigationViewItem Content="Custom Commands" Tag="CustomPage" />
-                <NavigationViewItem Content="Settings" Tag="SettingsPage" />
+                <NavigationViewItem Content="Shutter" Tag="ShutterPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE72C;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Energy/Voltage" Tag="EnergyPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE945;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Pulse Settings" Tag="PulsePage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE121;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Interlock Status" Tag="InterlockPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE81C;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Custom Commands" Tag="CustomCommandsPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE756;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
             </NavigationView.MenuItems>
+
+            <!-- Content Frame -->
+            <Frame x:Name="ContentFrame" 
+                   NavigationFailed="ContentFrame_NavigationFailed"/>
         </NavigationView>
 
-        <!-- Content Area -->
-        <Frame x:Name="ContentFrame" Grid.Column="1" />
-
         <!-- Status Bar -->
-        <TextBlock x:Name="StatusTextBlock" Grid.Column="1" VerticalAlignment="Bottom" Margin="10" FontSize="14" />
+        <Border Grid.Row="2" Background="{ThemeResource SystemControlBackgroundAltHighBrush}" 
+                BorderThickness="0,1,0,0" BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}">
+            <StackPanel Orientation="Horizontal" Margin="10,5">
+                <TextBlock x:Name="StatusTextBlock" 
+                           Text="Disconnected" 
+                           VerticalAlignment="Center"
+                           FontSize="12"
+                           TextTrimming="CharacterEllipsis"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

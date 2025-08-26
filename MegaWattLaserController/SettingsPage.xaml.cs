@@ -1,97 +1,79 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using LaserControllerApp.Services;
 using System.Linq;
-using Microsoft.UI.Dispatching;
+using System.Collections.ObjectModel;
+using System;
 
 namespace LaserControllerApp
 {
     public sealed partial class SettingsPage : Page
     {
-        private readonly SerialPortManager serialPortManager = SerialPortManager.Instance;
-        private string selectedPort = null;
-        private readonly DispatcherQueue dispatcherQueue;
+        private readonly SerialPortManager _serialPortManager = SerialPortManager.Instance;
+        private string _selectedPort = null;
 
         public SettingsPage()
         {
             this.InitializeComponent();
-            dispatcherQueue = DispatcherQueue.GetForCurrentThread();
             PopulatePortComboBox();
-            serialPortManager.ConnectionStatusChanged += SerialPortManager_ConnectionStatusChanged;
             UpdateConnectionStatus();
         }
 
         private void PopulatePortComboBox()
         {
-            var ports = serialPortManager.GetAvailablePorts();
+            var ports = _serialPortManager.GetAvailablePorts();
+            PortComboBox.Items.Clear();
+
             if (ports != null && ports.Length > 0)
             {
-                dispatcherQueue.TryEnqueue(() =>
+                foreach (var port in ports.OrderBy(p => p))
                 {
-                    PortComboBox.Items.Clear();
-                    PortComboBox.Items.Add(new ComboBoxItem { IsEnabled = false, Content = "Select a port..." });
-                    foreach (var port in ports.OrderBy(p => p))
-                    {
-                        PortComboBox.Items.Add(new ComboBoxItem { Content = port });
-                    }
-                    PortComboBox.SelectedIndex = 0;
-                });
+                    PortComboBox.Items.Add(port);
+                }
             }
             else
             {
-                dispatcherQueue.TryEnqueue(() =>
-                {
-                    PortComboBox.Items.Clear();
-                    PortComboBox.Items.Add(new ComboBoxItem { IsEnabled = false, Content = "No ports available" });
-                });
+                PortComboBox.Items.Add("No ports available");
+                PortComboBox.IsEnabled = false;
             }
         }
 
         private void PortComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (PortComboBox.SelectedItem is ComboBoxItem item && item.Content is string portName && !string.IsNullOrEmpty(portName) && portName != "Select a port..." && portName != "No ports available")
+            if (PortComboBox.SelectedItem is string portName && !string.IsNullOrEmpty(portName))
             {
-                selectedPort = portName;
+                _selectedPort = portName;
                 UpdateButtonStates();
             }
         }
 
-        private void ConnectButton_Click(object sender, RoutedEventArgs e)
+        private async void ConnectButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(selectedPort) && serialPortManager.Connect(selectedPort))
+            if (!string.IsNullOrEmpty(_selectedPort))
             {
+                await _serialPortManager.ConnectAsync(_selectedPort);
                 UpdateButtonStates();
                 UpdateConnectionStatus();
             }
         }
 
-        private void DisconnectButton_Click(object sender, RoutedEventArgs e)
+        private async void DisconnectButton_Click(object sender, RoutedEventArgs e)
         {
-            serialPortManager.Disconnect();
+            await _serialPortManager.DisconnectAsync();
             UpdateButtonStates();
             UpdateConnectionStatus();
         }
 
-        private void SerialPortManager_ConnectionStatusChanged(object sender, string status)
-        {
-            dispatcherQueue.TryEnqueue(() => UpdateConnectionStatus());
-        }
-
         private void UpdateButtonStates()
         {
-            bool isConnected = serialPortManager.GetLogMessages().Any(m => m.Contains("Connected"));
-            dispatcherQueue.TryEnqueue(() =>
-            {
-                ConnectButton.IsEnabled = !isConnected && !string.IsNullOrEmpty(selectedPort);
-                DisconnectButton.IsEnabled = isConnected;
-            });
+            ConnectButton.IsEnabled = !_serialPortManager.IsConnected && !string.IsNullOrEmpty(_selectedPort);
+            DisconnectButton.IsEnabled = _serialPortManager.IsConnected;
         }
 
         private void UpdateConnectionStatus()
         {
-            dispatcherQueue.TryEnqueue(() =>
-            {
-                ConnectionStatusText.Text = serialPortManager.GetLogMessages().LastOrDefault(m => m.Contains("Connected") || m.Contains("Disconnected") || m.Contains("failed")) ?? "Not connected";
-            });
+            ConnectionStatusText.Text = _serialPortManager.IsConnected ?
+                $"Connected to {_serialPortManager.PortName}" : "Disconnected";
         }
     }
 }

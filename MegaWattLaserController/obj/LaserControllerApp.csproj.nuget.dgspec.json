@@ -51,13 +51,25 @@
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
           "dependencies": {
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.Windows.SDK.BuildTools": {
               "target": "Package",
-              "version": "[10.0.26100.4948, )"
+              "version": "[10.0.26100.551, )"
             },
             "Microsoft.WindowsAppSDK": {
               "target": "Package",
-              "version": "[1.7.250606001, )"
+              "version": "[1.5.240810.4, )"
+            },
+            "Microsoft.Xaml.Behaviors.WinUI.Managed": {
+              "target": "Package",
+              "version": "[2.0.9, )"
             },
             "System.IO.Ports": {
               "target": "Package",

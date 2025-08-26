@@ -6,8 +6,8 @@
         <StackPanel>
             <TextBlock Text="Voltage (V):" FontSize="16" />
             <Slider x:Name="VoltageSlider" Minimum="0" Maximum="1000" Value="350" Width="200" Margin="0,0,0,10" />
-            <Button Content="Set Voltage" Click="SetVoltage_Click" />
-            <TextBlock x:Name="VoltageStatus" Text="Current Voltage: 350V" FontSize="14" />
+            <Button x:Name="SetVoltageButton" Content="Set Voltage" Click="SetVoltage_Click" />
+            <TextBlock x:Name="VoltageStatusText" Text="Current Voltage: 350V" FontSize="14" />
         </StackPanel>
     </Grid>
 </Page>

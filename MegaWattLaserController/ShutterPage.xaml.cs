@@ -1,25 +1,27 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using LaserControllerApp.Services;
+using System.Threading.Tasks;
 
 namespace LaserControllerApp
 {
     public sealed partial class ShutterPage : Page
     {
-        private readonly SerialPortManager serialPortManager = SerialPortManager.Instance;
+        private readonly SerialPortManager _serialPortManager = SerialPortManager.Instance;
 
         public ShutterPage()
         {
             this.InitializeComponent();
         }
 
-        private void OpenShutter_Click(object sender, RoutedEventArgs e)
+        private async void OpenShutter_Click(object sender, RoutedEventArgs e)
         {
-            serialPortManager.SendCommand("SHUTTER_OPEN");
+            await _serialPortManager.SendCommandAsync("SHUTTER_OPEN");
         }
 
-        private void CloseShutter_Click(object sender, RoutedEventArgs e)
+        private async void CloseShutter_Click(object sender, RoutedEventArgs e)
         {
-            serialPortManager.SendCommand("SHUTTER_CLOSE");
+            await _serialPortManager.SendCommandAsync("SHUTTER_CLOSE");
         }
     }
 }

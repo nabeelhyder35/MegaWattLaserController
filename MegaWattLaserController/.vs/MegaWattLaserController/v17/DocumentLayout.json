@@ -3,50 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\lasercontrollerapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:lasercontrollerapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nabeel Hyder\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240227000\\buildTransitive\\Microsoft.WindowsAppSDK.SingleFile.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\serialportmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:serialportmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\shutterpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:shutterpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nabeel Hyder\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240227000\\buildTransitive\\Microsoft.UI.Xaml.Markup.Compiler.interop.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\energypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:energypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\energypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -57,18 +29,52 @@
       "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:custompage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\shutterpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:shutterpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\energypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:energypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\services\\serialportmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:services\\serialportmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\custompage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:custompage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\shutterpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:shutterpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|c:\\users\\nabeel hyder\\megawattlasercontroller\\megawattlasercontroller\\shutterpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EEE4520-B190-4F7E-A940-9CEA7BB66F10}|LaserControllerApp.csproj|solutionrelative:shutterpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +84,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -93,112 +99,71 @@
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
+              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240227000\\buildTransitive\\Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
+              "RelativeDocumentMoniker": "..\\..\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240227000\\buildTransitive\\Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
+              "ToolTip": "C:\\Users\\Nabeel Hyder\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240227000\\buildTransitive\\Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
+              "RelativeToolTip": "..\\..\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240227000\\buildTransitive\\Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
+              "ViewState": "AgIAAPYBAAAAAAAAAAAiwAACAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-08-26T20:27:20.704Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\.gitignore",
-              "RelativeDocumentMoniker": "..\\.gitignore",
-              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\.gitignore",
-              "RelativeToolTip": "..\\.gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-25T19:04:01.8Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAUwBIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T17:19:03.742Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "LaserControllerApp.csproj",
               "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\LaserControllerApp.csproj",
               "RelativeDocumentMoniker": "LaserControllerApp.csproj",
               "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\LaserControllerApp.csproj",
               "RelativeToolTip": "LaserControllerApp.csproj",
-              "ViewState": "AgIAABUAAAAAAAAAAAAnwB0AAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-08-25T17:06:25.445Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SettingsPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\SettingsPage.xaml.cs",
-              "RelativeDocumentMoniker": "SettingsPage.xaml.cs",
-              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\SettingsPage.xaml.cs",
-              "RelativeToolTip": "SettingsPage.xaml.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAwwGAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T16:35:50.285Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SettingsPage.xaml",
-              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\SettingsPage.xaml",
-              "RelativeDocumentMoniker": "SettingsPage.xaml",
-              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\SettingsPage.xaml",
-              "RelativeToolTip": "SettingsPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-25T16:35:25.458Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SerialPortManager.cs",
-              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\SerialPortManager.cs",
-              "RelativeDocumentMoniker": "SerialPortManager.cs",
-              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\SerialPortManager.cs",
-              "RelativeToolTip": "SerialPortManager.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAwwGEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T16:08:39.673Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Microsoft.NET.Sdk.DefaultItems.Shared.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
-              "ViewState": "AgIAALQAAAAAAAAAAAAIwL8AAAAYAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Microsoft.WindowsAppSDK.SingleFile.targets",
+              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240227000\\buildTransitive\\Microsoft.WindowsAppSDK.SingleFile.targets",
+              "RelativeDocumentMoniker": "..\\..\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240227000\\buildTransitive\\Microsoft.WindowsAppSDK.SingleFile.targets",
+              "ToolTip": "C:\\Users\\Nabeel Hyder\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240227000\\buildTransitive\\Microsoft.WindowsAppSDK.SingleFile.targets",
+              "RelativeToolTip": "..\\..\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240227000\\buildTransitive\\Microsoft.WindowsAppSDK.SingleFile.targets",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAQwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-08-25T18:27:44.09Z",
+              "WhenOpened": "2025-08-26T20:54:01.782Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CustomPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\CustomPage.xaml.cs",
+              "RelativeDocumentMoniker": "CustomPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\CustomPage.xaml.cs",
+              "RelativeToolTip": "CustomPage.xaml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAswBsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T16:16:46.657Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ShutterPage.xaml",
-              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\ShutterPage.xaml",
-              "RelativeDocumentMoniker": "ShutterPage.xaml",
-              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\ShutterPage.xaml",
-              "RelativeToolTip": "ShutterPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAcwAcAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-25T16:13:13.241Z",
-              "EditorCaption": ""
+              "Title": "ShutterPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\ShutterPage.xaml.cs",
+              "RelativeDocumentMoniker": "ShutterPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\ShutterPage.xaml.cs",
+              "RelativeToolTip": "ShutterPage.xaml.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAswBoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T16:13:35.001Z"
             },
             {
               "$type": "Document",
@@ -208,23 +173,57 @@
               "RelativeDocumentMoniker": "App.xaml",
               "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\App.xaml",
               "RelativeToolTip": "App.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswA4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-25T18:21:37.372Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T18:21:37.372Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
+              "Title": "SettingsPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\SettingsPage.xaml.cs",
+              "RelativeDocumentMoniker": "SettingsPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\SettingsPage.xaml.cs",
+              "RelativeToolTip": "SettingsPage.xaml.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAswE4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T16:35:50.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EnergyPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\EnergyPage.xaml",
+              "RelativeDocumentMoniker": "EnergyPage.xaml",
+              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\EnergyPage.xaml",
+              "RelativeToolTip": "EnergyPage.xaml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-25T16:14:51.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCYAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAANQAAAAAAAAAAAAswN0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T16:40:01.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T16:40:01.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EnergyPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\EnergyPage.xaml.cs",
+              "RelativeDocumentMoniker": "EnergyPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\EnergyPage.xaml.cs",
+              "RelativeToolTip": "EnergyPage.xaml.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAUwC0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T16:15:31.904Z"
             },
             {
               "$type": "Document",
@@ -234,53 +233,37 @@
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAkwHYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-25T16:39:42.447Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T16:39:42.447Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "EnergyPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\EnergyPage.xaml.cs",
-              "RelativeDocumentMoniker": "EnergyPage.xaml.cs",
-              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\EnergyPage.xaml.cs",
-              "RelativeToolTip": "EnergyPage.xaml.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAYwBYAAAABAAAAAAAAAA==",
+              "Title": "SerialPortManager.cs",
+              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\Services\\SerialPortManager.cs",
+              "RelativeDocumentMoniker": "Services\\SerialPortManager.cs",
+              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\Services\\SerialPortManager.cs",
+              "RelativeToolTip": "Services\\SerialPortManager.cs",
+              "ViewState": "AgIAAFABAAAAAAAAAAAYwHcBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T16:15:31.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T16:08:39.673Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "EnergyPage.xaml",
-              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\EnergyPage.xaml",
-              "RelativeDocumentMoniker": "EnergyPage.xaml",
-              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\EnergyPage.xaml",
-              "RelativeToolTip": "EnergyPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAcwAwAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-25T16:14:51.92Z",
-              "EditorCaption": ""
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAADwvw0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T17:19:03.742Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "CustomPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\CustomPage.xaml.cs",
-              "RelativeDocumentMoniker": "CustomPage.xaml.cs",
-              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\CustomPage.xaml.cs",
-              "RelativeToolTip": "CustomPage.xaml.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAcwBUAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T16:16:46.657Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "CustomPage.xaml",
               "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\CustomPage.xaml",
               "RelativeDocumentMoniker": "CustomPage.xaml",
@@ -288,12 +271,59 @@
               "RelativeToolTip": "CustomPage.xaml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-25T16:16:11.25Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T16:16:11.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SettingsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\SettingsPage.xaml",
+              "RelativeDocumentMoniker": "SettingsPage.xaml",
+              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\SettingsPage.xaml",
+              "RelativeToolTip": "SettingsPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-25T16:35:25.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\.gitignore",
+              "RelativeDocumentMoniker": "..\\.gitignore",
+              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\.gitignore",
+              "RelativeToolTip": "..\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-25T19:04:01.8Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
+              "Title": "Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "ViewState": "AgIAALQAAAAAAAAAAAAIwL8AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-08-25T18:27:44.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ShutterPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\ShutterPage.xaml",
+              "RelativeDocumentMoniker": "ShutterPage.xaml",
+              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\ShutterPage.xaml",
+              "RelativeToolTip": "ShutterPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAcwAcAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-25T16:13:13.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "Microsoft.NET.Sdk.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.targets",
@@ -305,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -314,18 +344,6 @@
               "ViewState": "AgIAAJwKAAAAAAAAAAAowKIKAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
               "WhenOpened": "2025-08-25T16:54:21.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ShutterPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\ShutterPage.xaml.cs",
-              "RelativeDocumentMoniker": "ShutterPage.xaml.cs",
-              "ToolTip": "C:\\Users\\Nabeel Hyder\\MegaWattLaserController\\MegaWattLaserController\\ShutterPage.xaml.cs",
-              "RelativeToolTip": "ShutterPage.xaml.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAiwBgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T16:13:35.001Z"
             }
           ]
         }
