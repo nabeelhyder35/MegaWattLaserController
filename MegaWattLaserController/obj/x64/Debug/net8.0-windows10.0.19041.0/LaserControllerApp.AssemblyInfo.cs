@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LaserControllerApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f9a1e5592842daf5b6edd6951d72f6214e756e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fa32c7a9a4c88d1ba876f80c910df4cbdb3627f")]
 [assembly: System.Reflection.AssemblyProductAttribute("LaserControllerApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LaserControllerApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

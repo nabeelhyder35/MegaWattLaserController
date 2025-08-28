@@ -68,21 +68,33 @@
                         PaneTitle="Laser Control">
 
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Shutter" Tag="ShutterPage">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE72C;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
-
-                <NavigationViewItem Content="Energy/Voltage" Tag="EnergyPage">
+                <NavigationViewItem Content="Energy Monitor" Tag="EnergyMonitorPage">
                     <NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE945;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
-                <NavigationViewItem Content="Pulse Settings" Tag="PulsePage">
+                <NavigationViewItem Content="Pulse Settings" Tag="PulseSettingsPage">
                     <NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE121;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Voltage Control" Tag="VoltagePage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE7F8;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Shutter Control" Tag="ShutterPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE72C;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Waveform Display" Tag="WaveformPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE9D2;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
@@ -98,7 +110,6 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
             </NavigationView.MenuItems>
-
             <!-- Content Frame -->
             <Frame x:Name="ContentFrame" 
                    NavigationFailed="ContentFrame_NavigationFailed"/>

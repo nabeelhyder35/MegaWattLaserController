@@ -55,6 +55,10 @@
               "target": "Package",
               "version": "[8.2.2, )"
             },
+            "LiveChartsCore.SkiaSharpView.WinUI": {
+              "target": "Package",
+              "version": "[2.0.0-rc2, )"
+            },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[8.0.0, )"

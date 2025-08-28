@@ -15,6 +15,11 @@
     <EnableMsixTooling>false</EnableMsixTooling>
     <StartupObject>LaserControllerApp.Program</StartupObject>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="EnergyMonitorPage.xaml" />
+    <None Remove="PulseSettingsPage.xaml" />
+    <None Remove="WaveformPage.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\AppIcon.ico" CopyToOutputDirectory="PreserveNewest" />
@@ -32,6 +37,26 @@
   <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240810.004" />
 <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.551" />
 <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+  <PackageReference Include="LiveChartsCore.SkiaSharpView.WinUI" Version="2.0.0-rc2" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="WaveformPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="PulseSettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="EnergyMonitorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>

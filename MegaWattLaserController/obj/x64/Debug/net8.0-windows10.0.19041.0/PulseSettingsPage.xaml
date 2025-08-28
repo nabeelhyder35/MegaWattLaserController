@@ -1,0 +1,134 @@
+﻿<Page x:Class="LaserControllerApp.PulseSettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="20">
+        <ScrollViewer>
+            <StackPanel Spacing="20">
+                <!-- Operation Mode -->
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
+                        CornerRadius="8" 
+                        Padding="20">
+                    <StackPanel Spacing="15">
+                        <TextBlock Text="OPERATION MODE" 
+                                   FontSize="16" 
+                                   FontWeight="Bold"/>
+
+                        <ComboBox x:ConnectionId='7' x:Name="ModeComboBox" 
+                                  Header="Select Mode:"
+                                                                                  >
+                            <ComboBoxItem Content="Continuous" Tag="CONTINUOUS"/>
+                            <ComboBoxItem Content="Burst" Tag="BURST"/>
+                        </ComboBox>
+
+                        <!-- Burst Settings (Visible only in Burst mode) -->
+                        <StackPanel x:ConnectionId='8' x:Name="BurstSettingsPanel" 
+                                    Spacing="10"
+                                    Visibility="Collapsed">
+                            <TextBox x:ConnectionId='9' x:Name="BurstCountTextBox" 
+                                     Header="Burst Count:"
+                                     PlaceholderText="Enter number of pulses (1-1000)"
+                                     InputScope="Number"/>
+
+                            <TextBlock Text="Internal/External Trigger:"
+                                       FontWeight="SemiBold"/>
+
+                            <StackPanel Orientation="Horizontal" Spacing="20">
+                                <RadioButton x:ConnectionId='10' x:Name="InternalTriggerRadio" 
+                                             Content="Internal"
+                                             GroupName="TriggerGroup"
+                                             IsChecked="True"/>
+                                <RadioButton x:ConnectionId='11' x:Name="ExternalTriggerRadio" 
+                                             Content="External"
+                                             GroupName="TriggerGroup"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Pulse Parameters -->
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
+                        CornerRadius="8" 
+                        Padding="20">
+                    <StackPanel Spacing="15">
+                        <TextBlock Text="PULSE PARAMETERS" 
+                                   FontSize="16" 
+                                   FontWeight="Bold"/>
+
+                        <!-- Repetition Rate -->
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Repetition Rate:"
+                                       Grid.Row="0" Grid.Column="0"
+                                       VerticalAlignment="Center"/>
+
+                            <Slider x:ConnectionId='5' x:Name="RepRateSlider"
+                                    Grid.Row="1" Grid.Column="0"
+                                    Minimum="1" Maximum="1000" Value="10"
+                                                                             />
+
+                            <TextBox x:ConnectionId='6' x:Name="RepRateTextBox"
+                                     Grid.Row="1" Grid.Column="1"
+                                     Margin="10,0,0,0"
+                                     Text="{Binding Value, ElementName=RepRateSlider, Mode=TwoWay}"
+                                     InputScope="Number"/>
+
+                            <TextBlock Text="Hz"
+                                       Grid.Row="1" Grid.Column="1"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Center"
+                                       Margin="0,0,25,0"/>
+                        </Grid>
+
+                        <!-- Pulse Width -->
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Pulse Width:"
+                                       Grid.Row="0" Grid.Column="0"
+                                       VerticalAlignment="Center"/>
+
+                            <Slider x:ConnectionId='3' x:Name="PulseWidthSlider"
+                                    Grid.Row="1" Grid.Column="0"
+                                    Minimum="1" Maximum="1000" Value="100"
+                                                                                />
+
+                            <TextBox x:ConnectionId='4' x:Name="PulseWidthTextBox"
+                                     Grid.Row="1" Grid.Column="1"
+                                     Margin="10,0,0,0"
+                                     Text="{Binding Value, ElementName=PulseWidthSlider, Mode=TwoWay}"
+                                     InputScope="Number"/>
+
+                            <TextBlock Text="ns"
+                                       Grid.Row="1" Grid.Column="1"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Center"
+                                       Margin="0,0,25,0"/>
+                        </Grid>
+
+                        <Button x:ConnectionId='2' x:Name="ApplyPulseSettingsButton"
+                                Content="Apply Settings"
+                                                                      
+                                HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
+

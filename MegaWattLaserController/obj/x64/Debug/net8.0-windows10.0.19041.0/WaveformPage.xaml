@@ -1,0 +1,50 @@
+﻿<Page x:ConnectionId='1' x:Class="LaserControllerApp.WaveformPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:lvc="using:LiveChartsCore.SkiaSharpView.WinUI"
+      xmlns:vm="using:LaserControllerApp.ViewModels"
+                          
+                              >
+
+    <Grid Margin="20">
+        <StackPanel Spacing="15">
+            <TextBlock Text="WAVEFORM DISPLAY" 
+                       FontSize="18" 
+                       FontWeight="Bold"/>
+
+            <Border BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
+                    BorderThickness="1"
+                    Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
+                <lvc:CartesianChart x:ConnectionId='8'
+                    x:Name="WaveformChart"
+                    Height="300"
+                                                      
+                                                    
+                                                    
+                    TooltipPosition="Hidden">
+                </lvc:CartesianChart>
+            </Border>
+
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button x:ConnectionId='3' x:Name="StartButton" Content="Start Monitoring"                              />
+                <Button x:ConnectionId='4' x:Name="StopButton" Content="Stop Monitoring"                             />
+                <ComboBox x:ConnectionId='5' x:Name="TimeScaleComboBox" 
+                          Width="100"
+                          SelectedIndex="0"
+                                                                               >
+                    <ComboBoxItem Content="1s" Tag="1"/>
+                    <ComboBoxItem Content="5s" Tag="5"/>
+                    <ComboBoxItem Content="10s" Tag="10"/>
+                </ComboBox>
+                <Button x:ConnectionId='6' x:Name="ClearButton" Content="Clear Chart"                         />
+                <Button x:ConnectionId='7' x:Name="ResetZoomButton" Content="Reset Zoom"                        />
+            </StackPanel>
+
+            <TextBlock x:ConnectionId='2' x:Name="StatusText" 
+                       FontSize="12" 
+                       Foreground="Gray"
+                       Text="Monitoring stopped"/>
+        </StackPanel>
+    </Grid>
+</Page>
+
