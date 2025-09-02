@@ -225,20 +225,20 @@ namespace LaserControllerApp.LaserControllerApp_XamlTypeInfo
         private void InitTypeTables()
         {
             _typeNameTable = new string[70];
-            _typeNameTable[0] = "LaserControllerApp.MainWindow";
-            _typeNameTable[1] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[2] = "LaserControllerApp.Views.CustomPage";
-            _typeNameTable[3] = "Microsoft.UI.Xaml.Controls.Page";
-            _typeNameTable[4] = "Microsoft.UI.Xaml.Controls.UserControl";
-            _typeNameTable[5] = "Microsoft.UI.Xaml.Controls.ProgressRing";
-            _typeNameTable[6] = "Microsoft.UI.Xaml.Controls.Control";
-            _typeNameTable[7] = "Boolean";
-            _typeNameTable[8] = "Double";
-            _typeNameTable[9] = "Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings";
-            _typeNameTable[10] = "Microsoft.UI.Xaml.DependencyObject";
-            _typeNameTable[11] = "LaserControllerApp.Views.EnergyMonitorPage";
-            _typeNameTable[12] = "LaserControllerApp.Converters.EnergyConverter";
-            _typeNameTable[13] = "Object";
+            _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
+            _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
+            _typeNameTable[2] = "Object";
+            _typeNameTable[3] = "Boolean";
+            _typeNameTable[4] = "LaserControllerApp.Views.CustomPage";
+            _typeNameTable[5] = "Microsoft.UI.Xaml.Controls.Page";
+            _typeNameTable[6] = "Microsoft.UI.Xaml.Controls.UserControl";
+            _typeNameTable[7] = "Microsoft.UI.Xaml.Controls.ProgressRing";
+            _typeNameTable[8] = "Microsoft.UI.Xaml.Controls.Control";
+            _typeNameTable[9] = "Double";
+            _typeNameTable[10] = "Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings";
+            _typeNameTable[11] = "Microsoft.UI.Xaml.DependencyObject";
+            _typeNameTable[12] = "LaserControllerApp.Views.EnergyMonitorPage";
+            _typeNameTable[13] = "LaserControllerApp.Converters.EnergyConverter";
             _typeNameTable[14] = "LaserControllerApp.Converters.TemperatureConverter";
             _typeNameTable[15] = "LaserControllerApp.Converters.VoltageConverter";
             _typeNameTable[16] = "Microsoft.UI.Xaml.Controls.InfoBar";
@@ -297,20 +297,20 @@ namespace LaserControllerApp.LaserControllerApp_XamlTypeInfo
             _typeNameTable[69] = "Int32";
 
             _typeTable = new global::System.Type[70];
-            _typeTable[0] = typeof(global::LaserControllerApp.MainWindow);
-            _typeTable[1] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[2] = typeof(global::LaserControllerApp.Views.CustomPage);
-            _typeTable[3] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
-            _typeTable[4] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
-            _typeTable[5] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing);
-            _typeTable[6] = typeof(global::Microsoft.UI.Xaml.Controls.Control);
-            _typeTable[7] = typeof(global::System.Boolean);
-            _typeTable[8] = typeof(global::System.Double);
-            _typeTable[9] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings);
-            _typeTable[10] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
-            _typeTable[11] = typeof(global::LaserControllerApp.Views.EnergyMonitorPage);
-            _typeTable[12] = typeof(global::LaserControllerApp.Converters.EnergyConverter);
-            _typeTable[13] = typeof(global::System.Object);
+            _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
+            _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
+            _typeTable[2] = typeof(global::System.Object);
+            _typeTable[3] = typeof(global::System.Boolean);
+            _typeTable[4] = typeof(global::LaserControllerApp.Views.CustomPage);
+            _typeTable[5] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
+            _typeTable[6] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
+            _typeTable[7] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing);
+            _typeTable[8] = typeof(global::Microsoft.UI.Xaml.Controls.Control);
+            _typeTable[9] = typeof(global::System.Double);
+            _typeTable[10] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings);
+            _typeTable[11] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
+            _typeTable[12] = typeof(global::LaserControllerApp.Views.EnergyMonitorPage);
+            _typeTable[13] = typeof(global::LaserControllerApp.Converters.EnergyConverter);
             _typeTable[14] = typeof(global::LaserControllerApp.Converters.TemperatureConverter);
             _typeTable[15] = typeof(global::LaserControllerApp.Converters.VoltageConverter);
             _typeTable[16] = typeof(global::Microsoft.UI.Xaml.Controls.InfoBar);
@@ -403,16 +403,18 @@ namespace LaserControllerApp.LaserControllerApp_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_2_CustomPage() { return new global::LaserControllerApp.Views.CustomPage(); }
-        private object Activate_5_ProgressRing() { return new global::Microsoft.UI.Xaml.Controls.ProgressRing(); }
-        private object Activate_11_EnergyMonitorPage() { return new global::LaserControllerApp.Views.EnergyMonitorPage(); }
-        private object Activate_12_EnergyConverter() { return new global::LaserControllerApp.Converters.EnergyConverter(); }
+        private object Activate_0_XamlControlsResources() { return new global::Microsoft.UI.Xaml.Controls.XamlControlsResources(); }
+        private object Activate_4_CustomPage() { return new global::LaserControllerApp.Views.CustomPage(); }
+        private object Activate_7_ProgressRing() { return new global::Microsoft.UI.Xaml.Controls.ProgressRing(); }
+        private object Activate_12_EnergyMonitorPage() { return new global::LaserControllerApp.Views.EnergyMonitorPage(); }
+        private object Activate_13_EnergyConverter() { return new global::LaserControllerApp.Converters.EnergyConverter(); }
         private object Activate_14_TemperatureConverter() { return new global::LaserControllerApp.Converters.TemperatureConverter(); }
         private object Activate_15_VoltageConverter() { return new global::LaserControllerApp.Converters.VoltageConverter(); }
         private object Activate_16_InfoBar() { return new global::Microsoft.UI.Xaml.Controls.InfoBar(); }
         private object Activate_26_InfoBarTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.InfoBarTemplateSettings(); }
         private object Activate_27_EnergyPage() { return new global::LaserControllerApp.Views.EnergyPage(); }
         private object Activate_28_HomeScreen() { return new global::LaserControllerApp.Views.HomeScreen(); }
+        private object Activate_29_MainViewModel() { return new global::LaserControllerApp.ViewModels.MainViewModel(); }
         private object Activate_31_InterlockStatusPage() { return new global::LaserControllerApp.Views.InterlockStatusPage(); }
         private object Activate_32_PulseSettingsPage() { return new global::LaserControllerApp.Views.PulseSettingsPage(); }
         private object Activate_33_SettingsPage() { return new global::LaserControllerApp.Views.SettingsPage(); }
@@ -426,6 +428,13 @@ namespace LaserControllerApp.LaserControllerApp_XamlTypeInfo
         private object Activate_65_WaveformPage() { return new global::LaserControllerApp.Views.WaveformPage(); }
         private object Activate_66_WaveformViewModel() { return new global::LaserControllerApp.ViewModels.WaveformViewModel(); }
         private object Activate_67_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
+        {
+            var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
+            var newKey = (global::System.Object)key;
+            var newItem = (global::System.Object)item;
+            collection.Add(newKey, newItem);
+        }
         private void VectorAdd_68_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
@@ -443,34 +452,44 @@ namespace LaserControllerApp.LaserControllerApp_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  LaserControllerApp.MainWindow
-                userType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.SetIsLocalType();
+            case 0:   //  Microsoft.UI.Xaml.Controls.XamlControlsResources
+                userType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.ResourceDictionary"));
+                userType.Activator = Activate_0_XamlControlsResources;
+                userType.DictionaryAdd = MapAdd_0_XamlControlsResources;
+                userType.AddMemberName("UseCompactResources");
                 xamlType = userType;
                 break;
 
-            case 1:   //  Microsoft.UI.Xaml.Window
+            case 1:   //  Microsoft.UI.Xaml.ResourceDictionary
                 xamlType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  LaserControllerApp.Views.CustomPage
+            case 2:   //  Object
+                xamlType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  Boolean
+                xamlType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 4:   //  LaserControllerApp.Views.CustomPage
                 userType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_2_CustomPage;
+                userType.Activator = Activate_4_CustomPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 3:   //  Microsoft.UI.Xaml.Controls.Page
+            case 5:   //  Microsoft.UI.Xaml.Controls.Page
                 xamlType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  Microsoft.UI.Xaml.Controls.UserControl
+            case 6:   //  Microsoft.UI.Xaml.Controls.UserControl
                 xamlType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  Microsoft.UI.Xaml.Controls.ProgressRing
+            case 7:   //  Microsoft.UI.Xaml.Controls.ProgressRing
                 userType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_5_ProgressRing;
+                userType.Activator = Activate_7_ProgressRing;
                 userType.AddMemberName("IsActive");
                 userType.AddMemberName("IsIndeterminate");
                 userType.AddMemberName("Maximum");
@@ -480,44 +499,36 @@ namespace LaserControllerApp.LaserControllerApp_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 6:   //  Microsoft.UI.Xaml.Controls.Control
+            case 8:   //  Microsoft.UI.Xaml.Controls.Control
                 xamlType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  Boolean
+            case 9:   //  Double
                 xamlType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 8:   //  Double
-                xamlType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 9:   //  Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings
+            case 10:   //  Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings
                 userType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 10:   //  Microsoft.UI.Xaml.DependencyObject
+            case 11:   //  Microsoft.UI.Xaml.DependencyObject
                 xamlType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 11:   //  LaserControllerApp.Views.EnergyMonitorPage
+            case 12:   //  LaserControllerApp.Views.EnergyMonitorPage
                 userType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_EnergyMonitorPage;
+                userType.Activator = Activate_12_EnergyMonitorPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 12:   //  LaserControllerApp.Converters.EnergyConverter
+            case 13:   //  LaserControllerApp.Converters.EnergyConverter
                 userType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_12_EnergyConverter;
+                userType.Activator = Activate_13_EnergyConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
-                break;
-
-            case 13:   //  Object
-                xamlType = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 14:   //  LaserControllerApp.Converters.TemperatureConverter
@@ -1013,661 +1024,671 @@ namespace LaserControllerApp.LaserControllerApp_XamlTypeInfo
             return foundXamlType;
         }
 
-        private object get_0_ProgressRing_IsActive(object instance)
+        private object get_0_XamlControlsResources_UseCompactResources(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.XamlControlsResources)instance;
+            return that.UseCompactResources;
+        }
+        private void set_0_XamlControlsResources_UseCompactResources(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.XamlControlsResources)instance;
+            that.UseCompactResources = (global::System.Boolean)Value;
+        }
+        private object get_1_ProgressRing_IsActive(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             return that.IsActive;
         }
-        private void set_0_ProgressRing_IsActive(object instance, object Value)
+        private void set_1_ProgressRing_IsActive(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             that.IsActive = (global::System.Boolean)Value;
         }
-        private object get_1_ProgressRing_IsIndeterminate(object instance)
+        private object get_2_ProgressRing_IsIndeterminate(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             return that.IsIndeterminate;
         }
-        private void set_1_ProgressRing_IsIndeterminate(object instance, object Value)
+        private void set_2_ProgressRing_IsIndeterminate(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             that.IsIndeterminate = (global::System.Boolean)Value;
         }
-        private object get_2_ProgressRing_Maximum(object instance)
+        private object get_3_ProgressRing_Maximum(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             return that.Maximum;
         }
-        private void set_2_ProgressRing_Maximum(object instance, object Value)
+        private void set_3_ProgressRing_Maximum(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             that.Maximum = (global::System.Double)Value;
         }
-        private object get_3_ProgressRing_Minimum(object instance)
+        private object get_4_ProgressRing_Minimum(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             return that.Minimum;
         }
-        private void set_3_ProgressRing_Minimum(object instance, object Value)
+        private void set_4_ProgressRing_Minimum(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             that.Minimum = (global::System.Double)Value;
         }
-        private object get_4_ProgressRing_TemplateSettings(object instance)
+        private object get_5_ProgressRing_TemplateSettings(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             return that.TemplateSettings;
         }
-        private object get_5_ProgressRing_Value(object instance)
+        private object get_6_ProgressRing_Value(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             return that.Value;
         }
-        private void set_5_ProgressRing_Value(object instance, object Value)
+        private void set_6_ProgressRing_Value(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
             that.Value = (global::System.Double)Value;
         }
-        private object get_6_InfoBar_Content(object instance)
+        private object get_7_InfoBar_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.Content;
         }
-        private void set_6_InfoBar_Content(object instance, object Value)
+        private void set_7_InfoBar_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_7_InfoBar_Title(object instance)
+        private object get_8_InfoBar_Title(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.Title;
         }
-        private void set_7_InfoBar_Title(object instance, object Value)
+        private void set_8_InfoBar_Title(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.Title = (global::System.String)Value;
         }
-        private object get_8_InfoBar_IsOpen(object instance)
+        private object get_9_InfoBar_IsOpen(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.IsOpen;
         }
-        private void set_8_InfoBar_IsOpen(object instance, object Value)
+        private void set_9_InfoBar_IsOpen(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.IsOpen = (global::System.Boolean)Value;
         }
-        private object get_9_InfoBar_ActionButton(object instance)
+        private object get_10_InfoBar_ActionButton(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.ActionButton;
         }
-        private void set_9_InfoBar_ActionButton(object instance, object Value)
+        private void set_10_InfoBar_ActionButton(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.ActionButton = (global::Microsoft.UI.Xaml.Controls.Primitives.ButtonBase)Value;
         }
-        private object get_10_InfoBar_CloseButtonCommand(object instance)
+        private object get_11_InfoBar_CloseButtonCommand(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.CloseButtonCommand;
         }
-        private void set_10_InfoBar_CloseButtonCommand(object instance, object Value)
+        private void set_11_InfoBar_CloseButtonCommand(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.CloseButtonCommand = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_11_InfoBar_CloseButtonCommandParameter(object instance)
+        private object get_12_InfoBar_CloseButtonCommandParameter(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.CloseButtonCommandParameter;
         }
-        private void set_11_InfoBar_CloseButtonCommandParameter(object instance, object Value)
+        private void set_12_InfoBar_CloseButtonCommandParameter(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.CloseButtonCommandParameter = (global::System.Object)Value;
         }
-        private object get_12_InfoBar_CloseButtonStyle(object instance)
+        private object get_13_InfoBar_CloseButtonStyle(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.CloseButtonStyle;
         }
-        private void set_12_InfoBar_CloseButtonStyle(object instance, object Value)
+        private void set_13_InfoBar_CloseButtonStyle(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.CloseButtonStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_13_InfoBar_ContentTemplate(object instance)
+        private object get_14_InfoBar_ContentTemplate(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.ContentTemplate;
         }
-        private void set_13_InfoBar_ContentTemplate(object instance, object Value)
+        private void set_14_InfoBar_ContentTemplate(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.ContentTemplate = (global::Microsoft.UI.Xaml.DataTemplate)Value;
         }
-        private object get_14_InfoBar_IconSource(object instance)
+        private object get_15_InfoBar_IconSource(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.IconSource;
         }
-        private void set_14_InfoBar_IconSource(object instance, object Value)
+        private void set_15_InfoBar_IconSource(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.IconSource = (global::Microsoft.UI.Xaml.Controls.IconSource)Value;
         }
-        private object get_15_InfoBar_IsClosable(object instance)
+        private object get_16_InfoBar_IsClosable(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.IsClosable;
         }
-        private void set_15_InfoBar_IsClosable(object instance, object Value)
+        private void set_16_InfoBar_IsClosable(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.IsClosable = (global::System.Boolean)Value;
         }
-        private object get_16_InfoBar_IsIconVisible(object instance)
+        private object get_17_InfoBar_IsIconVisible(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.IsIconVisible;
         }
-        private void set_16_InfoBar_IsIconVisible(object instance, object Value)
+        private void set_17_InfoBar_IsIconVisible(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.IsIconVisible = (global::System.Boolean)Value;
         }
-        private object get_17_InfoBar_Message(object instance)
+        private object get_18_InfoBar_Message(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.Message;
         }
-        private void set_17_InfoBar_Message(object instance, object Value)
+        private void set_18_InfoBar_Message(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.Message = (global::System.String)Value;
         }
-        private object get_18_InfoBar_Severity(object instance)
+        private object get_19_InfoBar_Severity(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.Severity;
         }
-        private void set_18_InfoBar_Severity(object instance, object Value)
+        private void set_19_InfoBar_Severity(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             that.Severity = (global::Microsoft.UI.Xaml.Controls.InfoBarSeverity)Value;
         }
-        private object get_19_InfoBar_TemplateSettings(object instance)
+        private object get_20_InfoBar_TemplateSettings(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.InfoBar)instance;
             return that.TemplateSettings;
         }
-        private object get_20_HomeScreen_ViewModel(object instance)
+        private object get_21_HomeScreen_ViewModel(object instance)
         {
             var that = (global::LaserControllerApp.Views.HomeScreen)instance;
             return that.ViewModel;
         }
-        private object get_21_ProgressBar_IsIndeterminate(object instance)
+        private object get_22_ProgressBar_IsIndeterminate(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressBar)instance;
             return that.IsIndeterminate;
         }
-        private void set_21_ProgressBar_IsIndeterminate(object instance, object Value)
+        private void set_22_ProgressBar_IsIndeterminate(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressBar)instance;
             that.IsIndeterminate = (global::System.Boolean)Value;
         }
-        private object get_22_ProgressBar_ShowError(object instance)
+        private object get_23_ProgressBar_ShowError(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressBar)instance;
             return that.ShowError;
         }
-        private void set_22_ProgressBar_ShowError(object instance, object Value)
+        private void set_23_ProgressBar_ShowError(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressBar)instance;
             that.ShowError = (global::System.Boolean)Value;
         }
-        private object get_23_ProgressBar_ShowPaused(object instance)
+        private object get_24_ProgressBar_ShowPaused(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressBar)instance;
             return that.ShowPaused;
         }
-        private void set_23_ProgressBar_ShowPaused(object instance, object Value)
+        private void set_24_ProgressBar_ShowPaused(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressBar)instance;
             that.ShowPaused = (global::System.Boolean)Value;
         }
-        private object get_24_ProgressBar_TemplateSettings(object instance)
+        private object get_25_ProgressBar_TemplateSettings(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressBar)instance;
             return that.TemplateSettings;
         }
-        private object get_25_CartesianChart_Series(object instance)
+        private object get_26_CartesianChart_Series(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.Series;
         }
-        private void set_25_CartesianChart_Series(object instance, object Value)
+        private void set_26_CartesianChart_Series(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.Series = (global::System.Collections.Generic.IEnumerable<global::LiveChartsCore.ISeries>)Value;
         }
-        private object get_26_CartesianChart_XAxes(object instance)
+        private object get_27_CartesianChart_XAxes(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.XAxes;
         }
-        private void set_26_CartesianChart_XAxes(object instance, object Value)
+        private void set_27_CartesianChart_XAxes(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.XAxes = (global::System.Collections.Generic.IEnumerable<global::LiveChartsCore.Kernel.Sketches.ICartesianAxis>)Value;
         }
-        private object get_27_CartesianChart_YAxes(object instance)
+        private object get_28_CartesianChart_YAxes(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.YAxes;
         }
-        private void set_27_CartesianChart_YAxes(object instance, object Value)
+        private void set_28_CartesianChart_YAxes(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.YAxes = (global::System.Collections.Generic.IEnumerable<global::LiveChartsCore.Kernel.Sketches.ICartesianAxis>)Value;
         }
-        private object get_28_CartesianChart_TooltipPosition(object instance)
+        private object get_29_CartesianChart_TooltipPosition(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.TooltipPosition;
         }
-        private void set_28_CartesianChart_TooltipPosition(object instance, object Value)
+        private void set_29_CartesianChart_TooltipPosition(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.TooltipPosition = (global::LiveChartsCore.Measure.TooltipPosition)Value;
         }
-        private object get_29_CartesianChart_CoreChart(object instance)
+        private object get_30_CartesianChart_CoreChart(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.CoreChart;
         }
-        private object get_30_CartesianChart_DrawMargin(object instance)
+        private object get_31_CartesianChart_DrawMargin(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.DrawMargin;
         }
-        private void set_30_CartesianChart_DrawMargin(object instance, object Value)
+        private void set_31_CartesianChart_DrawMargin(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.DrawMargin = (global::LiveChartsCore.Measure.Margin)Value;
         }
-        private object get_31_CartesianChart_CoreCanvas(object instance)
+        private object get_32_CartesianChart_CoreCanvas(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.CoreCanvas;
         }
-        private object get_32_CartesianChart_SyncContext(object instance)
+        private object get_33_CartesianChart_SyncContext(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.SyncContext;
         }
-        private void set_32_CartesianChart_SyncContext(object instance, object Value)
+        private void set_33_CartesianChart_SyncContext(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.SyncContext = (global::System.Object)Value;
         }
-        private object get_33_CartesianChart_Title(object instance)
+        private object get_34_CartesianChart_Title(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.Title;
         }
-        private void set_33_CartesianChart_Title(object instance, object Value)
+        private void set_34_CartesianChart_Title(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.Title = (global::LiveChartsCore.VisualElements.VisualElement)Value;
         }
-        private object get_34_CartesianChart_Sections(object instance)
+        private object get_35_CartesianChart_Sections(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.Sections;
         }
-        private void set_34_CartesianChart_Sections(object instance, object Value)
+        private void set_35_CartesianChart_Sections(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.Sections = (global::System.Collections.Generic.IEnumerable<global::LiveChartsCore.CoreSection>)Value;
         }
-        private object get_35_CartesianChart_VisualElements(object instance)
+        private object get_36_CartesianChart_VisualElements(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.VisualElements;
         }
-        private void set_35_CartesianChart_VisualElements(object instance, object Value)
+        private void set_36_CartesianChart_VisualElements(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.VisualElements = (global::System.Collections.Generic.IEnumerable<global::LiveChartsCore.Kernel.ChartElement>)Value;
         }
-        private object get_36_CartesianChart_DrawMarginFrame(object instance)
+        private object get_37_CartesianChart_DrawMarginFrame(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.DrawMarginFrame;
         }
-        private void set_36_CartesianChart_DrawMarginFrame(object instance, object Value)
+        private void set_37_CartesianChart_DrawMarginFrame(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.DrawMarginFrame = (global::LiveChartsCore.CoreDrawMarginFrame)Value;
         }
-        private object get_37_CartesianChart_ZoomMode(object instance)
+        private object get_38_CartesianChart_ZoomMode(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.ZoomMode;
         }
-        private void set_37_CartesianChart_ZoomMode(object instance, object Value)
+        private void set_38_CartesianChart_ZoomMode(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.ZoomMode = (global::LiveChartsCore.Measure.ZoomAndPanMode)Value;
         }
-        private object get_38_CartesianChart_ZoomingSpeed(object instance)
+        private object get_39_CartesianChart_ZoomingSpeed(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.ZoomingSpeed;
         }
-        private void set_38_CartesianChart_ZoomingSpeed(object instance, object Value)
+        private void set_39_CartesianChart_ZoomingSpeed(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.ZoomingSpeed = (global::System.Double)Value;
         }
 #pragma warning disable 0618  //   Warning on Deprecated usage
-        private object get_39_CartesianChart_TooltipFindingStrategy(object instance)
+        private object get_40_CartesianChart_TooltipFindingStrategy(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.TooltipFindingStrategy;
         }
-        private void set_39_CartesianChart_TooltipFindingStrategy(object instance, object Value)
+        private void set_40_CartesianChart_TooltipFindingStrategy(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.TooltipFindingStrategy = (global::LiveChartsCore.Measure.TooltipFindingStrategy)Value;
         }
 #pragma warning restore 0618
-        private object get_40_CartesianChart_FindingStrategy(object instance)
+        private object get_41_CartesianChart_FindingStrategy(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.FindingStrategy;
         }
-        private void set_40_CartesianChart_FindingStrategy(object instance, object Value)
+        private void set_41_CartesianChart_FindingStrategy(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.FindingStrategy = (global::LiveChartsCore.Measure.FindingStrategy)Value;
         }
-        private object get_41_CartesianChart_AnimationsSpeed(object instance)
+        private object get_42_CartesianChart_AnimationsSpeed(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.AnimationsSpeed;
         }
-        private void set_41_CartesianChart_AnimationsSpeed(object instance, object Value)
+        private void set_42_CartesianChart_AnimationsSpeed(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.AnimationsSpeed = (global::System.TimeSpan)Value;
         }
-        private object get_42_CartesianChart_EasingFunction(object instance)
+        private object get_43_CartesianChart_EasingFunction(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.EasingFunction;
         }
-        private void set_42_CartesianChart_EasingFunction(object instance, object Value)
+        private void set_43_CartesianChart_EasingFunction(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.EasingFunction = (global::System.Func<global::System.Single, global::System.Single>)Value;
         }
-        private object get_43_CartesianChart_LegendPosition(object instance)
+        private object get_44_CartesianChart_LegendPosition(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.LegendPosition;
         }
-        private void set_43_CartesianChart_LegendPosition(object instance, object Value)
+        private void set_44_CartesianChart_LegendPosition(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.LegendPosition = (global::LiveChartsCore.Measure.LegendPosition)Value;
         }
-        private object get_44_CartesianChart_LegendBackgroundPaint(object instance)
+        private object get_45_CartesianChart_LegendBackgroundPaint(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.LegendBackgroundPaint;
         }
-        private void set_44_CartesianChart_LegendBackgroundPaint(object instance, object Value)
+        private void set_45_CartesianChart_LegendBackgroundPaint(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.LegendBackgroundPaint = (global::LiveChartsCore.Painting.Paint)Value;
         }
-        private object get_45_CartesianChart_LegendTextPaint(object instance)
+        private object get_46_CartesianChart_LegendTextPaint(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.LegendTextPaint;
         }
-        private void set_45_CartesianChart_LegendTextPaint(object instance, object Value)
+        private void set_46_CartesianChart_LegendTextPaint(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.LegendTextPaint = (global::LiveChartsCore.Painting.Paint)Value;
         }
-        private object get_46_CartesianChart_LegendTextSize(object instance)
+        private object get_47_CartesianChart_LegendTextSize(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.LegendTextSize;
         }
-        private void set_46_CartesianChart_LegendTextSize(object instance, object Value)
+        private void set_47_CartesianChart_LegendTextSize(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.LegendTextSize = (global::System.Double)Value;
         }
-        private object get_47_CartesianChart_Legend(object instance)
+        private object get_48_CartesianChart_Legend(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.Legend;
         }
-        private void set_47_CartesianChart_Legend(object instance, object Value)
+        private void set_48_CartesianChart_Legend(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.Legend = (global::LiveChartsCore.Kernel.Sketches.IChartLegend)Value;
         }
-        private object get_48_CartesianChart_TooltipBackgroundPaint(object instance)
+        private object get_49_CartesianChart_TooltipBackgroundPaint(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.TooltipBackgroundPaint;
         }
-        private void set_48_CartesianChart_TooltipBackgroundPaint(object instance, object Value)
+        private void set_49_CartesianChart_TooltipBackgroundPaint(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.TooltipBackgroundPaint = (global::LiveChartsCore.Painting.Paint)Value;
         }
-        private object get_49_CartesianChart_TooltipTextPaint(object instance)
+        private object get_50_CartesianChart_TooltipTextPaint(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.TooltipTextPaint;
         }
-        private void set_49_CartesianChart_TooltipTextPaint(object instance, object Value)
+        private void set_50_CartesianChart_TooltipTextPaint(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.TooltipTextPaint = (global::LiveChartsCore.Painting.Paint)Value;
         }
-        private object get_50_CartesianChart_TooltipTextSize(object instance)
+        private object get_51_CartesianChart_TooltipTextSize(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.TooltipTextSize;
         }
-        private void set_50_CartesianChart_TooltipTextSize(object instance, object Value)
+        private void set_51_CartesianChart_TooltipTextSize(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.TooltipTextSize = (global::System.Double)Value;
         }
-        private object get_51_CartesianChart_Tooltip(object instance)
+        private object get_52_CartesianChart_Tooltip(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.Tooltip;
         }
-        private void set_51_CartesianChart_Tooltip(object instance, object Value)
+        private void set_52_CartesianChart_Tooltip(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.Tooltip = (global::LiveChartsCore.Kernel.Sketches.IChartTooltip)Value;
         }
-        private object get_52_CartesianChart_AutoUpdateEnabled(object instance)
+        private object get_53_CartesianChart_AutoUpdateEnabled(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.AutoUpdateEnabled;
         }
-        private void set_52_CartesianChart_AutoUpdateEnabled(object instance, object Value)
+        private void set_53_CartesianChart_AutoUpdateEnabled(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.AutoUpdateEnabled = (global::System.Boolean)Value;
         }
-        private object get_53_CartesianChart_UpdaterThrottler(object instance)
+        private object get_54_CartesianChart_UpdaterThrottler(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.UpdaterThrottler;
         }
-        private void set_53_CartesianChart_UpdaterThrottler(object instance, object Value)
+        private void set_54_CartesianChart_UpdaterThrottler(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.UpdaterThrottler = (global::System.TimeSpan)Value;
         }
-        private object get_54_CartesianChart_UpdateStartedCommand(object instance)
+        private object get_55_CartesianChart_UpdateStartedCommand(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.UpdateStartedCommand;
         }
-        private void set_54_CartesianChart_UpdateStartedCommand(object instance, object Value)
+        private void set_55_CartesianChart_UpdateStartedCommand(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.UpdateStartedCommand = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_55_CartesianChart_PointerPressedCommand(object instance)
+        private object get_56_CartesianChart_PointerPressedCommand(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.PointerPressedCommand;
         }
-        private void set_55_CartesianChart_PointerPressedCommand(object instance, object Value)
+        private void set_56_CartesianChart_PointerPressedCommand(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.PointerPressedCommand = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_56_CartesianChart_PointerReleasedCommand(object instance)
+        private object get_57_CartesianChart_PointerReleasedCommand(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.PointerReleasedCommand;
         }
-        private void set_56_CartesianChart_PointerReleasedCommand(object instance, object Value)
+        private void set_57_CartesianChart_PointerReleasedCommand(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.PointerReleasedCommand = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_57_CartesianChart_PointerMoveCommand(object instance)
+        private object get_58_CartesianChart_PointerMoveCommand(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.PointerMoveCommand;
         }
-        private void set_57_CartesianChart_PointerMoveCommand(object instance, object Value)
+        private void set_58_CartesianChart_PointerMoveCommand(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.PointerMoveCommand = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_58_CartesianChart_DataPointerDownCommand(object instance)
+        private object get_59_CartesianChart_DataPointerDownCommand(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.DataPointerDownCommand;
         }
-        private void set_58_CartesianChart_DataPointerDownCommand(object instance, object Value)
+        private void set_59_CartesianChart_DataPointerDownCommand(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.DataPointerDownCommand = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_59_CartesianChart_HoveredPointsChangedCommand(object instance)
+        private object get_60_CartesianChart_HoveredPointsChangedCommand(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.HoveredPointsChangedCommand;
         }
-        private void set_59_CartesianChart_HoveredPointsChangedCommand(object instance, object Value)
+        private void set_60_CartesianChart_HoveredPointsChangedCommand(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.HoveredPointsChangedCommand = (global::System.Windows.Input.ICommand)Value;
         }
 #pragma warning disable 0618  //   Warning on Deprecated usage
-        private object get_60_CartesianChart_ChartPointPointerDownCommand(object instance)
+        private object get_61_CartesianChart_ChartPointPointerDownCommand(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.ChartPointPointerDownCommand;
         }
-        private void set_60_CartesianChart_ChartPointPointerDownCommand(object instance, object Value)
+        private void set_61_CartesianChart_ChartPointPointerDownCommand(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.ChartPointPointerDownCommand = (global::System.Windows.Input.ICommand)Value;
         }
 #pragma warning restore 0618
-        private object get_61_CartesianChart_VisualElementsPointerDownCommand(object instance)
+        private object get_62_CartesianChart_VisualElementsPointerDownCommand(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.VisualElementsPointerDownCommand;
         }
-        private void set_61_CartesianChart_VisualElementsPointerDownCommand(object instance, object Value)
+        private void set_62_CartesianChart_VisualElementsPointerDownCommand(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.VisualElementsPointerDownCommand = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_62_CartesianChart_MatchAxesScreenDataRatio(object instance)
+        private object get_63_CartesianChart_MatchAxesScreenDataRatio(object instance)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             return that.MatchAxesScreenDataRatio;
         }
-        private void set_62_CartesianChart_MatchAxesScreenDataRatio(object instance, object Value)
+        private void set_63_CartesianChart_MatchAxesScreenDataRatio(object instance, object Value)
         {
             var that = (global::LiveChartsCore.SkiaSharpView.WinUI.CartesianChart)instance;
             that.MatchAxesScreenDataRatio = (global::System.Boolean)Value;
         }
-        private object get_63_WaveformPage_ViewModel(object instance)
+        private object get_64_WaveformPage_ViewModel(object instance)
         {
             var that = (global::LaserControllerApp.Views.WaveformPage)instance;
             return that.ViewModel;
         }
-        private object get_64_TreeViewNode_Children(object instance)
+        private object get_65_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_65_TreeViewNode_Content(object instance)
+        private object get_66_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_65_TreeViewNode_Content(object instance, object Value)
+        private void set_66_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_66_TreeViewNode_Depth(object instance)
+        private object get_67_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_67_TreeViewNode_HasChildren(object instance)
+        private object get_68_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_68_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_69_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_68_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_69_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_69_TreeViewNode_IsExpanded(object instance)
+        private object get_70_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_69_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_70_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_70_TreeViewNode_Parent(object instance)
+        private object get_71_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -1680,486 +1701,493 @@ namespace LaserControllerApp.LaserControllerApp_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "Microsoft.UI.Xaml.Controls.XamlControlsResources.UseCompactResources":
+                userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.XamlControlsResources");
+                xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "UseCompactResources", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_0_XamlControlsResources_UseCompactResources;
+                xamlMember.Setter = set_0_XamlControlsResources_UseCompactResources;
+                break;
             case "Microsoft.UI.Xaml.Controls.ProgressRing.IsActive":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "IsActive", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_0_ProgressRing_IsActive;
-                xamlMember.Setter = set_0_ProgressRing_IsActive;
+                xamlMember.Getter = get_1_ProgressRing_IsActive;
+                xamlMember.Setter = set_1_ProgressRing_IsActive;
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressRing.IsIndeterminate":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "IsIndeterminate", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_1_ProgressRing_IsIndeterminate;
-                xamlMember.Setter = set_1_ProgressRing_IsIndeterminate;
+                xamlMember.Getter = get_2_ProgressRing_IsIndeterminate;
+                xamlMember.Setter = set_2_ProgressRing_IsIndeterminate;
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressRing.Maximum":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Maximum", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_2_ProgressRing_Maximum;
-                xamlMember.Setter = set_2_ProgressRing_Maximum;
+                xamlMember.Getter = get_3_ProgressRing_Maximum;
+                xamlMember.Setter = set_3_ProgressRing_Maximum;
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressRing.Minimum":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Minimum", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_3_ProgressRing_Minimum;
-                xamlMember.Setter = set_3_ProgressRing_Minimum;
+                xamlMember.Getter = get_4_ProgressRing_Minimum;
+                xamlMember.Setter = set_4_ProgressRing_Minimum;
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressRing.TemplateSettings":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "TemplateSettings", "Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings");
-                xamlMember.Getter = get_4_ProgressRing_TemplateSettings;
+                xamlMember.Getter = get_5_ProgressRing_TemplateSettings;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressRing.Value":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Value", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_5_ProgressRing_Value;
-                xamlMember.Setter = set_5_ProgressRing_Value;
+                xamlMember.Getter = get_6_ProgressRing_Value;
+                xamlMember.Setter = set_6_ProgressRing_Value;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.Content":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_6_InfoBar_Content;
-                xamlMember.Setter = set_6_InfoBar_Content;
+                xamlMember.Getter = get_7_InfoBar_Content;
+                xamlMember.Setter = set_7_InfoBar_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.Title":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Title", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_7_InfoBar_Title;
-                xamlMember.Setter = set_7_InfoBar_Title;
+                xamlMember.Getter = get_8_InfoBar_Title;
+                xamlMember.Setter = set_8_InfoBar_Title;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.IsOpen":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "IsOpen", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_8_InfoBar_IsOpen;
-                xamlMember.Setter = set_8_InfoBar_IsOpen;
+                xamlMember.Getter = get_9_InfoBar_IsOpen;
+                xamlMember.Setter = set_9_InfoBar_IsOpen;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.ActionButton":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "ActionButton", "Microsoft.UI.Xaml.Controls.Primitives.ButtonBase");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_9_InfoBar_ActionButton;
-                xamlMember.Setter = set_9_InfoBar_ActionButton;
+                xamlMember.Getter = get_10_InfoBar_ActionButton;
+                xamlMember.Setter = set_10_InfoBar_ActionButton;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.CloseButtonCommand":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "CloseButtonCommand", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_10_InfoBar_CloseButtonCommand;
-                xamlMember.Setter = set_10_InfoBar_CloseButtonCommand;
+                xamlMember.Getter = get_11_InfoBar_CloseButtonCommand;
+                xamlMember.Setter = set_11_InfoBar_CloseButtonCommand;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.CloseButtonCommandParameter":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "CloseButtonCommandParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_11_InfoBar_CloseButtonCommandParameter;
-                xamlMember.Setter = set_11_InfoBar_CloseButtonCommandParameter;
+                xamlMember.Getter = get_12_InfoBar_CloseButtonCommandParameter;
+                xamlMember.Setter = set_12_InfoBar_CloseButtonCommandParameter;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.CloseButtonStyle":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "CloseButtonStyle", "Microsoft.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_12_InfoBar_CloseButtonStyle;
-                xamlMember.Setter = set_12_InfoBar_CloseButtonStyle;
+                xamlMember.Getter = get_13_InfoBar_CloseButtonStyle;
+                xamlMember.Setter = set_13_InfoBar_CloseButtonStyle;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.ContentTemplate":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "ContentTemplate", "Microsoft.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_13_InfoBar_ContentTemplate;
-                xamlMember.Setter = set_13_InfoBar_ContentTemplate;
+                xamlMember.Getter = get_14_InfoBar_ContentTemplate;
+                xamlMember.Setter = set_14_InfoBar_ContentTemplate;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.IconSource":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "IconSource", "Microsoft.UI.Xaml.Controls.IconSource");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_14_InfoBar_IconSource;
-                xamlMember.Setter = set_14_InfoBar_IconSource;
+                xamlMember.Getter = get_15_InfoBar_IconSource;
+                xamlMember.Setter = set_15_InfoBar_IconSource;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.IsClosable":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "IsClosable", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_15_InfoBar_IsClosable;
-                xamlMember.Setter = set_15_InfoBar_IsClosable;
+                xamlMember.Getter = get_16_InfoBar_IsClosable;
+                xamlMember.Setter = set_16_InfoBar_IsClosable;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.IsIconVisible":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "IsIconVisible", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_16_InfoBar_IsIconVisible;
-                xamlMember.Setter = set_16_InfoBar_IsIconVisible;
+                xamlMember.Getter = get_17_InfoBar_IsIconVisible;
+                xamlMember.Setter = set_17_InfoBar_IsIconVisible;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.Message":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Message", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_17_InfoBar_Message;
-                xamlMember.Setter = set_17_InfoBar_Message;
+                xamlMember.Getter = get_18_InfoBar_Message;
+                xamlMember.Setter = set_18_InfoBar_Message;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.Severity":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Severity", "Microsoft.UI.Xaml.Controls.InfoBarSeverity");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_18_InfoBar_Severity;
-                xamlMember.Setter = set_18_InfoBar_Severity;
+                xamlMember.Getter = get_19_InfoBar_Severity;
+                xamlMember.Setter = set_19_InfoBar_Severity;
                 break;
             case "Microsoft.UI.Xaml.Controls.InfoBar.TemplateSettings":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.InfoBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "TemplateSettings", "Microsoft.UI.Xaml.Controls.InfoBarTemplateSettings");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_19_InfoBar_TemplateSettings;
+                xamlMember.Getter = get_20_InfoBar_TemplateSettings;
                 xamlMember.SetIsReadOnly();
                 break;
             case "LaserControllerApp.Views.HomeScreen.ViewModel":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LaserControllerApp.Views.HomeScreen");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "ViewModel", "LaserControllerApp.ViewModels.MainViewModel");
-                xamlMember.Getter = get_20_HomeScreen_ViewModel;
+                xamlMember.Getter = get_21_HomeScreen_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressBar.IsIndeterminate":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "IsIndeterminate", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_21_ProgressBar_IsIndeterminate;
-                xamlMember.Setter = set_21_ProgressBar_IsIndeterminate;
+                xamlMember.Getter = get_22_ProgressBar_IsIndeterminate;
+                xamlMember.Setter = set_22_ProgressBar_IsIndeterminate;
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressBar.ShowError":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "ShowError", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_22_ProgressBar_ShowError;
-                xamlMember.Setter = set_22_ProgressBar_ShowError;
+                xamlMember.Getter = get_23_ProgressBar_ShowError;
+                xamlMember.Setter = set_23_ProgressBar_ShowError;
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressBar.ShowPaused":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "ShowPaused", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_23_ProgressBar_ShowPaused;
-                xamlMember.Setter = set_23_ProgressBar_ShowPaused;
+                xamlMember.Getter = get_24_ProgressBar_ShowPaused;
+                xamlMember.Setter = set_24_ProgressBar_ShowPaused;
                 break;
             case "Microsoft.UI.Xaml.Controls.ProgressBar.TemplateSettings":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressBar");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "TemplateSettings", "Microsoft.UI.Xaml.Controls.ProgressBarTemplateSettings");
-                xamlMember.Getter = get_24_ProgressBar_TemplateSettings;
+                xamlMember.Getter = get_25_ProgressBar_TemplateSettings;
                 xamlMember.SetIsReadOnly();
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.Series":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Series", "System.Collections.Generic.IEnumerable`1<LiveChartsCore.ISeries>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_25_CartesianChart_Series;
-                xamlMember.Setter = set_25_CartesianChart_Series;
+                xamlMember.Getter = get_26_CartesianChart_Series;
+                xamlMember.Setter = set_26_CartesianChart_Series;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.XAxes":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "XAxes", "System.Collections.Generic.IEnumerable`1<LiveChartsCore.Kernel.Sketches.ICartesianAxis>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_26_CartesianChart_XAxes;
-                xamlMember.Setter = set_26_CartesianChart_XAxes;
+                xamlMember.Getter = get_27_CartesianChart_XAxes;
+                xamlMember.Setter = set_27_CartesianChart_XAxes;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.YAxes":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "YAxes", "System.Collections.Generic.IEnumerable`1<LiveChartsCore.Kernel.Sketches.ICartesianAxis>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_27_CartesianChart_YAxes;
-                xamlMember.Setter = set_27_CartesianChart_YAxes;
+                xamlMember.Getter = get_28_CartesianChart_YAxes;
+                xamlMember.Setter = set_28_CartesianChart_YAxes;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.TooltipPosition":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "TooltipPosition", "LiveChartsCore.Measure.TooltipPosition");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_28_CartesianChart_TooltipPosition;
-                xamlMember.Setter = set_28_CartesianChart_TooltipPosition;
+                xamlMember.Getter = get_29_CartesianChart_TooltipPosition;
+                xamlMember.Setter = set_29_CartesianChart_TooltipPosition;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.CoreChart":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "CoreChart", "LiveChartsCore.Chart");
-                xamlMember.Getter = get_29_CartesianChart_CoreChart;
+                xamlMember.Getter = get_30_CartesianChart_CoreChart;
                 xamlMember.SetIsReadOnly();
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.DrawMargin":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "DrawMargin", "LiveChartsCore.Measure.Margin");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_30_CartesianChart_DrawMargin;
-                xamlMember.Setter = set_30_CartesianChart_DrawMargin;
+                xamlMember.Getter = get_31_CartesianChart_DrawMargin;
+                xamlMember.Setter = set_31_CartesianChart_DrawMargin;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.CoreCanvas":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "CoreCanvas", "LiveChartsCore.Motion.CoreMotionCanvas");
-                xamlMember.Getter = get_31_CartesianChart_CoreCanvas;
+                xamlMember.Getter = get_32_CartesianChart_CoreCanvas;
                 xamlMember.SetIsReadOnly();
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.SyncContext":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "SyncContext", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_32_CartesianChart_SyncContext;
-                xamlMember.Setter = set_32_CartesianChart_SyncContext;
+                xamlMember.Getter = get_33_CartesianChart_SyncContext;
+                xamlMember.Setter = set_33_CartesianChart_SyncContext;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.Title":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Title", "LiveChartsCore.VisualElements.VisualElement");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_33_CartesianChart_Title;
-                xamlMember.Setter = set_33_CartesianChart_Title;
+                xamlMember.Getter = get_34_CartesianChart_Title;
+                xamlMember.Setter = set_34_CartesianChart_Title;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.Sections":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Sections", "System.Collections.Generic.IEnumerable`1<LiveChartsCore.CoreSection>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_34_CartesianChart_Sections;
-                xamlMember.Setter = set_34_CartesianChart_Sections;
+                xamlMember.Getter = get_35_CartesianChart_Sections;
+                xamlMember.Setter = set_35_CartesianChart_Sections;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.VisualElements":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "VisualElements", "System.Collections.Generic.IEnumerable`1<LiveChartsCore.Kernel.ChartElement>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_35_CartesianChart_VisualElements;
-                xamlMember.Setter = set_35_CartesianChart_VisualElements;
+                xamlMember.Getter = get_36_CartesianChart_VisualElements;
+                xamlMember.Setter = set_36_CartesianChart_VisualElements;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.DrawMarginFrame":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "DrawMarginFrame", "LiveChartsCore.CoreDrawMarginFrame");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_36_CartesianChart_DrawMarginFrame;
-                xamlMember.Setter = set_36_CartesianChart_DrawMarginFrame;
+                xamlMember.Getter = get_37_CartesianChart_DrawMarginFrame;
+                xamlMember.Setter = set_37_CartesianChart_DrawMarginFrame;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.ZoomMode":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "ZoomMode", "LiveChartsCore.Measure.ZoomAndPanMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_37_CartesianChart_ZoomMode;
-                xamlMember.Setter = set_37_CartesianChart_ZoomMode;
+                xamlMember.Getter = get_38_CartesianChart_ZoomMode;
+                xamlMember.Setter = set_38_CartesianChart_ZoomMode;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.ZoomingSpeed":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "ZoomingSpeed", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_38_CartesianChart_ZoomingSpeed;
-                xamlMember.Setter = set_38_CartesianChart_ZoomingSpeed;
+                xamlMember.Getter = get_39_CartesianChart_ZoomingSpeed;
+                xamlMember.Setter = set_39_CartesianChart_ZoomingSpeed;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.TooltipFindingStrategy":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "TooltipFindingStrategy", "LiveChartsCore.Measure.TooltipFindingStrategy");
-                xamlMember.Getter = get_39_CartesianChart_TooltipFindingStrategy;
-                xamlMember.Setter = set_39_CartesianChart_TooltipFindingStrategy;
+                xamlMember.Getter = get_40_CartesianChart_TooltipFindingStrategy;
+                xamlMember.Setter = set_40_CartesianChart_TooltipFindingStrategy;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.FindingStrategy":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "FindingStrategy", "LiveChartsCore.Measure.FindingStrategy");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_40_CartesianChart_FindingStrategy;
-                xamlMember.Setter = set_40_CartesianChart_FindingStrategy;
+                xamlMember.Getter = get_41_CartesianChart_FindingStrategy;
+                xamlMember.Setter = set_41_CartesianChart_FindingStrategy;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.AnimationsSpeed":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "AnimationsSpeed", "TimeSpan");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_41_CartesianChart_AnimationsSpeed;
-                xamlMember.Setter = set_41_CartesianChart_AnimationsSpeed;
+                xamlMember.Getter = get_42_CartesianChart_AnimationsSpeed;
+                xamlMember.Setter = set_42_CartesianChart_AnimationsSpeed;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.EasingFunction":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "EasingFunction", "System.Func`2<Single, Single>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_42_CartesianChart_EasingFunction;
-                xamlMember.Setter = set_42_CartesianChart_EasingFunction;
+                xamlMember.Getter = get_43_CartesianChart_EasingFunction;
+                xamlMember.Setter = set_43_CartesianChart_EasingFunction;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.LegendPosition":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "LegendPosition", "LiveChartsCore.Measure.LegendPosition");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_43_CartesianChart_LegendPosition;
-                xamlMember.Setter = set_43_CartesianChart_LegendPosition;
+                xamlMember.Getter = get_44_CartesianChart_LegendPosition;
+                xamlMember.Setter = set_44_CartesianChart_LegendPosition;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.LegendBackgroundPaint":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "LegendBackgroundPaint", "LiveChartsCore.Painting.Paint");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_44_CartesianChart_LegendBackgroundPaint;
-                xamlMember.Setter = set_44_CartesianChart_LegendBackgroundPaint;
+                xamlMember.Getter = get_45_CartesianChart_LegendBackgroundPaint;
+                xamlMember.Setter = set_45_CartesianChart_LegendBackgroundPaint;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.LegendTextPaint":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "LegendTextPaint", "LiveChartsCore.Painting.Paint");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_45_CartesianChart_LegendTextPaint;
-                xamlMember.Setter = set_45_CartesianChart_LegendTextPaint;
+                xamlMember.Getter = get_46_CartesianChart_LegendTextPaint;
+                xamlMember.Setter = set_46_CartesianChart_LegendTextPaint;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.LegendTextSize":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "LegendTextSize", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_46_CartesianChart_LegendTextSize;
-                xamlMember.Setter = set_46_CartesianChart_LegendTextSize;
+                xamlMember.Getter = get_47_CartesianChart_LegendTextSize;
+                xamlMember.Setter = set_47_CartesianChart_LegendTextSize;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.Legend":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Legend", "LiveChartsCore.Kernel.Sketches.IChartLegend");
-                xamlMember.Getter = get_47_CartesianChart_Legend;
-                xamlMember.Setter = set_47_CartesianChart_Legend;
+                xamlMember.Getter = get_48_CartesianChart_Legend;
+                xamlMember.Setter = set_48_CartesianChart_Legend;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.TooltipBackgroundPaint":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "TooltipBackgroundPaint", "LiveChartsCore.Painting.Paint");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_48_CartesianChart_TooltipBackgroundPaint;
-                xamlMember.Setter = set_48_CartesianChart_TooltipBackgroundPaint;
+                xamlMember.Getter = get_49_CartesianChart_TooltipBackgroundPaint;
+                xamlMember.Setter = set_49_CartesianChart_TooltipBackgroundPaint;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.TooltipTextPaint":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "TooltipTextPaint", "LiveChartsCore.Painting.Paint");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_49_CartesianChart_TooltipTextPaint;
-                xamlMember.Setter = set_49_CartesianChart_TooltipTextPaint;
+                xamlMember.Getter = get_50_CartesianChart_TooltipTextPaint;
+                xamlMember.Setter = set_50_CartesianChart_TooltipTextPaint;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.TooltipTextSize":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "TooltipTextSize", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_50_CartesianChart_TooltipTextSize;
-                xamlMember.Setter = set_50_CartesianChart_TooltipTextSize;
+                xamlMember.Getter = get_51_CartesianChart_TooltipTextSize;
+                xamlMember.Setter = set_51_CartesianChart_TooltipTextSize;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.Tooltip":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Tooltip", "LiveChartsCore.Kernel.Sketches.IChartTooltip");
-                xamlMember.Getter = get_51_CartesianChart_Tooltip;
-                xamlMember.Setter = set_51_CartesianChart_Tooltip;
+                xamlMember.Getter = get_52_CartesianChart_Tooltip;
+                xamlMember.Setter = set_52_CartesianChart_Tooltip;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.AutoUpdateEnabled":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "AutoUpdateEnabled", "Boolean");
-                xamlMember.Getter = get_52_CartesianChart_AutoUpdateEnabled;
-                xamlMember.Setter = set_52_CartesianChart_AutoUpdateEnabled;
+                xamlMember.Getter = get_53_CartesianChart_AutoUpdateEnabled;
+                xamlMember.Setter = set_53_CartesianChart_AutoUpdateEnabled;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.UpdaterThrottler":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "UpdaterThrottler", "TimeSpan");
-                xamlMember.Getter = get_53_CartesianChart_UpdaterThrottler;
-                xamlMember.Setter = set_53_CartesianChart_UpdaterThrottler;
+                xamlMember.Getter = get_54_CartesianChart_UpdaterThrottler;
+                xamlMember.Setter = set_54_CartesianChart_UpdaterThrottler;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.UpdateStartedCommand":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "UpdateStartedCommand", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_54_CartesianChart_UpdateStartedCommand;
-                xamlMember.Setter = set_54_CartesianChart_UpdateStartedCommand;
+                xamlMember.Getter = get_55_CartesianChart_UpdateStartedCommand;
+                xamlMember.Setter = set_55_CartesianChart_UpdateStartedCommand;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.PointerPressedCommand":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "PointerPressedCommand", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_55_CartesianChart_PointerPressedCommand;
-                xamlMember.Setter = set_55_CartesianChart_PointerPressedCommand;
+                xamlMember.Getter = get_56_CartesianChart_PointerPressedCommand;
+                xamlMember.Setter = set_56_CartesianChart_PointerPressedCommand;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.PointerReleasedCommand":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "PointerReleasedCommand", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_56_CartesianChart_PointerReleasedCommand;
-                xamlMember.Setter = set_56_CartesianChart_PointerReleasedCommand;
+                xamlMember.Getter = get_57_CartesianChart_PointerReleasedCommand;
+                xamlMember.Setter = set_57_CartesianChart_PointerReleasedCommand;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.PointerMoveCommand":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "PointerMoveCommand", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_57_CartesianChart_PointerMoveCommand;
-                xamlMember.Setter = set_57_CartesianChart_PointerMoveCommand;
+                xamlMember.Getter = get_58_CartesianChart_PointerMoveCommand;
+                xamlMember.Setter = set_58_CartesianChart_PointerMoveCommand;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.DataPointerDownCommand":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "DataPointerDownCommand", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_58_CartesianChart_DataPointerDownCommand;
-                xamlMember.Setter = set_58_CartesianChart_DataPointerDownCommand;
+                xamlMember.Getter = get_59_CartesianChart_DataPointerDownCommand;
+                xamlMember.Setter = set_59_CartesianChart_DataPointerDownCommand;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.HoveredPointsChangedCommand":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "HoveredPointsChangedCommand", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_59_CartesianChart_HoveredPointsChangedCommand;
-                xamlMember.Setter = set_59_CartesianChart_HoveredPointsChangedCommand;
+                xamlMember.Getter = get_60_CartesianChart_HoveredPointsChangedCommand;
+                xamlMember.Setter = set_60_CartesianChart_HoveredPointsChangedCommand;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.ChartPointPointerDownCommand":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "ChartPointPointerDownCommand", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_60_CartesianChart_ChartPointPointerDownCommand;
-                xamlMember.Setter = set_60_CartesianChart_ChartPointPointerDownCommand;
+                xamlMember.Getter = get_61_CartesianChart_ChartPointPointerDownCommand;
+                xamlMember.Setter = set_61_CartesianChart_ChartPointPointerDownCommand;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.VisualElementsPointerDownCommand":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "VisualElementsPointerDownCommand", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_61_CartesianChart_VisualElementsPointerDownCommand;
-                xamlMember.Setter = set_61_CartesianChart_VisualElementsPointerDownCommand;
+                xamlMember.Getter = get_62_CartesianChart_VisualElementsPointerDownCommand;
+                xamlMember.Setter = set_62_CartesianChart_VisualElementsPointerDownCommand;
                 break;
             case "LiveChartsCore.SkiaSharpView.WinUI.CartesianChart.MatchAxesScreenDataRatio":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveChartsCore.SkiaSharpView.WinUI.CartesianChart");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "MatchAxesScreenDataRatio", "Boolean");
-                xamlMember.Getter = get_62_CartesianChart_MatchAxesScreenDataRatio;
-                xamlMember.Setter = set_62_CartesianChart_MatchAxesScreenDataRatio;
+                xamlMember.Getter = get_63_CartesianChart_MatchAxesScreenDataRatio;
+                xamlMember.Setter = set_63_CartesianChart_MatchAxesScreenDataRatio;
                 break;
             case "LaserControllerApp.Views.WaveformPage.ViewModel":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LaserControllerApp.Views.WaveformPage");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "ViewModel", "LaserControllerApp.ViewModels.WaveformViewModel");
-                xamlMember.Getter = get_63_WaveformPage_ViewModel;
+                xamlMember.Getter = get_64_WaveformPage_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_64_TreeViewNode_Children;
+                xamlMember.Getter = get_65_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_65_TreeViewNode_Content;
-                xamlMember.Setter = set_65_TreeViewNode_Content;
+                xamlMember.Getter = get_66_TreeViewNode_Content;
+                xamlMember.Setter = set_66_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_66_TreeViewNode_Depth;
+                xamlMember.Getter = get_67_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_67_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_68_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_68_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_68_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_69_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_69_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_69_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_69_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_70_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_70_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::LaserControllerApp.LaserControllerApp_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_70_TreeViewNode_Parent;
+                xamlMember.Getter = get_71_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }

@@ -58,7 +58,7 @@
                 </Border>
 
                 <!-- Interlock Status Grid -->
-                <Border Background="{StaticResource SystemAltMediumColorBrush}" 
+                <Border Background="{StaticResource SystemControlBackgroundBaseLowBrush}" 
                         CornerRadius="8" 
                         Padding="20"
                         Margin="0,20,0,0">
@@ -265,7 +265,7 @@
                 </StackPanel>
 
                 <!-- Status Legend -->
-                <Border Background="{StaticResource SystemAltLightColorBrush}" 
+                <Border Background="{ThemeResource SystemControlBackgroundBaseLowBrush}" 
                         CornerRadius="8" 
                         Padding="15"
                         Margin="0,20,0,0">

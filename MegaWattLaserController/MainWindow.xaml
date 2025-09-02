@@ -4,37 +4,138 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="using:LaserControllerApp"
     mc:Ignorable="d"
-    Title="Laser Controller App">
+    Title="KALD-20-10 Laser Controller">
 
     <Grid>
+        <Grid.Resources>
+            <!-- Style for connection bar controls -->
+            <Style x:Key="ConnectionControlStyle" TargetType="Control">
+                <Setter Property="Margin" Value="5,0,5,0" />
+                <Setter Property="Padding" Value="8,4" />
+                <Setter Property="MinWidth" Value="100" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+        </Grid.Resources>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Connection Status Bar -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Padding="10">
-            <Ellipse x:Name="ConnectionStatusEllipse" Width="12" Height="12" Fill="Red" Margin="0,0,5,0"/>
-            <TextBlock x:Name="StatusTextBlock" Text="Disconnected" VerticalAlignment="Center" Margin="0,0,10,0"/>
-
-            <ComboBox x:Name="PortComboBox" Width="150" Margin="0,0,5,0" 
-                     Header="Port" PlaceholderText="Select port"/>
-            <ComboBox x:Name="BaudRateComboBox" Width="100" Margin="0,0,5,0" 
-                     Header="Baud Rate" SelectedIndex="0">
-                <ComboBoxItem>9600</ComboBoxItem>
-                <ComboBoxItem>19200</ComboBoxItem>
-                <ComboBoxItem>38400</ComboBoxItem>
-                <ComboBoxItem>57600</ComboBoxItem>
-                <ComboBoxItem>115200</ComboBoxItem>
-            </ComboBox>
-            <Button x:Name="RefreshPortsButton" Content="Refresh" Click="RefreshPorts_Click" Margin="0,0,5,0"/>
-            <Button x:Name="ConnectButton" Content="Connect" Click="Connect_Click" Margin="0,0,5,0"/>
-            <Button x:Name="DisconnectButton" Content="Disconnect" Click="Disconnect_Click" IsEnabled="False"/>
+        <!-- Connection Bar -->
+        <StackPanel Grid.Row="0" 
+                    Orientation="Horizontal" 
+                    Margin="10" 
+                    VerticalAlignment="Center"
+                    Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
+            <Ellipse x:Name="ConnectionStatusEllipse" 
+                     Width="12" 
+                     Height="12" 
+                     Fill="{ThemeResource SystemControlForegroundBaseHighBrush}" 
+                     Margin="0,0,10,0"
+                     ToolTipService.ToolTip="Connection status"/>
+            <TextBlock x:Name="StatusTextBlock" 
+                       Text="Disconnected" 
+                       VerticalAlignment="Center"
+                       Margin="0,0,10,0"
+                       FontSize="12"/>
+            <ComboBox x:Name="PortComboBox" 
+                      ItemsSource="{Binding AvailablePorts, Mode=OneWay}"
+                      SelectedItem="{Binding SelectedPort, Mode=TwoWay}"
+                      PlaceholderText="Select Port" 
+                      Style="{StaticResource ConnectionControlStyle}"
+                      ToolTipService.ToolTip="Available serial ports"/>
+            <ComboBox x:Name="BaudRateComboBox"
+                      ItemsSource="{Binding BaudRates, Mode=OneWay}"
+                      SelectedItem="{Binding SelectedBaudRate, Mode=TwoWay}"
+                      Style="{StaticResource ConnectionControlStyle}"
+                      ToolTipService.ToolTip="Communication speed"/>
+            <Button x:Name="RefreshPortsButton" 
+                    Content="Refresh" 
+                    Click="RefreshPorts_Click" 
+                    Style="{StaticResource ConnectionControlStyle}"
+                    ToolTipService.ToolTip="Refresh available serial ports"/>
+            <Button x:Name="ConnectButton" 
+                    Content="Connect" 
+                    Click="Connect_Click" 
+                    Style="{StaticResource ConnectionControlStyle}"
+                    ToolTipService.ToolTip="Connect to selected port"/>
+            <Button x:Name="DisconnectButton" 
+                    Content="Disconnect" 
+                    Click="Disconnect_Click" 
+                    IsEnabled="False"
+                    Style="{StaticResource ConnectionControlStyle}"
+                    ToolTipService.ToolTip="Disconnect from port"/>
         </StackPanel>
 
-        <!-- Simple content area -->
-        <Frame x:Name="ContentFrame" Grid.Row="1"/>
+        <!-- Main Navigation -->
+        <NavigationView x:Name="NavigationViewControl" 
+                        Grid.Row="1" 
+                        PaneDisplayMode="Left" 
+                        IsBackButtonVisible="Collapsed"
+                        SelectionChanged="NavigationViewControl_SelectionChanged"
+                        IsSettingsVisible="True"
+                        PaneTitle="Laser Control">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Home" Tag="HomeScreen">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE80F;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Energy Monitor" Tag="EnergyMonitorPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE945;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Pulse Settings" Tag="PulseSettingsPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE121;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Voltage Control" Tag="VoltagePage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE7F8;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Shutter Control" Tag="ShutterPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE72C;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Waveform Display" Tag="WaveformPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE9D2;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Interlock Status" Tag="InterlockStatusPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE81C;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Custom Commands" Tag="CustomPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE756;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame" 
+                   NavigationFailed="ContentFrame_NavigationFailed"/>
+        </NavigationView>
+
+        <!-- Status Bar -->
+        <Border Grid.Row="2" 
+                Background="{ThemeResource SystemControlBackgroundAltHighBrush}" 
+                BorderThickness="0,1,0,0" 
+                BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}">
+            <StackPanel Orientation="Horizontal" Margin="10,5">
+                <TextBlock x:Name="StatusTextBlockFooter" 
+                           Text="Ready" 
+                           VerticalAlignment="Center"
+                           FontSize="12"
+                           TextTrimming="CharacterEllipsis"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

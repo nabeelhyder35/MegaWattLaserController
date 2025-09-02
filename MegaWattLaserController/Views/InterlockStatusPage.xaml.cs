@@ -1,4 +1,4 @@
-using LaserControllerApp.Models;
+﻿using LaserControllerApp.Models;
 using LaserControllerApp.Services;
 using LaserControllerApp.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,11 +18,17 @@ namespace LaserControllerApp.Views
         private readonly DispatcherTimer _updateTimer;
 
         public InterlockStatusPage()
+            : this(App.Services.GetRequiredService<SerialPortManager>(),
+                   App.Services.GetRequiredService<MainViewModel>())
+        {
+        }
+
+        public InterlockStatusPage(SerialPortManager serialPortManager, MainViewModel mainViewModel)
         {
             this.InitializeComponent();
 
-            _serialPortManager = App.Services.GetRequiredService<SerialPortManager>();
-            _mainViewModel = App.Services.GetRequiredService<MainViewModel>();
+            _serialPortManager = serialPortManager ?? throw new ArgumentNullException(nameof(serialPortManager));
+            _mainViewModel = mainViewModel ?? throw new ArgumentNullException(nameof(mainViewModel));
 
             _updateTimer = new DispatcherTimer();
             _updateTimer.Interval = TimeSpan.FromSeconds(2);
@@ -130,16 +136,30 @@ namespace LaserControllerApp.Views
 
         private async void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
-            RefreshButton.IsEnabled = false;
-            await LoadInterlockStatusAsync();
-            RefreshButton.IsEnabled = true;
+            if (sender is Button btn)
+            {
+                btn.IsEnabled = false;
+                try
+                {
+                    await LoadInterlockStatusAsync();
+                }
+                finally
+                {
+                    btn.IsEnabled = true;
+                }
+            }
+            else
+            {
+                await LoadInterlockStatusAsync();
+            }
         }
 
         private async void ResetFaultsButton_Click(object sender, RoutedEventArgs e)
         {
+            Button? btn = sender as Button;
             try
             {
-                ResetFaultsButton.IsEnabled = false;
+                if (btn != null) btn.IsEnabled = false;
 
                 // Use appropriate command to reset faults; here using lcdTxReset as example
                 await _serialPortManager.SendCommandAsync(new FpgaCommand(FpgaCommandIds.lcdTxReset));
@@ -166,7 +186,7 @@ namespace LaserControllerApp.Views
             }
             finally
             {
-                ResetFaultsButton.IsEnabled = true;
+                if (btn != null) btn.IsEnabled = true;
             }
         }
     }

@@ -11,7 +11,16 @@
     <None Update="App.xaml">
       <SubType>Designer</SubType>
     </None>
+    <None Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </None>
     <None Update="Views\HomeScreen.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Views\InterlockStatusPage.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Views\SystemSettingsPage.xaml">
       <SubType>Designer</SubType>
     </None>
     <Page Update="Views\SystemSettingsPage.xaml">

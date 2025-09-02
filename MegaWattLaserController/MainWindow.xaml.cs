@@ -1,10 +1,13 @@
 ﻿using LaserControllerApp.Services;
 using LaserControllerApp.ViewModels;
+using LaserControllerApp.Views;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Shapes;
+using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -25,6 +28,10 @@ namespace LaserControllerApp
         private Button _connectButton;
         private Button _disconnectButton;
         private Frame _contentFrame;
+        private Grid _contentGrid;
+        private StackPanel _navPanel;
+
+        public MainViewModel ViewModel => _viewModel;
 
         public MainWindow(SerialPortManager serialPortManager, MainViewModel viewModel)
         {
@@ -74,7 +81,7 @@ namespace LaserControllerApp
             try
             {
                 Debug.WriteLine("MainWindow activated, setting size");
-                this.AppWindow.Resize(new Windows.Graphics.SizeInt32(800, 600));
+                this.AppWindow.Resize(new Windows.Graphics.SizeInt32(1200, 800));
                 this.Activated -= MainWindow_Activated; // Remove handler after first use
                 Debug.WriteLine("Window size set successfully");
             }
@@ -175,18 +182,69 @@ namespace LaserControllerApp
                 _statusPanel.Children.Add(_connectButton);
                 _statusPanel.Children.Add(_disconnectButton);
 
-                // Create content frame
+                // Create content frame and navigation panel
                 _contentFrame = new Frame();
+                _contentGrid = new Grid();
+                _contentGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(220) });
+                _contentGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+                _navPanel = new StackPanel
+                {
+                    Orientation = Orientation.Vertical,
+                    Padding = new Thickness(10),
+                    Spacing = 8
+                };
+
+                // Create navigation buttons
+                var homeBtn = new Button { Content = "Home", Tag = "HOME", HorizontalAlignment = HorizontalAlignment.Stretch };
+                homeBtn.Click += NavButton_Click;
+                var systemBtn = new Button { Content = "System Settings", Tag = typeof(Views.SystemSettingsPage), HorizontalAlignment = HorizontalAlignment.Stretch };
+                systemBtn.Click += NavButton_Click;
+                var energyBtn = new Button { Content = "Energy", Tag = typeof(Views.EnergyPage), HorizontalAlignment = HorizontalAlignment.Stretch };
+                energyBtn.Click += NavButton_Click;
+                var voltageBtn = new Button { Content = "Voltage", Tag = typeof(Views.VoltagePage), HorizontalAlignment = HorizontalAlignment.Stretch };
+                voltageBtn.Click += NavButton_Click;
+                var waveformBtn = new Button { Content = "Waveform", Tag = typeof(Views.WaveformPage), HorizontalAlignment = HorizontalAlignment.Stretch };
+                waveformBtn.Click += NavButton_Click;
+                var pulseBtn = new Button { Content = "Pulse Settings", Tag = typeof(Views.PulseSettingsPage), HorizontalAlignment = HorizontalAlignment.Stretch };
+                pulseBtn.Click += NavButton_Click;
+                var shutterBtn = new Button { Content = "Shutter", Tag = typeof(Views.ShutterPage), HorizontalAlignment = HorizontalAlignment.Stretch };
+                shutterBtn.Click += NavButton_Click;
+                var interlockBtn = new Button { Content = "Interlock", Tag = typeof(Views.InterlockStatusPage), HorizontalAlignment = HorizontalAlignment.Stretch };
+                interlockBtn.Click += NavButton_Click;
+                var energyMonBtn = new Button { Content = "Energy Monitor", Tag = typeof(Views.EnergyMonitorPage), HorizontalAlignment = HorizontalAlignment.Stretch };
+                energyMonBtn.Click += NavButton_Click;
+                var customBtn = new Button { Content = "Custom", Tag = typeof(Views.CustomPage), HorizontalAlignment = HorizontalAlignment.Stretch };
+                customBtn.Click += NavButton_Click;
+                var settingsBtn = new Button { Content = "Settings", Tag = typeof(Views.SettingsPage), HorizontalAlignment = HorizontalAlignment.Stretch };
+                settingsBtn.Click += NavButton_Click;
+
+                _navPanel.Children.Add(homeBtn);
+                _navPanel.Children.Add(systemBtn);
+                _navPanel.Children.Add(energyBtn);
+                _navPanel.Children.Add(voltageBtn);
+                _navPanel.Children.Add(waveformBtn);
+                _navPanel.Children.Add(pulseBtn);
+                _navPanel.Children.Add(shutterBtn);
+                _navPanel.Children.Add(interlockBtn);
+                _navPanel.Children.Add(energyMonBtn);
+                _navPanel.Children.Add(customBtn);
+                _navPanel.Children.Add(settingsBtn);
+
+                Grid.SetColumn(_navPanel, 0);
+                Grid.SetColumn(_contentFrame, 1);
+                _contentGrid.Children.Add(_navPanel);
+                _contentGrid.Children.Add(_contentFrame);
 
                 // Add elements to grid
                 Grid.SetRow(_statusPanel, 0);
-                Grid.SetRow(_contentFrame, 1);
+                Grid.SetRow(_contentGrid, 1);
                 _mainGrid.Children.Add(_statusPanel);
-                _mainGrid.Children.Add(_contentFrame);
+                _mainGrid.Children.Add(_contentGrid);
 
                 // Set window content
                 this.Content = _mainGrid;
-                this.Title = "Laser Controller App";
+                this.AppWindow.Title = "Laser Controller App";
 
                 Debug.WriteLine("UI elements created successfully");
             }
@@ -208,6 +266,19 @@ namespace LaserControllerApp
 
                 // Subscribe to connection status changes
                 _serialPortManager.ConnectionStatusChanged += SerialPortManager_ConnectionStatusChanged;
+
+                // Navigation error handling
+                _contentFrame.NavigationFailed += ContentFrame_NavigationFailed;
+
+                // Default navigation
+                try
+                {
+                    _contentFrame.Content = App.Services.GetRequiredService<HomeScreen>();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Failed to load HomeScreen: {ex.Message}");
+                }
 
                 Debug.WriteLine("UI initialized successfully");
             }
@@ -258,6 +329,45 @@ namespace LaserControllerApp
                     Debug.WriteLine($"Error updating connection status: {ex.Message}");
                 }
             });
+        }
+
+        private void NavButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (sender is Button btn)
+                {
+                    var tag = btn.Tag;
+                    if (tag is Type pageType)
+                    {
+                        // Resolve the page via DI to support constructor injection
+                        var pageObj = App.Services.GetService(pageType) as Page;
+                        if (pageObj != null)
+                        {
+                            _contentFrame.Content = pageObj;
+                        }
+                        else
+                        {
+                            // Fallback to type navigation
+                            _contentFrame.Navigate(pageType);
+                        }
+                    }
+                    else if (tag is string s && s == "HOME")
+                    {
+                        _contentFrame.Content = App.Services.GetRequiredService<HomeScreen>();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _ = ShowMessageAsync("Navigation Error", ex.Message);
+            }
+        }
+
+        private void ContentFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
+        {
+            e.Handled = true;
+            _ = ShowMessageAsync("Navigation Failed", e.Exception?.Message ?? "Unknown error.");
         }
 
         private void RefreshPorts_Click(object sender, RoutedEventArgs e)

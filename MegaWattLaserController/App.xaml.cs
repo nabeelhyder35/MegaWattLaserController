@@ -18,8 +18,6 @@ namespace LaserControllerApp
             {
                 Debug.WriteLine("=== App Constructor Starting ===");
                 this.InitializeComponent();
-                Debug.WriteLine("InitializeComponent completed");
-
                 Services = ConfigureServices();
                 Debug.WriteLine("DI container configured");
 
@@ -42,26 +40,26 @@ namespace LaserControllerApp
                 Debug.WriteLine("Configuring DI services...");
                 var services = new ServiceCollection();
 
-                // Register SerialPortManager using the public constructor
+                // Register SerialPortManager as singleton
                 services.AddSingleton<SerialPortManager>();
 
-                services.AddSingleton<MainViewModel>();
-                services.AddSingleton<MainWindow>();
-
                 // Register ViewModels
+                services.AddSingleton<MainViewModel>();
                 services.AddSingleton<WaveformViewModel>();
+
+                // Register MainWindow
+                services.AddSingleton<MainWindow>();
 
                 // Register all pages
                 services.AddTransient<Views.EnergyMonitorPage>();
                 services.AddTransient<Views.HomeScreen>();
-                services.AddTransient<Views.InterlockStatusPage>();
-                services.AddTransient<Views.SystemSettingsPage>();
                 services.AddTransient<Views.EnergyPage>();
                 services.AddTransient<Views.ShutterPage>();
                 services.AddTransient<Views.PulseSettingsPage>();
                 services.AddTransient<Views.WaveformPage>();
                 services.AddTransient<Views.CustomPage>();
                 services.AddTransient<Views.VoltagePage>();
+                services.AddTransient<Views.SettingsPage>();
 
                 var provider = services.BuildServiceProvider();
                 Debug.WriteLine("Services configured successfully");
@@ -73,22 +71,14 @@ namespace LaserControllerApp
                 throw;
             }
         }
+
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
             try
             {
                 Debug.WriteLine("=== OnLaunched Starting ===");
-
-                if (Application.Current.Resources.MergedDictionaries.Count == 0)
-                {
-                    Debug.WriteLine("Adding XAML resources...");
-                    Application.Current.Resources.MergedDictionaries.Add(new Microsoft.UI.Xaml.Controls.XamlControlsResources());
-                    Debug.WriteLine("XAML resources added");
-                }
-
                 m_window = Services.GetRequiredService<MainWindow>();
                 Debug.WriteLine("MainWindow retrieved from DI");
-
                 m_window.Activate();
                 Debug.WriteLine("=== OnLaunched Completed ===");
             }
@@ -104,5 +94,6 @@ namespace LaserControllerApp
             Debug.WriteLine($"!!! Unhandled exception: {e.Exception}");
             e.Handled = true;
         }
-    }
+
+            }
 }

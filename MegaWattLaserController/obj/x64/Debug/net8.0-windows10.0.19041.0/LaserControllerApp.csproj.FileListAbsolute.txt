@@ -1,6 +1,5 @@
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\bin\x64\Debug\net8.0-windows10.0.19041.0\Microsoft.UI.Xaml\Assets\map.html
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\bin\x64\Debug\net8.0-windows10.0.19041.0\App.xbf
-C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\bin\x64\Debug\net8.0-windows10.0.19041.0\MainWindow.xbf
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\bin\x64\Debug\net8.0-windows10.0.19041.0\Views\CustomPage.xbf
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\bin\x64\Debug\net8.0-windows10.0.19041.0\Views\EnergyMonitorPage.xbf
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\bin\x64\Debug\net8.0-windows10.0.19041.0\Views\EnergyPage.xbf
@@ -315,8 +314,6 @@ C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\bin\x64\De
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\LaserControllerApp.csproj.AssemblyReference.cache
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\App.g.i.cs
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\App.g.cs
-C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\MainWindow.g.i.cs
-C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\MainWindow.g.cs
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\Views\CustomPage.g.i.cs
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\Views\CustomPage.g.cs
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\Views\EnergyMonitorPage.g.i.cs
@@ -352,7 +349,6 @@ C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\De
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\Views\SystemSettingsPage.xaml
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\Views\VoltagePage.xaml
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\Views\WaveformPage.xaml
-C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\MainWindow.xaml
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\App.xbf
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\Views\CustomPage.xbf
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\Views\EnergyMonitorPage.xbf
@@ -365,7 +361,6 @@ C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\De
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\Views\SystemSettingsPage.xbf
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\Views\VoltagePage.xbf
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\Views\WaveformPage.xbf
-C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\MainWindow.xbf
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\XamlSaveStateFile.xml
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\LaserControllerApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Nabeel Hyder\MegaWattLaserController\MegaWattLaserController\obj\x64\Debug\net8.0-windows10.0.19041.0\LaserControllerApp.AssemblyInfoInputs.cache
