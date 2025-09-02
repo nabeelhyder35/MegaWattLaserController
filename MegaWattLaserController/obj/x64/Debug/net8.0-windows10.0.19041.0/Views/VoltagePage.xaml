@@ -1,0 +1,91 @@
+﻿<Page x:Class="LaserControllerApp.Views.VoltagePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:LaserControllerApp.Views"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10">
+            <FontIcon Glyph="&#xE905;" FontSize="24"/>
+            <TextBlock Text="Voltage Control" FontSize="24" FontWeight="Bold"/>
+        </StackPanel>
+
+        <!-- Main Content -->
+        <StackPanel Grid.Row="1" Spacing="20" Padding="0,20,0,0">
+            <!-- Voltage Control -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Output Voltage:"
+                           VerticalAlignment="Center" Margin="0,0,10,0"/>
+
+                <Slider x:ConnectionId='11' x:Name="VoltageSlider" Grid.Row="0" Grid.Column="1"
+                        Minimum="0" Maximum="1000"
+                        Margin="0,0,10,0"/>
+
+                <TextBox x:ConnectionId='12' x:Name="VoltageTextBox" Grid.Row="0" Grid.Column="2"
+                         Width="80" InputScope="Number"/>
+
+                <TextBlock x:ConnectionId='13' x:Name="VoltageStatusText" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                           Margin="0,10,0,0" Foreground="Gray" TextWrapping="Wrap"/>
+            </Grid>
+
+            <!-- Voltage Presets -->
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <TextBlock Text="Quick Presets:" VerticalAlignment="Center"/>
+                <Button x:ConnectionId='7' Content="100V"                            Tag="100"/>
+                <Button x:ConnectionId='8' Content="250V"                            Tag="250"/>
+                <Button x:ConnectionId='9' Content="500V"                            Tag="500"/>
+                <Button x:ConnectionId='10' Content="750V"                            Tag="750"/>
+            </StackPanel>
+
+            <!-- Status Indicators -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Ellipse x:ConnectionId='4' Grid.Row="0" Grid.Column="0" Width="12" Height="12" Fill="Red"
+                         Margin="0,0,10,5" x:Name="VoltageStatusIndicator"/>
+
+                <TextBlock x:ConnectionId='5' Grid.Row="0" Grid.Column="1" Text="Voltage Output: Disabled"
+                           x:Name="VoltageOutputStatus" VerticalAlignment="Center"/>
+
+                <ProgressBar x:ConnectionId='6' Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                             Height="10" Margin="0,5,0,0" Value="0"
+                             Maximum="1000"
+                             x:Name="VoltageProgressBar"/>
+            </Grid>
+        </StackPanel>
+
+        <!-- Action Buttons -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="10" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button x:ConnectionId='2' x:Name="ApplyVoltageButton" Content="Apply Voltage"
+                                                     Style="{ThemeResource AccentButtonStyle}"/>
+            <Button x:ConnectionId='3' x:Name="DisableVoltageButton" Content="Disable Output"
+                                                      />
+        </StackPanel>
+    </Grid>
+</Page>
+

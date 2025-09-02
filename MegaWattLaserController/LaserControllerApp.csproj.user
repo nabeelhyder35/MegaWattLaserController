@@ -11,32 +11,23 @@
     <None Update="App.xaml">
       <SubType>Designer</SubType>
     </None>
-    <Page Update="WaveformPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="PulseSettingsPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="EnergyMonitorPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="SettingsPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="CustomPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="EnergyPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <None Update="MainWindow.xaml">
+    <None Update="Views\HomeScreen.xaml">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="Views\SystemSettingsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\InterlockStatusPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HomeScreen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\VoltagePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>
-    <Page Update="ShutterPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
 </Project>

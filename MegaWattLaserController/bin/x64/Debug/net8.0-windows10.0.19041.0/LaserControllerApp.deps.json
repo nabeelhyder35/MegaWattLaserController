@@ -9,11 +9,9 @@
       "LaserControllerApp/1.0.0": {
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.2.2",
-          "LiveChartsCore.SkiaSharpView.WinUI": "2.0.0-rc2",
+          "LiveChartsCore.SkiaSharpView.WinUI": "2.0.0-rc5.3",
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
-          "Microsoft.Windows.SDK.BuildTools": "10.0.26100.1742",
           "Microsoft.WindowsAppSDK": "1.5.240227000",
-          "Microsoft.Xaml.Behaviors.WinUI.Managed": "2.0.9",
           "System.IO.Ports": "8.0.0",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.19041.57"
         },
@@ -41,19 +39,19 @@
           }
         }
       },
-      "HarfBuzzSharp/7.3.0": {
+      "HarfBuzzSharp/7.3.0.3": {
         "dependencies": {
-          "HarfBuzzSharp.NativeAssets.Win32": "7.3.0",
-          "HarfBuzzSharp.NativeAssets.macOS": "7.3.0"
+          "HarfBuzzSharp.NativeAssets.Win32": "7.3.0.3",
+          "HarfBuzzSharp.NativeAssets.macOS": "7.3.0.3"
         },
         "runtime": {
           "lib/net6.0/HarfBuzzSharp.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "7.3.0.0"
+            "fileVersion": "7.3.0.3"
           }
         }
       },
-      "HarfBuzzSharp.NativeAssets.macOS/7.3.0": {
+      "HarfBuzzSharp.NativeAssets.macOS/7.3.0.3": {
         "runtimeTargets": {
           "runtimes/osx/native/libHarfBuzzSharp.dylib": {
             "rid": "osx",
@@ -62,7 +60,7 @@
           }
         }
       },
-      "HarfBuzzSharp.NativeAssets.Win32/7.3.0": {
+      "HarfBuzzSharp.NativeAssets.Win32/7.3.0.3": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/libHarfBuzzSharp.dll": {
             "rid": "win-arm64",
@@ -81,35 +79,52 @@
           }
         }
       },
-      "LiveChartsCore/2.0.0-rc2": {
+      "LiveChartsCore/2.0.0-rc5.3": {
         "runtime": {
-          "lib/net6.0/LiveChartsCore.dll": {
+          "lib/net8.0-windows10.0.19041/LiveChartsCore.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.0.0"
           }
         }
       },
-      "LiveChartsCore.SkiaSharpView/2.0.0-rc2": {
+      "LiveChartsCore.Behaviours/2.0.0-rc5.3": {
         "dependencies": {
-          "LiveChartsCore": "2.0.0-rc2",
-          "SkiaSharp": "2.88.6",
-          "SkiaSharp.HarfBuzz": "2.88.6"
+          "LiveChartsCore": "2.0.0-rc5.3",
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756",
+          "Microsoft.WindowsAppSDK": "1.5.240227000"
         },
         "runtime": {
-          "lib/net6.0/LiveChartsCore.SkiaSharpView.dll": {
+          "lib/net8.0-windows10.0.19041/LiveChartsCore.Behaviours.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.0.0"
           }
         }
       },
-      "LiveChartsCore.SkiaSharpView.WinUI/2.0.0-rc2": {
+      "LiveChartsCore.SkiaSharpView/2.0.0-rc5.3": {
         "dependencies": {
-          "LiveChartsCore": "2.0.0-rc2",
-          "LiveChartsCore.SkiaSharpView": "2.0.0-rc2",
-          "SkiaSharp.Views.WinUI": "2.88.6"
+          "LiveChartsCore": "2.0.0-rc5.3",
+          "SkiaSharp": "2.88.9",
+          "SkiaSharp.HarfBuzz": "2.88.9"
         },
         "runtime": {
-          "lib/net7.0-windows10.0.19041/LiveChartsCore.SkiaSharpView.WinUI.dll": {
+          "lib/net8.0-windows10.0.19041/LiveChartsCore.SkiaSharpView.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "LiveChartsCore.SkiaSharpView.WinUI/2.0.0-rc5.3": {
+        "dependencies": {
+          "LiveChartsCore": "2.0.0-rc5.3",
+          "LiveChartsCore.Behaviours": "2.0.0-rc5.3",
+          "LiveChartsCore.SkiaSharpView": "2.0.0-rc5.3",
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756",
+          "Microsoft.WindowsAppSDK": "1.5.240227000",
+          "SkiaSharp.HarfBuzz": "2.88.9",
+          "SkiaSharp.Views.WinUI": "2.88.9"
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/LiveChartsCore.SkiaSharpView.WinUI.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.0.0"
           }
@@ -134,10 +149,10 @@
           }
         }
       },
-      "Microsoft.Windows.SDK.BuildTools/10.0.26100.1742": {},
+      "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {},
       "Microsoft.WindowsAppSDK/1.5.240227000": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.26100.1742"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756"
         },
         "runtime": {
           "lib/net6.0-windows10.0.18362.0/Microsoft.InteractiveExperiences.Projection.dll": {
@@ -234,21 +249,6 @@
           }
         }
       },
-      "Microsoft.Xaml.Behaviors.WinUI.Managed/2.0.9": {
-        "dependencies": {
-          "Microsoft.WindowsAppSDK": "1.5.240227000"
-        },
-        "runtime": {
-          "lib/net5.0-windows10.0.17763.0/Microsoft.Xaml.Interactions.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          },
-          "lib/net5.0-windows10.0.17763.0/Microsoft.Xaml.Interactivity.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "runtime.linux-arm.runtime.native.System.IO.Ports/8.0.0": {
         "runtimeTargets": {
           "runtimes/linux-arm/native/libSystem.IO.Ports.Native.so": {
@@ -303,31 +303,31 @@
           }
         }
       },
-      "SkiaSharp/2.88.6": {
+      "SkiaSharp/2.88.9": {
         "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "2.88.6",
-          "SkiaSharp.NativeAssets.macOS": "2.88.6"
+          "SkiaSharp.NativeAssets.Win32": "2.88.9",
+          "SkiaSharp.NativeAssets.macOS": "2.88.9"
         },
         "runtime": {
           "lib/net6.0/SkiaSharp.dll": {
             "assemblyVersion": "2.88.0.0",
-            "fileVersion": "2.88.6.0"
+            "fileVersion": "2.88.9.0"
           }
         }
       },
-      "SkiaSharp.HarfBuzz/2.88.6": {
+      "SkiaSharp.HarfBuzz/2.88.9": {
         "dependencies": {
-          "HarfBuzzSharp": "7.3.0",
-          "SkiaSharp": "2.88.6"
+          "HarfBuzzSharp": "7.3.0.3",
+          "SkiaSharp": "2.88.9"
         },
         "runtime": {
           "lib/net6.0/SkiaSharp.HarfBuzz.dll": {
             "assemblyVersion": "2.88.0.0",
-            "fileVersion": "2.88.6.0"
+            "fileVersion": "2.88.9.0"
           }
         }
       },
-      "SkiaSharp.NativeAssets.macOS/2.88.6": {
+      "SkiaSharp.NativeAssets.macOS/2.88.9": {
         "runtimeTargets": {
           "runtimes/osx/native/libSkiaSharp.dylib": {
             "rid": "osx",
@@ -336,7 +336,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Win32/2.88.6": {
+      "SkiaSharp.NativeAssets.Win32/2.88.9": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/libSkiaSharp.dll": {
             "rid": "win-arm64",
@@ -355,15 +355,71 @@
           }
         }
       },
-      "SkiaSharp.Views.WinUI/2.88.6": {
+      "SkiaSharp.NativeAssets.WinUI/2.88.9": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/lib/net6.0-windows10.0.19041/SkiaSharp.Views.WinUI.Native.Projection.dll": {
+            "rid": "win-arm64",
+            "assetType": "runtime",
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.9.0"
+          },
+          "runtimes/win-x64/lib/net6.0-windows10.0.19041/SkiaSharp.Views.WinUI.Native.Projection.dll": {
+            "rid": "win-x64",
+            "assetType": "runtime",
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.9.0"
+          },
+          "runtimes/win-x86/lib/net6.0-windows10.0.19041/SkiaSharp.Views.WinUI.Native.Projection.dll": {
+            "rid": "win-x86",
+            "assetType": "runtime",
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.9.0"
+          },
+          "runtimes/win-arm64/native/SkiaSharp.Views.WinUI.Native.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm64/native/SkiaSharp.Views.WinUI.Native.winmd": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/SkiaSharp.Views.WinUI.Native.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/SkiaSharp.Views.WinUI.Native.winmd": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/SkiaSharp.Views.WinUI.Native.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/SkiaSharp.Views.WinUI.Native.winmd": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.Views.WinUI/2.88.9": {
         "dependencies": {
           "Microsoft.WindowsAppSDK": "1.5.240227000",
-          "SkiaSharp": "2.88.6"
+          "SkiaSharp": "2.88.9",
+          "SkiaSharp.NativeAssets.WinUI": "2.88.9"
         },
         "runtime": {
           "lib/net6.0-windows10.0.19041.0/SkiaSharp.Views.Windows.dll": {
             "assemblyVersion": "2.88.0.0",
-            "fileVersion": "2.88.6.0"
+            "fileVersion": "2.88.9.0"
           }
         }
       },
@@ -412,47 +468,54 @@
       "path": "communitytoolkit.mvvm/8.2.2",
       "hashPath": "communitytoolkit.mvvm.8.2.2.nupkg.sha512"
     },
-    "HarfBuzzSharp/7.3.0": {
+    "HarfBuzzSharp/7.3.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-OrQLaxtZMIeS2yHSUtsKzeSdk9CPaCpyJ/JCs+wLfRGatjE8MLUS6LGj6vdbGRxqRavcXs79C9O3oWe6FJR0JQ==",
-      "path": "harfbuzzsharp/7.3.0",
-      "hashPath": "harfbuzzsharp.7.3.0.nupkg.sha512"
+      "sha512": "sha512-Hq+5+gx10coOvuRgB13KBwiWxJq1QeYuhtVLbA01ZCWaugOnolUahF44KvrQTUUHDNk/C7HB6SMaebsZeOdhgg==",
+      "path": "harfbuzzsharp/7.3.0.3",
+      "hashPath": "harfbuzzsharp.7.3.0.3.nupkg.sha512"
     },
-    "HarfBuzzSharp.NativeAssets.macOS/7.3.0": {
+    "HarfBuzzSharp.NativeAssets.macOS/7.3.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-LWcFJ39j+dN0KK8c/GJJZPPZPL9TqT2FA42/LRGqzUMmSm5LYbINOMnPvUr7RuLR6RFSmKIrgrlgObR8G5ho2A==",
-      "path": "harfbuzzsharp.nativeassets.macos/7.3.0",
-      "hashPath": "harfbuzzsharp.nativeassets.macos.7.3.0.nupkg.sha512"
+      "sha512": "sha512-UAwIYnkbBTzBJv1Id8FijY/i8QiIepRemSXufU8fyzwWhYJdx4+ajG8yQUie5HW/uusbVLFSr26muSlJOFDgSw==",
+      "path": "harfbuzzsharp.nativeassets.macos/7.3.0.3",
+      "hashPath": "harfbuzzsharp.nativeassets.macos.7.3.0.3.nupkg.sha512"
     },
-    "HarfBuzzSharp.NativeAssets.Win32/7.3.0": {
+    "HarfBuzzSharp.NativeAssets.Win32/7.3.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ulEewLMk+dNmbmpy15ny/YusI6JNUWqchF080TV2jgfFBXPXjWm767JleDi/S7hp8eDeEN6GYIIxpvNr5fLvIw==",
-      "path": "harfbuzzsharp.nativeassets.win32/7.3.0",
-      "hashPath": "harfbuzzsharp.nativeassets.win32.7.3.0.nupkg.sha512"
+      "sha512": "sha512-RPxRXD16KtSs8Yxr2RK9Qs7AwyN9MlpqZIYs0AvfaJwl7RAtVhC0+u2f2SKwX0uMYYd3O98Z+OBA1sj6aWVKQA==",
+      "path": "harfbuzzsharp.nativeassets.win32/7.3.0.3",
+      "hashPath": "harfbuzzsharp.nativeassets.win32.7.3.0.3.nupkg.sha512"
     },
-    "LiveChartsCore/2.0.0-rc2": {
+    "LiveChartsCore/2.0.0-rc5.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-X55dG3oI3AVOGWUrly+J/bUJGmb/pmB2aTkaWJPyIXI2cr5cqPJG/6GLL17IJ8e3GOofFWgQCbg0Az0+myUQLg==",
-      "path": "livechartscore/2.0.0-rc2",
-      "hashPath": "livechartscore.2.0.0-rc2.nupkg.sha512"
+      "sha512": "sha512-HirzXpe1jP7iv1ueLZl6nRtxqdlvN9qRLNNuc3T9RlGGrXokaFWj2wSGYTDZINnDXdbb6QxhZFt1aAavBcKlVw==",
+      "path": "livechartscore/2.0.0-rc5.3",
+      "hashPath": "livechartscore.2.0.0-rc5.3.nupkg.sha512"
     },
-    "LiveChartsCore.SkiaSharpView/2.0.0-rc2": {
+    "LiveChartsCore.Behaviours/2.0.0-rc5.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UVvUa7QAlyiPLuCjcoMKr4dI1FIUE5xW/XjcioSXgsOoqZg0E6Fq3B9k5t6MjIVE6dUU2F3tZwdm5KDiNftQ2A==",
-      "path": "livechartscore.skiasharpview/2.0.0-rc2",
-      "hashPath": "livechartscore.skiasharpview.2.0.0-rc2.nupkg.sha512"
+      "sha512": "sha512-J5wnb8yyIB+UTHYoj1+cuoHmgatNtjW5sPgCUyHx4D3MRkZTjC8dHNGksXbn4ydJOTo9j+pceZKwv6THmjiZng==",
+      "path": "livechartscore.behaviours/2.0.0-rc5.3",
+      "hashPath": "livechartscore.behaviours.2.0.0-rc5.3.nupkg.sha512"
     },
-    "LiveChartsCore.SkiaSharpView.WinUI/2.0.0-rc2": {
+    "LiveChartsCore.SkiaSharpView/2.0.0-rc5.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-lZOADXt5CpU/x4nCulxv2NKd03N/8ksWwuCPrVJGCvgOCDmb3xONR4sZj62GgDHI9YG1AYjTwxTolCRd21CCjg==",
-      "path": "livechartscore.skiasharpview.winui/2.0.0-rc2",
-      "hashPath": "livechartscore.skiasharpview.winui.2.0.0-rc2.nupkg.sha512"
+      "sha512": "sha512-UZUNBShABAJQKIV2Rb7KhKcyYtTp0MjLf0fatRV1vmDDwiCOFWd9xO5jeVlOlnTJt938EGZzz4j1lKJjjtYAzw==",
+      "path": "livechartscore.skiasharpview/2.0.0-rc5.3",
+      "hashPath": "livechartscore.skiasharpview.2.0.0-rc5.3.nupkg.sha512"
+    },
+    "LiveChartsCore.SkiaSharpView.WinUI/2.0.0-rc5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ElaZYHmB8AinTzka2p9RZ2BMxsVgiYrM2YO0lG/sp9z8Y+djjKuBoJQYb56Kb6ZJzs/8bqdyoHkSFDD9k96bRw==",
+      "path": "livechartscore.skiasharpview.winui/2.0.0-rc5.3",
+      "hashPath": "livechartscore.skiasharpview.winui.2.0.0-rc5.3.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/8.0.0": {
       "type": "package",
@@ -468,12 +531,12 @@
       "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.0",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
     },
-    "Microsoft.Windows.SDK.BuildTools/10.0.26100.1742": {
+    "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ypcHjr4KEi6xQhgClnbXoANHcyyX/QsC4Rky4igs6M4GiDa+weegPo8JuV/VMxqrZCV4zlqDsp2krgkN7ReAAg==",
-      "path": "microsoft.windows.sdk.buildtools/10.0.26100.1742",
-      "hashPath": "microsoft.windows.sdk.buildtools.10.0.26100.1742.nupkg.sha512"
+      "sha512": "sha512-7ZL2sFSioYm1Ry067Kw1hg0SCcW5kuVezC2SwjGbcPE61Nn+gTbH86T73G3LcEOVj0S3IZzNuE/29gZvOLS7VA==",
+      "path": "microsoft.windows.sdk.buildtools/10.0.22621.756",
+      "hashPath": "microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512"
     },
     "Microsoft.WindowsAppSDK/1.5.240227000": {
       "type": "package",
@@ -481,13 +544,6 @@
       "sha512": "sha512-6rESOsREi8534J7IDpNfFYPvxQaSleXKt4A7ZYPeQyckNMQ0o1W0jZ420bJbEMz9Cw/S/8IbpPftLLZ9w/GTCQ==",
       "path": "microsoft.windowsappsdk/1.5.240227000",
       "hashPath": "microsoft.windowsappsdk.1.5.240227000.nupkg.sha512"
-    },
-    "Microsoft.Xaml.Behaviors.WinUI.Managed/2.0.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rGIUCwQZB1degP2+Cc7hBbGOwuokyUxMh97umT+dpqJ8X71y2DKsXrKzDDQc8lKdWbloJbVDpzB9X42yZiS8tA==",
-      "path": "microsoft.xaml.behaviors.winui.managed/2.0.9",
-      "hashPath": "microsoft.xaml.behaviors.winui.managed.2.0.9.nupkg.sha512"
     },
     "runtime.linux-arm.runtime.native.System.IO.Ports/8.0.0": {
       "type": "package",
@@ -531,40 +587,47 @@
       "path": "runtime.osx-x64.runtime.native.system.io.ports/8.0.0",
       "hashPath": "runtime.osx-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512"
     },
-    "SkiaSharp/2.88.6": {
+    "SkiaSharp/2.88.9": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wdfeBAQrEQCbJIRgAiargzP1Uy+0grZiG4CSgBnhAgcJTsPzlifIaO73JRdwIlT3TyBoeU9jEqzwFUhl4hTYnQ==",
-      "path": "skiasharp/2.88.6",
-      "hashPath": "skiasharp.2.88.6.nupkg.sha512"
+      "sha512": "sha512-3MD5VHjXXieSHCleRLuaTXmL2pD0mB7CcOB1x2kA1I4bhptf4e3R27iM93264ZYuAq6mkUyX5XbcxnZvMJYc1Q==",
+      "path": "skiasharp/2.88.9",
+      "hashPath": "skiasharp.2.88.9.nupkg.sha512"
     },
-    "SkiaSharp.HarfBuzz/2.88.6": {
+    "SkiaSharp.HarfBuzz/2.88.9": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-s5yZTHdqbXKiTL06ns6zW3asELfX60dEceA4ZdYmNlOkz/OyWDfdjHAuu4HGDA7Mxx5iaUEzDZgPkEe+OVr/jg==",
-      "path": "skiasharp.harfbuzz/2.88.6",
-      "hashPath": "skiasharp.harfbuzz.2.88.6.nupkg.sha512"
+      "sha512": "sha512-5lyjX04CSWTKFYMSNN6SMupV2qzYDr8W/u8S3ZEkr+Sg3kOi0YE06EOqG0tzn/YPBID89xam4L3rz3hUUKOGEQ==",
+      "path": "skiasharp.harfbuzz/2.88.9",
+      "hashPath": "skiasharp.harfbuzz.2.88.9.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.macOS/2.88.6": {
+    "SkiaSharp.NativeAssets.macOS/2.88.9": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Sko9LFxRXSjb3OGh5/RxrVRXxYo48tr5NKuuSy6jB85GrYt8WRqVY1iLOLwtjPiVAt4cp+pyD4i30azanS64dw==",
-      "path": "skiasharp.nativeassets.macos/2.88.6",
-      "hashPath": "skiasharp.nativeassets.macos.2.88.6.nupkg.sha512"
+      "sha512": "sha512-Nv5spmKc4505Ep7oUoJ5vp3KweFpeNqxpyGDWyeEPTX2uR6S6syXIm3gj75dM0YJz7NPvcix48mR5laqs8dPuA==",
+      "path": "skiasharp.nativeassets.macos/2.88.9",
+      "hashPath": "skiasharp.nativeassets.macos.2.88.9.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.Win32/2.88.6": {
+    "SkiaSharp.NativeAssets.Win32/2.88.9": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7TzFO0u/g2MpQsTty4fyCDdMcfcWI+aLswwfnYXr3gtNS6VLKdMXPMeKpJa3pJSLnUBN6wD0JjuCe8OoLBQ6cQ==",
-      "path": "skiasharp.nativeassets.win32/2.88.6",
-      "hashPath": "skiasharp.nativeassets.win32.2.88.6.nupkg.sha512"
+      "sha512": "sha512-wb2kYgU7iy84nQLYZwMeJXixvK++GoIuECjU4ECaUKNuflyRlJKyiRhN1MAHswvlvzuvkrjRWlK0Za6+kYQK7w==",
+      "path": "skiasharp.nativeassets.win32/2.88.9",
+      "hashPath": "skiasharp.nativeassets.win32.2.88.9.nupkg.sha512"
     },
-    "SkiaSharp.Views.WinUI/2.88.6": {
+    "SkiaSharp.NativeAssets.WinUI/2.88.9": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YsUQsncWgj0//PTwkUmyaTTEHem84//4gl974pD7n1qjq4hTKSuumn504p8yl2qUNFHvo/YUYYAVyEQx6477QQ==",
-      "path": "skiasharp.views.winui/2.88.6",
-      "hashPath": "skiasharp.views.winui.2.88.6.nupkg.sha512"
+      "sha512": "sha512-l/AL4vL/jQDWNeKeMCayodNHC/QVhl7M9PYfSmkEja1JC+BHXFuHdPecfqWHVJl1GR+ALg3I7XpZ2w32BM6LRw==",
+      "path": "skiasharp.nativeassets.winui/2.88.9",
+      "hashPath": "skiasharp.nativeassets.winui.2.88.9.nupkg.sha512"
+    },
+    "SkiaSharp.Views.WinUI/2.88.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aZgmQeyhz9HOE8+2jAi8/7hqhmi8i+cUV7oTUREFHWr3h0p8ExyIaML6KckWQwnCFZZlof7ky6vCblgmRL/aCw==",
+      "path": "skiasharp.views.winui/2.88.9",
+      "hashPath": "skiasharp.views.winui.2.88.9.nupkg.sha512"
     },
     "System.IO.Ports/8.0.0": {
       "type": "package",

@@ -1,0 +1,220 @@
+﻿<Page x:ConnectionId='1' x:Class="LaserControllerApp.Views.SystemSettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          
+                              >
+
+    <Page.Resources>
+        <Style x:Key="SettingsButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="80"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" CornerRadius="8" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SettingsGridStyle" TargetType="Grid">
+            <Setter Property="Margin" Value="20"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid Margin="20">
+        <ScrollViewer>
+            <StackPanel>
+                <!-- Header -->
+                <Border Background="{StaticResource SystemAccentColorDark2}" 
+                        CornerRadius="8" 
+                        Padding="20">
+                    <StackPanel>
+                        <TextBlock Text="SYSTEM SETTINGS" 
+                                   FontSize="18" 
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+
+                        <TextBlock Text="Configure laser system parameters and settings"
+                                   FontSize="12"
+                                   Foreground="White"
+                                   Opacity="0.8"
+                                   Margin="0,5,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Settings Grid -->
+                <Grid Style="{StaticResource SettingsGridStyle}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Row 1 -->
+                    <Button x:ConnectionId='10' x:Name="PulseSettingsButton" 
+                            Content="Pulse Settings" 
+                            Style="{StaticResource SettingsButtonStyle}"
+                            Grid.Row="0" Grid.Column="0"
+                                                             
+                            ToolTipService.ToolTip="Configure pulse parameters"/>
+
+                    <Button x:ConnectionId='11' x:Name="VoltageSettingsButton" 
+                            Content="Voltage Control" 
+                            Style="{StaticResource SettingsButtonStyle}"
+                            Grid.Row="0" Grid.Column="1"
+                                                               
+                            ToolTipService.ToolTip="Set voltage parameters"/>
+
+                    <Button x:ConnectionId='12' x:Name="DelaySettingsButton" 
+                            Content="Delay Settings" 
+                            Style="{StaticResource SettingsButtonStyle}"
+                            Grid.Row="0" Grid.Column="2"
+                                                             
+                            ToolTipService.ToolTip="Configure timing delays"/>
+
+                    <Button x:ConnectionId='13' x:Name="InterlockSettingsButton" 
+                            Content="Interlock Config" 
+                            Style="{StaticResource SettingsButtonStyle}"
+                            Grid.Row="0" Grid.Column="3"
+                                                                 
+                            ToolTipService.ToolTip="Configure interlock settings"/>
+
+                    <!-- Row 2 -->
+                    <Button x:ConnectionId='14' x:Name="ShutterSettingsButton" 
+                            Content="Shutter Control" 
+                            Style="{StaticResource SettingsButtonStyle}"
+                            Grid.Row="1" Grid.Column="0"
+                                                               
+                            ToolTipService.ToolTip="Control laser shutter"/>
+
+                    <Button x:ConnectionId='15' x:Name="SoftStartSettingsButton" 
+                            Content="Soft Start" 
+                            Style="{StaticResource SettingsButtonStyle}"
+                            Grid.Row="1" Grid.Column="1"
+                                                                 
+                            ToolTipService.ToolTip="Configure soft start parameters"/>
+
+                    <Button x:ConnectionId='16' x:Name="WaveformSettingsButton" 
+                            Content="Waveform" 
+                            Style="{StaticResource SettingsButtonStyle}"
+                            Grid.Row="1" Grid.Column="2"
+                                                                
+                            ToolTipService.ToolTip="Waveform display settings"/>
+
+                    <Button x:ConnectionId='17' x:Name="SystemInfoButton" 
+                            Content="System Info" 
+                            Style="{StaticResource SettingsButtonStyle}"
+                            Grid.Row="1" Grid.Column="3"
+                                                          
+                            ToolTipService.ToolTip="View system information"/>
+
+                    <!-- Row 3 -->
+                    <Button x:ConnectionId='18' x:Name="UserSettingsButton" 
+                            Content="User Settings" 
+                            Style="{StaticResource SettingsButtonStyle}"
+                            Grid.Row="2" Grid.Column="0"
+                                                            
+                            ToolTipService.ToolTip="User configuration settings"/>
+
+                    <Button x:ConnectionId='19' x:Name="FactorySettingsButton" 
+                            Content="Factory Settings" 
+                            Style="{StaticResource SettingsButtonStyle}"
+                            Grid.Row="2" Grid.Column="1"
+                                                               
+                            ToolTipService.ToolTip="Factory-level configuration (requires password)"/>
+
+                    <Button x:ConnectionId='20' x:Name="PasswordSettingsButton" 
+                            Content="Password" 
+                            Style="{StaticResource SettingsButtonStyle}"
+                            Grid.Row="2" Grid.Column="2"
+                                                                
+                            ToolTipService.ToolTip="Change password settings"/>
+
+                    <Button x:ConnectionId='21' x:Name="ConfigSaveButton" 
+                            Content="Save/Restore" 
+                            Style="{StaticResource SettingsButtonStyle}"
+                            Grid.Row="2" Grid.Column="3"
+                                                          
+                            ToolTipService.ToolTip="Save and restore configurations"/>
+                </Grid>
+
+                <!-- Current Settings Display -->
+                <Border Background="{StaticResource SystemAltMediumColorBrush}" 
+                        CornerRadius="8" 
+                        Padding="20"
+                        Margin="0,25,0,0">
+                    <StackPanel>
+                        <TextBlock Text="CURRENT SYSTEM STATUS" 
+                                   FontSize="16" 
+                                   FontWeight="Bold"/>
+
+                        <Grid Margin="0,10,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Connection Status:" 
+                                       Grid.Row="0" Grid.Column="0"
+                                       FontWeight="SemiBold"/>
+                            <TextBlock x:ConnectionId='7' x:Name="ConnectionStatusText" 
+                                       Text="Disconnected" 
+                                       Grid.Row="0" Grid.Column="1"
+                                       Foreground="Red"/>
+
+                            <TextBlock Text="Laser State:" 
+                                       Grid.Row="1" Grid.Column="0"
+                                       FontWeight="SemiBold"/>
+                            <TextBlock x:ConnectionId='8' x:Name="LaserStateText" 
+                                       Text="Idle" 
+                                       Grid.Row="1" Grid.Column="1"/>
+
+                            <TextBlock Text="Active Settings Profile:" 
+                                       Grid.Row="2" Grid.Column="0"
+                                       FontWeight="SemiBold"/>
+                            <TextBlock x:ConnectionId='9' x:Name="SettingsProfileText" 
+                                       Text="Default" 
+                                       Grid.Row="2" Grid.Column="1"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Quick Actions -->
+                <StackPanel Orientation="Horizontal" Margin="0,25,0,0" HorizontalAlignment="Center">
+                    <Button x:ConnectionId='4' x:Name="SaveSettingsButton" 
+                            Content="Save Current Settings" 
+                                                            
+                            Margin="5"/>
+
+                    <Button x:ConnectionId='5' x:Name="LoadSettingsButton" 
+                            Content="Load Settings" 
+                                                            
+                            Margin="5"/>
+
+                    <Button x:ConnectionId='6' x:Name="ResetSettingsButton" 
+                            Content="Reset to Default" 
+                                                             
+                            Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
+
