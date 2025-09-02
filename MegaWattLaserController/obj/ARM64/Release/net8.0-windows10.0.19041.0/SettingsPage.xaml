@@ -1,0 +1,15 @@
+﻿<Page x:Class="LaserControllerApp.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="Serial Port Settings" FontSize="18" Margin="0,0,0,10" />
+            <ComboBox x:ConnectionId='2' x:Name="PortComboBox" Width="200" Margin="0,0,0,10"                                                  />
+            <Button x:ConnectionId='3' x:Name="ConnectButton" Content="Connect"                             Margin="0,0,0,10" />
+            <Button x:ConnectionId='4' x:Name="DisconnectButton" Content="Disconnect"                                />
+            <TextBlock x:ConnectionId='5' x:Name="ConnectionStatusText" FontSize="14" />
+        </StackPanel>
+    </Grid>
+</Page>
+
