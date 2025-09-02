@@ -1,5 +1,4 @@
 Assets\AppIcon.ico
-Assets\AppIcon.ico
 Assets\LockScreenLogo.scale-200.png
 Assets\SplashScreen.scale-200.png
 Assets\Square150x150Logo.scale-200.png
@@ -8,11 +7,13 @@ Assets\Square44x44Logo.targetsize-24_altform-unplated.png
 Assets\StoreLogo.png
 Assets\Wide310x150Logo.scale-200.png
 App.xbf
-CustomPage.xbf
-EnergyMonitorPage.xbf
-EnergyPage.xbf
 MainWindow.xbf
-PulseSettingsPage.xbf
-SettingsPage.xbf
-ShutterPage.xbf
-WaveformPage.xbf
+Views\CustomPage.xbf
+Views\EnergyMonitorPage.xbf
+Views\EnergyPage.xbf
+Views\InterlockStatusPage.xbf
+Views\PulseSettingsPage.xbf
+Views\SettingsPage.xbf
+Views\ShutterPage.xbf
+Views\VoltagePage.xbf
+Views\WaveformPage.xbf

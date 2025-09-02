@@ -1,0 +1,39 @@
+<Page
+    x:Class="LaserControllerApp.Views.InterlockStatusPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:LaserControllerApp.ViewModels"
+    Loaded="Page_Loaded"
+    Unloaded="Page_Unloaded">
+
+    <Grid Margin="20">
+        <StackPanel Spacing="15">
+            <TextBlock Text="INTERLOCK STATUS" 
+                       FontSize="18" 
+                       FontWeight="Bold" />
+
+            <Border BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
+                    BorderThickness="1"
+                    Background="{ThemeResource SystemControlBackgroundAltHighBrush}"
+                    Padding="10">
+                <ItemsControl ItemsSource="{Binding InterlockItems}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="vm:InterlockItemViewModel">
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <TextBlock Text="{x:Bind Name}" Width="150"/>
+                                <TextBlock Text="{x:Bind Status}" Foreground="{x:Bind StatusColor}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Border>
+
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Refresh" Click="Refresh_Click"/>
+                <Button Content="Clear Log" Click="ClearLog_Click"/>
+            </StackPanel>
+
+            <TextBlock x:Name="StatusText" FontSize="12" Foreground="Gray" Text="Idle"/>
+        </StackPanel>
+    </Grid>
+</Page>

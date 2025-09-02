@@ -1,80 +1,67 @@
 ﻿using LiveChartsCore;
 using LiveChartsCore.Defaults;
+using LiveChartsCore.Kernel;
+using LiveChartsCore.Kernel.Sketches;
 using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Painting;
-using LiveChartsCore.Kernel.Sketches;
 using SkiaSharp;
-using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace LaserControllerApp.ViewModels
 {
     public class WaveformViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<ObservablePoint> _dataPoints;
-        private IEnumerable<ICartesianAxis> _xAxes;
-        private IEnumerable<ICartesianAxis> _yAxes;
+        private ObservableCollection<ObservablePoint> _dataPoints = new();
+        private IEnumerable<ICartesianAxis> _xAxes = new Axis[0];
+        private IEnumerable<ICartesianAxis> _yAxes = new Axis[0];
 
         public WaveformViewModel()
         {
             InitializeChart();
         }
 
-        public ISeries[] Series { get; private set; }
+        public ISeries[] Series { get; private set; } = new ISeries[0];
 
         public IEnumerable<ICartesianAxis> XAxes
         {
             get => _xAxes;
-            set
-            {
-                _xAxes = value;
-                OnPropertyChanged();
-            }
+            set => SetField(ref _xAxes, value);
         }
 
         public IEnumerable<ICartesianAxis> YAxes
         {
             get => _yAxes;
-            set
-            {
-                _yAxes = value;
-                OnPropertyChanged();
-            }
+            set => SetField(ref _yAxes, value);
         }
 
         public ObservableCollection<ObservablePoint> DataPoints
         {
             get => _dataPoints;
-            set
-            {
-                _dataPoints = value;
-                OnPropertyChanged();
-            }
+            set => SetField(ref _dataPoints, value);
         }
 
         private void InitializeChart()
         {
-            // Initialize data collection
             DataPoints = new ObservableCollection<ObservablePoint>();
 
-            // Configure series
             Series = new ISeries[]
             {
                 new LineSeries<ObservablePoint>
                 {
                     Values = DataPoints,
+                    Mapping = (point, index) => new Coordinate(point.X ?? 0, point.Y ?? 0), // ✅ use constructor
                     Stroke = new SolidColorPaint(SKColors.Blue, 2f),
                     Fill = null,
                     GeometrySize = 0,
                     LineSmoothness = 0,
-                    Name = "Laser Output"
+                    Name = "Laser Energy"
                 }
             };
 
-            // Configure X axis (Time)
             XAxes = new Axis[]
             {
                 new Axis
@@ -84,11 +71,10 @@ namespace LaserControllerApp.ViewModels
                     TextSize = 10,
                     Labeler = value => value.ToString("F1"),
                     MinLimit = 0,
-                    MaxLimit = 10 // Initial 10-second view
+                    MaxLimit = 10
                 }
             };
 
-            // Configure Y axis (Energy/Voltage)
             YAxes = new Axis[]
             {
                 new Axis
@@ -98,7 +84,7 @@ namespace LaserControllerApp.ViewModels
                     TextSize = 10,
                     Labeler = value => value.ToString("F1"),
                     MinLimit = 0,
-                    MaxLimit = 100 // Adjust based on expected range
+                    MaxLimit = 100
                 }
             };
         }
@@ -107,11 +93,12 @@ namespace LaserControllerApp.ViewModels
         {
             DataPoints.Add(new ObservablePoint(time, value));
 
-            // Auto-scroll: keep last 10 seconds visible
-            if (time > ((Axis)XAxes.First()).MaxLimit)
+            // Auto-scroll
+            var xAxis = (Axis)XAxes.First();
+            if (time > xAxis.MaxLimit)
             {
-                ((Axis)XAxes.First()).MinLimit = time - 10;
-                ((Axis)XAxes.First()).MaxLimit = time;
+                xAxis.MinLimit = time - 10;
+                xAxis.MaxLimit = time;
                 OnPropertyChanged(nameof(XAxes));
             }
         }
@@ -119,32 +106,40 @@ namespace LaserControllerApp.ViewModels
         public void ClearData()
         {
             DataPoints.Clear();
-            ((Axis)XAxes.First()).MinLimit = 0;
-            ((Axis)XAxes.First()).MaxLimit = 10;
+            var xAxis = (Axis)XAxes.First();
+            xAxis.MinLimit = 0;
+            xAxis.MaxLimit = 10;
             OnPropertyChanged(nameof(XAxes));
         }
 
         public void SetTimeRange(double maxSeconds)
         {
+            var xAxis = (Axis)XAxes.First();
             if (DataPoints.Count > 0)
             {
-                double currentTime = DataPoints[^1].X ?? 0; // Add null coalescing
-                ((Axis)XAxes.First()).MinLimit = currentTime - maxSeconds;
-                ((Axis)XAxes.First()).MaxLimit = currentTime;
+                double currentTime = DataPoints[^1].X ?? 0;
+                xAxis.MinLimit = currentTime - maxSeconds;
+                xAxis.MaxLimit = currentTime;
             }
             else
             {
-                ((Axis)XAxes.First()).MinLimit = 0;
-                ((Axis)XAxes.First()).MaxLimit = maxSeconds;
+                xAxis.MinLimit = 0;
+                xAxis.MaxLimit = maxSeconds;
             }
             OnPropertyChanged(nameof(XAxes));
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        protected bool SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+            field = value;
+            OnPropertyChanged(propertyName);
+            return true;
         }
     }
 }

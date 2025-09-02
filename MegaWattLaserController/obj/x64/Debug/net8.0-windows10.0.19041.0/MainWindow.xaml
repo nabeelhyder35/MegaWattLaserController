@@ -2,129 +2,59 @@
     x:Class="LaserControllerApp.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Title="KALD-20-10 Laser Controller">
+    xmlns:local="using:LaserControllerApp"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    Title="Laser Controller">
 
-    <Grid>
+    <Grid x:ConnectionId='2' x:Name="RootGrid"                                               >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Connection Bar -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10" VerticalAlignment="Center">
-            <!-- Connection Status Indicator -->
-            <Ellipse x:ConnectionId='5' x:Name="ConnectionStatusEllipse" 
-                     Width="12" 
-                     Height="12" 
-                     Fill="Red" 
-                     Margin="0,0,10,0"
-                     ToolTipService.ToolTip="Connection status"/>
-
-            <!-- Port Selection -->
-            <ComboBox x:ConnectionId='6' x:Name="PortComboBox" 
-                                                           
-                      PlaceholderText="Select Port" 
-                      Width="150"
-                      ToolTipService.ToolTip="Available serial ports"/>
-
-            <!-- Baud Rate Selection -->
-            <ComboBox x:ConnectionId='7' x:Name="BaudRateComboBox"
-                                                      
-                      SelectedIndex="0"
-                      Width="100"
-                      Margin="10,0,0,0"
-                                                                          
-                      ToolTipService.ToolTip="Communication speed"/>
-
-            <!-- Connection Controls -->
-            <Button x:ConnectionId='8' x:Name="ConnectButton" 
-                    Content="Connect" 
-                                          
-                    ToolTipService.ToolTip="Connect to selected port"/>
-
-            <Button x:ConnectionId='9' x:Name="DisconnectButton" 
-                    Content="Disconnect" 
-                                             
-                    IsEnabled="False"
-                    ToolTipService.ToolTip="Disconnect from port"/>
-
-            <Button x:ConnectionId='10' x:Name="RefreshPortsButton" 
-                    Content="Refresh Ports" 
-                                               
-                    ToolTipService.ToolTip="Refresh available serial ports"/>
+        <!-- Top Bar -->
+        <StackPanel Orientation="Horizontal" Margin="8" Spacing="8">
+            <ComboBox x:ConnectionId='7' Width="120"
+                                                                                  
+                                                                                 
+                      PlaceholderText="Select Port"/>
+            <ComboBox x:ConnectionId='8' Width="120"
+                                                                             
+                                                                                     />
+            <Button x:ConnectionId='9' Content="Refresh"                                                 />
+            <Button x:ConnectionId='10' Content="Connect"                                            />
+            <Button x:ConnectionId='11' Content="Disconnect"                                               />
+            <TextBlock x:ConnectionId='12'                                                     
+                       FontWeight="Bold" VerticalAlignment="Center" Margin="12,0,0,0"/>
         </StackPanel>
 
-        <!-- Main Navigation -->
-        <NavigationView x:ConnectionId='2' x:Name="NavigationViewControl" 
-                        Grid.Row="1" 
-                        PaneDisplayMode="Left" 
-                        IsBackButtonVisible="Collapsed"
-                                                                                 
-                        IsSettingsVisible="False"
-                        PaneTitle="Laser Control">
+        <!-- NavigationView -->
+        <muxc:NavigationView x:ConnectionId='3' x:Name="NavigationViewControl"
+                             Grid.Row="1"
+                             PaneDisplayMode="Left"
+                             IsBackButtonVisible="Collapsed"
+                             IsSettingsVisible="True"
+                             PaneTitle="Laser Control"
+                                                                                      >
 
-            <NavigationView.MenuItems>
-                <NavigationViewItem Content="Energy Monitor" Tag="EnergyMonitorPage">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE945;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
+            <muxc:NavigationView.MenuItems>
+                <muxc:NavigationViewItem Content="Energy Monitor" Tag="EnergyMonitorPage"/>
+                <muxc:NavigationViewItem Content="Pulse Settings" Tag="PulseSettingsPage"/>
+                <muxc:NavigationViewItem Content="Voltage Control" Tag="VoltagePage"/>
+                <muxc:NavigationViewItem Content="Shutter Control" Tag="ShutterPage"/>
+                <muxc:NavigationViewItem Content="Waveform Display" Tag="WaveformPage"/>
+                <muxc:NavigationViewItem Content="Interlock Status" Tag="InterlockStatusPage"/>
+                <muxc:NavigationViewItem Content="Custom Commands" Tag="CustomPage"/>
+            </muxc:NavigationView.MenuItems>
 
-                <NavigationViewItem Content="Pulse Settings" Tag="PulseSettingsPage">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE121;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
+            <Frame x:ConnectionId='6' x:Name="ContentFrame"/>
+        </muxc:NavigationView>
 
-                <NavigationViewItem Content="Voltage Control" Tag="VoltagePage">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE7F8;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
-
-                <NavigationViewItem Content="Shutter Control" Tag="ShutterPage">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE72C;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
-
-                <NavigationViewItem Content="Waveform Display" Tag="WaveformPage">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE9D2;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
-
-                <NavigationViewItem Content="Interlock Status" Tag="InterlockPage">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE81C;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
-
-                <NavigationViewItem Content="Custom Commands" Tag="CustomCommandsPage">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE756;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
-            </NavigationView.MenuItems>
-            <!-- Content Frame -->
-            <Frame x:ConnectionId='4' x:Name="ContentFrame" 
-                                                                   />
-        </NavigationView>
-
-        <!-- Status Bar -->
-        <Border Grid.Row="2" Background="{ThemeResource SystemControlBackgroundAltHighBrush}" 
-                BorderThickness="0,1,0,0" BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}">
-            <StackPanel Orientation="Horizontal" Margin="10,5">
-                <TextBlock x:ConnectionId='3' x:Name="StatusTextBlock" 
-                           Text="Disconnected" 
-                           VerticalAlignment="Center"
-                           FontSize="12"
-                           TextTrimming="CharacterEllipsis"/>
-            </StackPanel>
+        <!-- Error Bar -->
+        <Border x:ConnectionId='4' Grid.Row="2" Background="DarkRed" Padding="8"
+                                                                     >
+            <TextBlock x:ConnectionId='5'                                                     Foreground="White" FontWeight="SemiBold"/>
         </Border>
     </Grid>
 </Window>

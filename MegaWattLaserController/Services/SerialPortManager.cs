@@ -1,376 +1,284 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using LaserControllerApp.Models;
+using Microsoft.UI.Dispatching;
+using System;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.IO.Ports;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace LaserControllerApp.Services
 {
-    public sealed class SerialPortManager : IDisposable
+    public interface ICommandResponseHandler
     {
-        #region Singleton Implementation
-        private static readonly Lazy<SerialPortManager> _instance =
-            new Lazy<SerialPortManager>(() => new SerialPortManager());
+        event EventHandler<FpgaCommand> CommandResponseReceived;
+    }
 
-        public static SerialPortManager Instance => _instance.Value;
-        #endregion
+    public partial class SerialPortManager : ObservableObject, IDisposable, ICommandResponseHandler
+    {
+        private SerialPort _serialPort;
+        private byte[] _receiveBuffer = new byte[4096];
+        private int _bufferIndex = 0;
+        private DispatcherQueue? _dispatcherQueue;
 
-        #region Private Fields
-        private readonly SerialPort _serialPort;
-        private readonly ObservableCollection<string> _logMessages = new ObservableCollection<string>();
-        private bool _isDisposed;
-        private bool _isConnected;
-        private readonly object _lockObject = new object();
-        private CancellationTokenSource _readCancellationTokenSource;
-        private Task _readTask;
-        #endregion
+        public event EventHandler<bool>? ConnectionStatusChanged;
+        public event EventHandler<FpgaCommand>? DataReceived;
+        public event EventHandler<FpgaCommand>? CommandResponseReceived;
+        public event EventHandler<string>? ErrorOccurred;
 
-        #region Events
-        public event EventHandler<string> ConnectionStatusChanged;
-        public event EventHandler<string> DataReceived;
-        public event EventHandler<string> ErrorOccurred;
-        #endregion
+        [ObservableProperty] private bool _isConnected;
+        [ObservableProperty] private string? _portName;
+        [ObservableProperty] private ObservableCollection<string> _logMessages = new();
+        [ObservableProperty] private int _bytesReceived;
+        [ObservableProperty] private int _bytesSent;
+        [ObservableProperty] private int _packetsReceived;
+        [ObservableProperty] private int _packetsSent;
+        [ObservableProperty] private int _checksumErrors;
 
-        #region Properties
-        public bool IsConnected
+        private const byte FPGA_START = 0x2A;
+        private const byte FPGA_END = 0x3A;
+
+        // <-- PUBLIC constructor for DI
+        public SerialPortManager()
         {
-            get
-            {
-                lock (_lockObject)
-                {
-                    return _isConnected && _serialPort?.IsOpen == true;
-                }
-            }
+            _serialPort = new SerialPort();
+            _serialPort.DataReceived += SerialPort_DataReceived;
         }
 
-        public string PortName => _serialPort?.PortName ?? "Not connected";
-        public int BaudRate => _serialPort?.BaudRate ?? 9600;
-        public string ConnectionStatus => IsConnected ? $"Connected to {PortName}" : "Disconnected";
-
-        public ObservableCollection<string> LogMessages => _logMessages;
-        #endregion
-
-        #region Constructor
-        private SerialPortManager()
+        public void Initialize(DispatcherQueue dispatcherQueue)
         {
-            _serialPort = new SerialPort
-            {
-                BaudRate = 9600,
-                Parity = Parity.None,
-                DataBits = 8,
-                StopBits = StopBits.One,
-                ReadTimeout = 1000,
-                WriteTimeout = 1000,
-                Handshake = Handshake.None,
-                NewLine = "\r\n"
-            };
-
-            _readCancellationTokenSource = new CancellationTokenSource();
-            AddLogMessage("SerialPortManager initialized");
-        }
-        #endregion
-
-        #region Public Methods
-        public string[] GetAvailablePorts()
-        {
-            try
-            {
-                return SerialPort.GetPortNames()
-                    .OrderBy(port => port)
-                    .ToArray();
-            }
-            catch (Exception ex)
-            {
-                AddLogMessage($"Failed to get available ports: {ex.Message}");
-                OnErrorOccurred($"Failed to get available ports: {ex.Message}");
-                return Array.Empty<string>();
-            }
+            _dispatcherQueue = dispatcherQueue ?? throw new ArgumentNullException(nameof(dispatcherQueue));
         }
 
         public async Task<bool> ConnectAsync(string portName, int baudRate = 9600)
         {
-            if (IsConnected)
+            if (_serialPort.IsOpen) await DisconnectAsync();
+
+            _serialPort.PortName = portName;
+            _serialPort.BaudRate = baudRate;
+            _serialPort.Parity = Parity.None;
+            _serialPort.DataBits = 8;
+            _serialPort.StopBits = StopBits.One;
+            _serialPort.Handshake = Handshake.None;
+            _serialPort.ReadTimeout = 500;
+            _serialPort.WriteTimeout = 500;
+
+            try
             {
-                await DisconnectAsync();
+                await Task.Run(() => _serialPort.Open());
+                IsConnected = true;
+                PortName = portName;
+
+                _dispatcherQueue?.TryEnqueue(() =>
+                {
+                    LogMessages.Add($"Connected to {portName} at {baudRate} baud");
+                    ConnectionStatusChanged?.Invoke(this, true);
+                });
+
+                return true;
             }
-
-            lock (_lockObject)
+            catch (Exception ex)
             {
-                try
+                IsConnected = false;
+                _dispatcherQueue?.TryEnqueue(() =>
                 {
-                    _serialPort.PortName = portName;
-                    _serialPort.BaudRate = baudRate;
-
-                    _serialPort.Open();
-                    _isConnected = true;
-
-                    // Start background reading task
-                    _readCancellationTokenSource = new CancellationTokenSource();
-                    _readTask = Task.Run(() => ReadFromSerialPortAsync(_readCancellationTokenSource.Token));
-
-                    AddLogMessage($"Connected to {portName} at {baudRate} baud");
-                    OnConnectionStatusChanged($"Connected to {portName}");
-
-                    return true;
-                }
-                catch (UnauthorizedAccessException ex)
-                {
-                    AddLogMessage($"Access denied to serial port: {ex.Message}");
-                    OnErrorOccurred($"Access denied to {portName}. Check permissions.");
-                }
-                catch (ArgumentException ex)
-                {
-                    AddLogMessage($"Invalid port name: {ex.Message}");
-                    OnErrorOccurred($"Invalid port name: {portName}");
-                }
-                catch (IOException ex)
-                {
-                    AddLogMessage($"I/O error: {ex.Message}");
-                    OnErrorOccurred($"I/O error: {ex.Message}");
-                }
-                catch (Exception ex)
-                {
-                    AddLogMessage($"Connection failed: {ex.Message}");
-                    OnErrorOccurred($"Connection failed: {ex.Message}");
-                }
-
-                _isConnected = false;
+                    LogMessages.Add($"Connection error: {ex.Message}");
+                    ErrorOccurred?.Invoke(this, $"Connection error: {ex.Message}");
+                });
                 return false;
             }
         }
 
         public async Task DisconnectAsync()
         {
-            lock (_lockObject)
-            {
-                if (!_isConnected) return;
-
-                try
-                {
-                    // Cancel background reading
-                    _readCancellationTokenSource?.Cancel();
-
-                    if (_serialPort?.IsOpen == true)
-                    {
-                        _serialPort.Close();
-                        AddLogMessage("Disconnected from serial port");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    AddLogMessage($"Error during disconnection: {ex.Message}");
-                    OnErrorOccurred($"Disconnection error: {ex.Message}");
-                }
-                finally
-                {
-                    _isConnected = false;
-                    OnConnectionStatusChanged("Disconnected");
-                }
-            }
-
-            // Wait for read task to complete
-            if (_readTask != null)
-            {
-                try
-                {
-                    await _readTask;
-                }
-                catch (OperationCanceledException)
-                {
-                    // Expected when we cancel the task
-                }
-                catch (Exception ex)
-                {
-                    AddLogMessage($"Error in read task during shutdown: {ex.Message}");
-                }
-            }
-        }
-
-        public async Task<bool> SendCommandAsync(string command)
-        {
-            if (string.IsNullOrWhiteSpace(command))
-            {
-                AddLogMessage("Cannot send empty command");
-                OnErrorOccurred("Cannot send empty command");
-                return false;
-            }
-
-            if (!IsConnected)
-            {
-                AddLogMessage("Not connected to any port");
-                OnErrorOccurred("Not connected to any port");
-                return false;
-            }
-
             try
             {
-                // Ensure command ends with newline
-                var formattedCommand = command.EndsWith("\n") ? command : command + "\n";
-
-                lock (_lockObject)
+                if (_serialPort.IsOpen)
                 {
-                    _serialPort.WriteLine(formattedCommand);
+                    await Task.Run(() => _serialPort.Close());
+                    IsConnected = false;
+                    _dispatcherQueue?.TryEnqueue(() =>
+                    {
+                        LogMessages.Add("Disconnected from serial port");
+                        ConnectionStatusChanged?.Invoke(this, false);
+                    });
                 }
-
-                AddLogMessage($"Sent: {formattedCommand.Trim()}");
-                return true;
-            }
-            catch (TimeoutException ex)
-            {
-                AddLogMessage($"Write timeout: {ex.Message}");
-                OnErrorOccurred($"Write timeout: {ex.Message}");
-            }
-            catch (InvalidOperationException ex)
-            {
-                AddLogMessage($"Port not open: {ex.Message}");
-                OnErrorOccurred("Port is not open");
             }
             catch (Exception ex)
             {
-                AddLogMessage($"Failed to send command: {ex.Message}");
-                OnErrorOccurred($"Failed to send command: {ex.Message}");
+                _dispatcherQueue?.TryEnqueue(() =>
+                {
+                    LogMessages.Add($"Disconnection error: {ex.Message}");
+                    ErrorOccurred?.Invoke(this, $"Disconnection error: {ex.Message}");
+                });
             }
-
-            return false;
         }
 
-        public void UpdateBaudRate(int baudRate)
+        public async Task<bool> SendCommandAsync(FpgaCommand command)
         {
-            lock (_lockObject)
+            if (!_serialPort.IsOpen)
             {
-                if (_serialPort != null && _serialPort.IsOpen)
+                _dispatcherQueue?.TryEnqueue(() =>
                 {
-                    AddLogMessage("Cannot change baud rate while port is open");
-                    return;
-                }
-
-                _serialPort.BaudRate = baudRate;
-                AddLogMessage($"Baud rate set to {baudRate}");
-            }
-        }
-
-        public void ClearLog()
-        {
-            _logMessages.Clear();
-        }
-        #endregion
-
-        #region Private Methods
-        private async Task ReadFromSerialPortAsync(CancellationToken cancellationToken)
-        {
-            AddLogMessage("Starting serial port reading task");
-
-            while (!cancellationToken.IsCancellationRequested && IsConnected)
-            {
-                try
-                {
-                    string data;
-                    lock (_lockObject)
-                    {
-                        if (_serialPort?.IsOpen != true || _serialPort.BytesToRead == 0)
-                        {
-                            continue;
-                        }
-
-                        data = _serialPort.ReadLine();
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(data))
-                    {
-                        AddLogMessage($"Received: {data.Trim()}");
-                        OnDataReceived(data);
-                    }
-                }
-                catch (TimeoutException)
-                {
-                    // Normal timeout, continue reading
-                    await Task.Delay(100, cancellationToken);
-                }
-                catch (OperationCanceledException)
-                {
-                    // Shutdown requested
-                    break;
-                }
-                catch (InvalidOperationException)
-                {
-                    // Port was closed
-                    break;
-                }
-                catch (Exception ex)
-                {
-                    AddLogMessage($"Error reading from serial port: {ex.Message}");
-                    OnErrorOccurred($"Read error: {ex.Message}");
-                    await Task.Delay(1000, cancellationToken); // Wait before retrying
-                }
+                    LogMessages.Add("Cannot send command: Serial port is not open");
+                    ErrorOccurred?.Invoke(this, "Serial port is not open");
+                });
+                return false;
             }
 
-            AddLogMessage("Serial port reading task stopped");
-        }
-
-        private void AddLogMessage(string message)
-        {
-            var timestamp = DateTime.Now.ToString("HH:mm:ss");
-            var logEntry = $"[{timestamp}] {message}";
-
-            // For WinUI 3, we need to use DispatcherQueue for UI thread access
-            _logMessages.Add(logEntry);
-
-            // Keep log to a reasonable size
-            if (_logMessages.Count > 1000)
-            {
-                _logMessages.RemoveAt(0);
-            }
-        }
-
-        private void OnDataReceived(string data)
-        {
-            DataReceived?.Invoke(this, data);
-        }
-
-        private void OnConnectionStatusChanged(string status)
-        {
-            ConnectionStatusChanged?.Invoke(this, status);
-        }
-
-        private void OnErrorOccurred(string errorMessage)
-        {
-            ErrorOccurred?.Invoke(this, errorMessage);
-        }
-        #endregion
-
-        #region IDisposable Implementation
-        public void Dispose()
-        {
-            if (_isDisposed) return;
-
-            _isDisposed = true;
-            _readCancellationTokenSource?.Cancel();
-
-            lock (_lockObject)
-            {
-                if (_serialPort?.IsOpen == true)
-                {
-                    _serialPort.Close();
-                }
-                _serialPort?.Dispose();
-            }
-
-            _readCancellationTokenSource?.Dispose();
-
-            // Wait for read task to complete if it's still running
             try
             {
-                _readTask?.Wait(1000); // Wait up to 1 second
+                byte[] packet = BuildCommandPacket(command);
+                await Task.Run(() => _serialPort.Write(packet, 0, packet.Length));
+
+                BytesSent += packet.Length;
+                PacketsSent++;
+                _dispatcherQueue?.TryEnqueue(() => LogMessages.Add($"Sent command: {command}"));
+
+                return true;
             }
-            catch (AggregateException)
+            catch (Exception ex)
             {
-                // Task was cancelled, which is expected
+                _dispatcherQueue?.TryEnqueue(() =>
+                {
+                    LogMessages.Add($"Send error: {ex.Message}");
+                    ErrorOccurred?.Invoke(this, $"Send error: {ex.Message}");
+                });
+                return false;
+            }
+        }
+
+        private byte[] BuildCommandPacket(FpgaCommand command)
+        {
+            int totalLength = 7 + command.Data.Length;
+            byte[] packet = new byte[totalLength];
+
+            int index = 0;
+            packet[index++] = FPGA_START;
+            packet[index++] = (byte)((command.Command >> 8) & 0xFF);
+            packet[index++] = (byte)(command.Command & 0xFF);
+            packet[index++] = (byte)((command.Data.Length >> 8) & 0xFF);
+            packet[index++] = (byte)(command.Data.Length & 0xFF);
+            Array.Copy(command.Data, 0, packet, index, command.Data.Length);
+            index += command.Data.Length;
+
+            byte checksum = 0;
+            for (int i = 1; i < index; i++) checksum ^= packet[i];
+            packet[index++] = checksum;
+            packet[index] = FPGA_END;
+
+            return packet;
+        }
+
+        private void SerialPort_DataReceived(object? sender, SerialDataReceivedEventArgs e)
+        {
+            if (!_serialPort.IsOpen) return;
+
+            int bytesToRead = _serialPort.BytesToRead;
+            if (bytesToRead <= 0) return;
+
+            if (_bufferIndex + bytesToRead > _receiveBuffer.Length)
+                Array.Resize(ref _receiveBuffer, _receiveBuffer.Length * 2);
+
+            int bytesRead = _serialPort.Read(_receiveBuffer, _bufferIndex, bytesToRead);
+            _bufferIndex += bytesRead;
+            BytesReceived += bytesRead;
+
+            ProcessReceivedData(_receiveBuffer, _bufferIndex);
+        }
+
+        private void ProcessReceivedData(byte[] data, int length)
+        {
+            int processedIndex = 0;
+            while (true)
+            {
+                int start = Array.IndexOf(data, FPGA_START, processedIndex);
+                if (start == -1) break;
+
+                int end = Array.IndexOf(data, FPGA_END, start + 1);
+                if (end == -1) break;
+
+                int frameLength = end - start + 1;
+                if (frameLength >= 7)
+                {
+                    byte[] frame = new byte[frameLength];
+                    Array.Copy(data, start, frame, 0, frameLength);
+
+                    var command = ParseCommandFrame(frame);
+                    if (command != null)
+                    {
+                        PacketsReceived++;
+                        _dispatcherQueue?.TryEnqueue(() =>
+                        {
+                            LogMessages.Add($"Received command: {command}");
+                            DataReceived?.Invoke(this, command);
+                            CommandResponseReceived?.Invoke(this, command);
+                        });
+                    }
+                }
+
+                processedIndex = end + 1;
             }
 
-            AddLogMessage("SerialPortManager disposed");
+            if (processedIndex > 0)
+            {
+                Array.Copy(data, processedIndex, data, 0, length - processedIndex);
+                _bufferIndex = length - processedIndex;
+            }
         }
-        #endregion
+
+        private FpgaCommand? ParseCommandFrame(byte[] frame)
+        {
+            if (frame.Length < 7) return null;
+            if (frame[0] != FPGA_START || frame[frame.Length - 1] != FPGA_END) return null;
+
+            ushort cmd = (ushort)((frame[1] << 8) | frame[2]);
+            ushort dataLen = (ushort)((frame[3] << 8) | frame[4]);
+
+            if (frame.Length - 7 != dataLen) return null;
+
+            byte checksum = 0;
+            for (int i = 1; i < 5 + dataLen; i++) checksum ^= frame[i];
+            if (checksum != frame[5 + dataLen])
+            {
+                ChecksumErrors++;
+                return null;
+            }
+
+            byte[] data = new byte[dataLen];
+            Array.Copy(frame, 5, data, 0, dataLen);
+
+            return new FpgaCommand { Command = cmd, Data = data };
+        }
+
+        public async Task<bool> RequestEnergyReadingAsync()
+        {
+            try
+            {
+                var command = new FpgaCommand(FpgaCommandIds.lcdTxReadEnergy);
+                await SendCommandAsync(command);
+                return true;
+            }
+            catch { return false; }
+        }
+
+        public async Task<bool> RequestTemperatureReadingAsync()
+        {
+            try
+            {
+                var command = new FpgaCommand(FpgaCommandIds.lcdTxReadTemperature);
+                await SendCommandAsync(command);
+                return true;
+            }
+            catch { return false; }
+        }
+
+        public string[] GetAvailablePorts() => SerialPort.GetPortNames();
+
+        public void Dispose()
+        {
+            if (_serialPort.IsOpen) _serialPort.Close();
+            _serialPort.DataReceived -= SerialPort_DataReceived;
+            _serialPort.Dispose();
+        }
     }
 }

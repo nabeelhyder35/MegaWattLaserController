@@ -1,0 +1,33 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="LaserControllerApp.Views.ShutterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:LaserControllerApp.ViewModels"
+                        
+                            >
+
+    <Grid Margin="20">
+        <StackPanel Spacing="15">
+            <TextBlock Text="SHUTTER CONTROL" 
+                       FontSize="18" 
+                       FontWeight="Bold"/>
+
+            <TextBlock Text="Current Shutter State:" FontSize="14"/>
+            <TextBlock x:ConnectionId='2' x:Name="ShutterStatusText"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Foreground="DarkBlue"
+                       Text="Unknown"/>
+
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button x:ConnectionId='5' x:Name="OpenShutterButton" Content="Open Shutter"                          />
+                <Button x:ConnectionId='6' x:Name="CloseShutterButton" Content="Close Shutter"                           />
+            </StackPanel>
+
+            <Button x:ConnectionId='3' x:Name="RefreshButton" Content="Refresh Status"                            />
+
+            <TextBlock x:ConnectionId='4' x:Name="StatusText" FontSize="12" Foreground="Gray" Text="Idle"/>
+        </StackPanel>
+    </Grid>
+</Page>
+
