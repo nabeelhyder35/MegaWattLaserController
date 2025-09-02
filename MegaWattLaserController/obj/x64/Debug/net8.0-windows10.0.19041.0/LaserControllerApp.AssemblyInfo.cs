@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LaserControllerApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fa32c7a9a4c88d1ba876f80c910df4cbdb3627f")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa1a01e2c309c514ad19a551c8b1d657b7ae978f")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("LaserControllerApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LaserControllerApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
