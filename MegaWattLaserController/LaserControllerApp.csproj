@@ -1,44 +1,86 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>LaserControllerApp</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+    <Platforms>x86;x64;ARM64</Platforms>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+    <UseWinUI>true</UseWinUI>
+    <Nullable>enable</Nullable>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <WindowsPackageType>None</WindowsPackageType>
+    <EnableMsixTooling>false</EnableMsixTooling>
+    <StartupObject>LaserControllerApp.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="EnergyMonitorPage.xaml" />
+    <None Remove="PulseSettingsPage.xaml" />
+    <None Remove="WaveformPage.xaml" />
+  </ItemGroup>
 
-    <PropertyGroup>
-        <OutputType>WinExe</OutputType>
-        <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
-        <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-        <RootNamespace>LaserControllerApp</RootNamespace>
-        <ApplicationManifest>app.manifest</ApplicationManifest>
-        <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
-        <Platforms>x86;x64;ARM64</Platforms>
-        <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
-        <UseWinUI>true</UseWinUI>
-        <Nullable>enable</Nullable>
-        <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
-        <WindowsPackageType>None</WindowsPackageType>
-        <WindowsAppSDKDeploymentManager>true</WindowsAppSDKDeploymentManager>
-        <EnableMsixTooling>false</EnableMsixTooling>
-    </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Assets\AppIcon.ico" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
 
-    <PropertyGroup Condition="'$(Platform)'=='' or '$(Platform)'=='AnyCPU'">
-        <Platform>x64</Platform>
-    </PropertyGroup>
+  <ItemGroup>
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <Page Remove="MainWindow.xaml" />
-    </ItemGroup>
+  <ItemGroup>
+   
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.9" />
+  <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240810.004" />
+<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.551" />
+<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+  <PackageReference Include="LiveChartsCore.SkiaSharpView.WinUI" Version="2.0.0-rc2" />
 
-    <ItemGroup>
-        <Content Include="Assets\AppIcon.ico" />
-    </ItemGroup>
+  </ItemGroup>
 
-    <ItemGroup>
-        <Manifest Include="$(ApplicationManifest)" />
-    </ItemGroup>
+  <ItemGroup>
+    <Page Update="WaveformPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-        <PackageReference Include="System.IO.Ports" Version="8.0.0" />
-        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240227000" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
-        <PackageReference Include="LiveChartsCore.SkiaSharpView.WinUI" Version="2.0.0-rc5.3" />
-    </ItemGroup>
+  <ItemGroup>
+    <Page Update="PulseSettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="EnergyMonitorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\HomeScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\DiagnosticsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Dialogs\NumericEntryDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Dialogs\ConfirmationDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>
+    <PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
+    <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
+    <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
+  </PropertyGroup>
 </Project>
