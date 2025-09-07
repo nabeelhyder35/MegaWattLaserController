@@ -1,89 +1,140 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using CommunityToolkit.Mvvm.Messaging;
 using LaserControllerApp.Services;
-using Microsoft.UI.Xaml;
+using Microsoft.UI;
+using Microsoft.UI.Dispatching;
+using Microsoft.UI.Xaml.Media;
 using System;
 using System.Collections.ObjectModel;
-using System.IO.Ports;
-using System.Linq;
-using System.Windows.Input;
+using System.Threading.Tasks;
+using Windows.UI;
 
 namespace LaserControllerApp.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
         private readonly SerialPortManager _serialPortManager;
-        private readonly DispatcherTimer _trialTimer;
+        private readonly DispatcherQueue _dispatcherQueue;
 
-        [ObservableProperty] private ObservableCollection<string> availablePorts = new();
-        [ObservableProperty] private string? selectedPort;
-        [ObservableProperty] private ObservableCollection<int> baudRates = new() { 9600, 19200, 38400, 57600, 115200, 230400 };
-        [ObservableProperty] private int selectedBaudRate = 115200;
-        [ObservableProperty] private string currentState = "Disconnected";
-        [ObservableProperty] private bool hasError;
-        [ObservableProperty] private string errorMessage = string.Empty;
-        [ObservableProperty] private double currentEnergy;
+        [ObservableProperty]
+        private string _currentState = "Disconnected";
 
-        public ICommand ConnectCommand { get; }
-        public ICommand DisconnectCommand { get; }
-        public ICommand RefreshPortsCommand { get; }
+        [ObservableProperty]
+        private bool _isConnected;
 
-        // ✅ Inject SerialPortManager via constructor
+        [ObservableProperty]
+        private ObservableCollection<string> _availablePorts;
+
+        [ObservableProperty]
+        private string _selectedPort;
+
+        [ObservableProperty]
+        private ObservableCollection<int> _baudRates = new ObservableCollection<int> { 9600, 19200, 38400, 57600, 115200 };
+
+        [ObservableProperty]
+        private int _selectedBaudRate = 9600;
+
+        [ObservableProperty]
+        private string _errorMessage;
+
+        [ObservableProperty]
+        private bool _hasError;
+
+        // Computed properties for XAML binding
+        public bool IsNotConnected => !IsConnected;
+
+        public bool CanConnect => !IsConnected && !string.IsNullOrEmpty(SelectedPort);
+
+        public SolidColorBrush ConnectionStatusColor => IsConnected ?
+            new SolidColorBrush(Colors.Green) : new SolidColorBrush(Colors.Red);
+
+        public event EventHandler<bool> ConnectionStatusChanged;
+
         public MainViewModel(SerialPortManager serialPortManager)
         {
             _serialPortManager = serialPortManager;
+            _dispatcherQueue = DispatcherQueue.GetForCurrentThread();
+            _availablePorts = new ObservableCollection<string>(_serialPortManager.GetAvailablePorts());
 
-            ConnectCommand = new AsyncRelayCommand(ConnectAsync);
-            DisconnectCommand = new AsyncRelayCommand(DisconnectAsync);
-            RefreshPortsCommand = new RelayCommand(RefreshPorts);
+            // Subscribe to SerialPortManager events
+            _serialPortManager.ConnectionStatusChanged += OnConnectionStatusChanged;
+            _serialPortManager.ErrorOccurred += OnErrorOccurred;
 
-            RefreshPorts();
+            UpdateConnectionStatus(_serialPortManager.IsConnected);
+        }
 
-            _trialTimer = new DispatcherTimer();
-            _trialTimer.Interval = TimeSpan.FromMinutes(2);
-            _trialTimer.Tick += (s, e) =>
+        private void OnConnectionStatusChanged(object sender, bool isConnected)
+        {
+            _dispatcherQueue.TryEnqueue(() =>
             {
-                _trialTimer.Stop();
-                ShowError("⚠ Trial Version: Please contact developers to get Pro version.");
-            };
-            _trialTimer.Start();
-
-            WeakReferenceMessenger.Default.Register<EnergyUpdateMessage>(this, (r, m) =>
-            {
-                CurrentEnergy = m.Energy;
+                UpdateConnectionStatus(isConnected);
+                ConnectionStatusChanged?.Invoke(this, isConnected);
             });
         }
 
-        private async System.Threading.Tasks.Task ConnectAsync()
+        private void OnErrorOccurred(object sender, string error)
         {
-            if (string.IsNullOrEmpty(SelectedPort)) { ShowError("Select a COM port."); return; }
-
-            bool result = await _serialPortManager.ConnectAsync(SelectedPort, SelectedBaudRate);
-            CurrentState = result ? "Connected" : "Failed";
-            if (!result) ShowError("Connection failed.");
+            _dispatcherQueue.TryEnqueue(() =>
+            {
+                ErrorMessage = error;
+                HasError = true;
+            });
         }
 
-        private async System.Threading.Tasks.Task DisconnectAsync()
+        private void UpdateConnectionStatus(bool isConnected)
         {
+            IsConnected = isConnected;
+            CurrentState = isConnected ? "Connected" : "Disconnected";
+            System.Diagnostics.Debug.WriteLine($"MainViewModel: Connection status updated to {CurrentState}");
+
+            // Notify that computed properties have changed
+            OnPropertyChanged(nameof(IsNotConnected));
+            OnPropertyChanged(nameof(CanConnect));
+            OnPropertyChanged(nameof(ConnectionStatusColor));
+        }
+
+        // This method is called when any ObservableProperty changes
+        partial void OnSelectedPortChanged(string value)
+        {
+            // Update CanConnect when SelectedPort changes
+            OnPropertyChanged(nameof(CanConnect));
+        }
+
+        [RelayCommand]
+        private async Task Connect()
+        {
+            if (string.IsNullOrEmpty(SelectedPort))
+            {
+                ErrorMessage = "Please select a port.";
+                HasError = true;
+                return;
+            }
+
+            HasError = false;
+            bool success = await _serialPortManager.ConnectAsync(SelectedPort, SelectedBaudRate);
+            if (!success)
+            {
+                ErrorMessage = $"Failed to connect to {SelectedPort}.";
+                HasError = true;
+            }
+        }
+
+        [RelayCommand]
+        private async Task Disconnect()
+        {
+            HasError = false;
             await _serialPortManager.DisconnectAsync();
-            CurrentState = "Disconnected";
         }
 
+        [RelayCommand]
         private void RefreshPorts()
         {
             AvailablePorts.Clear();
-            foreach (var port in SerialPort.GetPortNames().OrderBy(p => p))
+            foreach (var port in _serialPortManager.GetAvailablePorts())
+            {
                 AvailablePorts.Add(port);
-
-            if (AvailablePorts.Count == 0)
-                ShowError("No COM ports detected.");
-        }
-
-        private void ShowError(string message)
-        {
-            ErrorMessage = message;
-            HasError = true;
+            }
+            HasError = false;
         }
     }
 }

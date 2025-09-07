@@ -1,0 +1,10 @@
+App.xbf
+MainWindow.xbf
+Views\CustomPage.xbf
+Views\EnergyMonitorPage.xbf
+Views\EnergyPage.xbf
+Views\InterlockStatusPage.xbf
+Views\LaserControlDashboard.xbf
+Views\PulseSettingsDialog.xbf
+Views\SettingsPage.xbf
+Views\ShutterPage.xbf

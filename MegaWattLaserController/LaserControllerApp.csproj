@@ -7,63 +7,67 @@
 		<RootNamespace>LaserControllerApp</RootNamespace>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
-		<Platforms>x86;x64;ARM64</Platforms>
-		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+
+		<!-- Platforms -->
+		<Platforms>x64</Platforms>
+		<RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+
+		<!-- WinUI 3 -->
 		<UseWinUI>true</UseWinUI>
+
+		<!-- Nullable & Usings -->
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Windows App SDK -->
 		<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
 		<WindowsPackageType>None</WindowsPackageType>
+		<EnableMsixTooling>true</EnableMsixTooling>
+
+		<!-- Publish Settings -->
+		<PublishSingleFile>false</PublishSingleFile>
+		<PublishTrimmed>false</PublishTrimmed>
+		<SelfContained>true</SelfContained>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+
+		<!-- Optimizations -->
+		<PublishReadyToRun>false</PublishReadyToRun>
+		<DebugType>embedded</DebugType>
 	</PropertyGroup>
 
+	<!-- Assets -->
 	<ItemGroup>
 		<Content Include="Assets\AppIcon.ico" />
 	</ItemGroup>
 
+	<!-- Manifest -->
 	<ItemGroup>
 		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 
+	<!-- NuGet Packages -->
 	<ItemGroup>
-		<!-- Windows App SDK (Use consistent version) -->
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240428000" />
-
-		<!-- MVVM Toolkit -->
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240802000" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-
-		<!-- Serial Port -->
 		<PackageReference Include="System.IO.Ports" Version="8.0.0" />
-
-		<!-- Dependency Injection -->
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
-
-		<!-- LiveChartsCore -->
-		<PackageReference Include="LiveChartsCore.SkiaSharpView.WinUI" Version="2.0.0-rc5.3" />
-
-		<!-- Remove these as they're included in the WinUI package -->
-		<!-- <PackageReference Include="Microsoft.WinUI" Version="3.3.3" /> -->
-		<!-- <PackageReference Include="LiveChartsCore.SkiaSharpView" Version="2.3.0" /> -->
-		<!-- <PackageReference Include="LiveChartsCore" Version="2.3.0" /> -->
-		<!-- <PackageReference Include="SkiaSharp" Version="2.88.3" /> -->
-		<!-- <PackageReference Include="SkiaSharp.Views" Version="2.88.3" /> -->
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
 	</ItemGroup>
 
+	<!-- Source Files -->
 	<ItemGroup>
-		<Compile Update="ViewModels\*.cs" />
-		<Compile Update="Models\*.cs" />
-		<Compile Update="Services\*.cs" />
-		<Compile Update="Views\*.xaml.cs" />
-		<Compile Update="Converters\*.cs" />
+		<Compile Update="**\*.cs" />
 	</ItemGroup>
 
+	<!-- XAML Pages -->
 	<ItemGroup>
-		<Page Update="Views\*.xaml" SubType="Designer" Generator="MSBuild:Compile" />
-		<Page Update="App.xaml" SubType="Designer" Generator="MSBuild:Compile" />
-		<Page Update="MainWindow.xaml" SubType="Designer" Generator="MSBuild:Compile" />
+		<Page Update="**\*.xaml" SubType="Designer" Generator="MSBuild:Compile" />
 	</ItemGroup>
 
+	<!-- Framework References -->
 	<ItemGroup>
-		<None Update="app.manifest" />
+		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.19041.36" />
+		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.19041.36" />
 	</ItemGroup>
 
 </Project>

@@ -1,0 +1,351 @@
+﻿<Page
+    x:Class="LaserControllerApp.Views.LaserControlDashboard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="using:LaserControllerApp.ViewModels"
+    xmlns:converters="using:LaserControllerApp.Converters"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded"
+    Unloaded="Page_Unloaded">
+
+
+    <Page.Resources>
+        <!-- Keep all your original styles -->
+        <Style x:Key="CompactCardStyle" TargetType="Border">
+            <Setter Property="Background" Value="{ThemeResource LayerFillColorDefaultBrush}"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource CardStrokeColorDefaultBrush}"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+
+        <Style x:Key="CompactButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+
+        <Style x:Key="StatusValueTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="StatusLabelTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Foreground" Value="{ThemeResource TextFillColorSecondaryBrush}"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="IconButtonStyle" TargetType="Button" BasedOn="{StaticResource CompactButtonStyle}">
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="MinWidth" Value="80"/>
+        </Style>
+    </Page.Resources>
+
+    <!-- Keep your original layout -->
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="{ThemeResource SystemControlAcrylicElementBrush}" 
+                Padding="16,12" CornerRadius="6" Margin="0,0,0,8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Vertical" Spacing="2">
+                    <TextBlock Text="Laser Control System" FontSize="16" FontWeight="Bold"
+                               Foreground="{ThemeResource TextFillColorPrimaryBrush}"/>
+                    <TextBlock Text="Compact Control Dashboard" FontSize="12"
+                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="12" HorizontalAlignment="Right">
+                    <ProgressRing IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" 
+                                  Width="16" Height="16"
+                                  Foreground="{ThemeResource SystemAccentColor}"/>
+                    <StackPanel Orientation="Horizontal" Spacing="6">
+                        <Ellipse Width="8" Height="8" 
+                                 Fill="{x:Bind ViewModel.ConnectionStatusColor, Mode=OneWay}"/>
+                        <TextBlock Text="{x:Bind ViewModel.ConnectionStatus, Mode=OneWay}"
+                                   Foreground="{x:Bind ViewModel.ConnectionStatusColor, Mode=OneWay}"
+                                   FontWeight="SemiBold" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- System Status Indicators - Grid Layout -->
+        <Border Grid.Row="1" Style="{StaticResource CompactCardStyle}" Margin="0,0,0,8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- ENERGY -->
+                <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                    <TextBlock Text="ENERGY" Style="{StaticResource StatusLabelTextStyle}"/>
+                    <TextBlock Text="{x:Bind ViewModel.StatusItems[0].Value, Mode=OneWay}" 
+                               Style="{StaticResource StatusValueTextStyle}"
+                               Foreground="{x:Bind ViewModel.StatusItems[0].IsWarning, Converter={StaticResource BooleanToColorConverter}, Mode=OneWay}"/>
+                    <TextBlock Text="J" Style="{StaticResource StatusLabelTextStyle}"/>
+                </StackPanel>
+
+                <!-- VOLTAGE -->
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                    <TextBlock Text="VOLTAGE" Style="{StaticResource StatusLabelTextStyle}"/>
+                    <TextBlock Text="{x:Bind ViewModel.StatusItems[1].Value, Mode=OneWay}" 
+                               Style="{StaticResource StatusValueTextStyle}"
+                               Foreground="{x:Bind ViewModel.StatusItems[1].IsWarning, Converter={StaticResource BooleanToColorConverter}, Mode=OneWay}"/>
+                    <TextBlock Text="V" Style="{StaticResource StatusLabelTextStyle}"/>
+                </StackPanel>
+
+                <!-- SHOTS -->
+                <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                    <TextBlock Text="SHOTS" Style="{StaticResource StatusLabelTextStyle}"/>
+                    <TextBlock Text="{x:Bind ViewModel.StatusItems[2].Value, Mode=OneWay}" 
+                               Style="{StaticResource StatusValueTextStyle}"/>
+                </StackPanel>
+
+                <!-- TEMPERATURE -->
+                <StackPanel Grid.Column="3" HorizontalAlignment="Center">
+                    <TextBlock Text="TEMP" Style="{StaticResource StatusLabelTextStyle}"/>
+                    <TextBlock Text="{x:Bind ViewModel.StatusItems[3].Value, Mode=OneWay}" 
+                               Style="{StaticResource StatusValueTextStyle}"/>
+                    <TextBlock Text="°C" Style="{StaticResource StatusLabelTextStyle}"/>
+                </StackPanel>
+
+                <!-- INTERLOCKS -->
+                <StackPanel Grid.Column="4" HorizontalAlignment="Center">
+                    <TextBlock Text="INTERLOCKS" Style="{StaticResource StatusLabelTextStyle}"/>
+                    <TextBlock Text="{x:Bind ViewModel.StatusItems[4].Value, Mode=OneWay}" 
+                               Style="{StaticResource StatusValueTextStyle}"
+                               Foreground="{x:Bind ViewModel.StatusItems[4].IsWarning, Converter={StaticResource BooleanToColorConverter}, Mode=OneWay}"/>
+                </StackPanel>
+
+                <!-- SYSTEM STATUS -->
+                <StackPanel Grid.Column="5" HorizontalAlignment="Center">
+                    <TextBlock Text="STATUS" Style="{StaticResource StatusLabelTextStyle}"/>
+                    <TextBlock Text="{x:Bind ViewModel.SystemStatus, Mode=OneWay}" 
+                               Style="{StaticResource StatusValueTextStyle}"
+                               Foreground="{ThemeResource SystemAccentColor}"/>
+                    <ProgressBar Value="{x:Bind ViewModel.StatusItems[5].ProgressValue, Mode=OneWay}" 
+                                 Maximum="100" Height="6" Margin="0,4,0,0"
+                                 Foreground="{ThemeResource SystemAccentColor}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Control Buttons - Organized in groups -->
+        <Border Grid.Row="2" Style="{StaticResource CompactCardStyle}" Margin="0,0,0,8">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Connection and Status Group -->
+                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Spacing="4" Margin="0,0,8,8">
+                    <TextBlock Text="Connection" Style="{StaticResource StatusLabelTextStyle}" Margin="0,0,0,4"/>
+                    <Button Style="{StaticResource IconButtonStyle}"
+                    Command="{x:Bind ViewModel.RefreshStatusCommand}"
+                    IsEnabled="{x:Bind ViewModel.IsConnected, Mode=OneWay}">
+                        <StackPanel Orientation="Horizontal" Spacing="4">
+                            <SymbolIcon Symbol="Refresh" Width="16" Height="16"/>
+                            <TextBlock Text="Refresh" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <!-- Arm/Disarm Group -->
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Spacing="4" Margin="4,0,4,8">
+                    <TextBlock Text="System Control" Style="{StaticResource StatusLabelTextStyle}" Margin="0,0,0,4"/>
+                    <Button Style="{StaticResource IconButtonStyle}"
+                    Command="{x:Bind ViewModel.ToggleArmLaserCommand}"
+                    Background="{x:Bind ViewModel.IsArmed, Converter={StaticResource ArmDisarmColorConverter}, Mode=OneWay}"
+                    IsEnabled="{x:Bind ViewModel.IsConnected, Mode=OneWay}">
+                        <StackPanel Orientation="Horizontal" Spacing="4">
+                            <SymbolIcon Symbol="Permissions" Width="16" Height="16"/>
+                            <TextBlock Text="{x:Bind ViewModel.IsArmed, Converter={StaticResource ArmDisarmConverter}, Mode=OneWay}" 
+                               VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <!-- Charging Group -->
+                <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical" Spacing="4" Margin="8,0,0,8">
+                    <TextBlock Text="Charging" Style="{StaticResource StatusLabelTextStyle}" Margin="0,0,0,4"/>
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Button Style="{StaticResource IconButtonStyle}"
+                        Command="{x:Bind ViewModel.StartChargingCommand}"
+                        IsEnabled="{x:Bind ViewModel.IsArmed, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="4">
+                                <SymbolIcon Symbol="Play" Width="16" Height="16"/>
+                                <TextBlock Text="Charge" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}"
+                        Command="{x:Bind ViewModel.StopChargingCommand}"
+                        IsEnabled="{x:Bind ViewModel.IsConnected, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="4">
+                                <SymbolIcon Symbol="Stop" Width="16" Height="16"/>
+                                <TextBlock Text="Stop" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Shutter Control Group -->
+                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Spacing="4" Margin="0,8,8,0">
+                    <TextBlock Text="Shutter" Style="{StaticResource StatusLabelTextStyle}" Margin="0,0,0,4"/>
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Button Style="{StaticResource IconButtonStyle}"
+                        Command="{x:Bind ViewModel.OpenShutterCommand}"
+                        IsEnabled="{x:Bind ViewModel.IsConnected, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="4">
+                                <SymbolIcon Symbol="OpenFile" Width="16" Height="16"/>
+                                <TextBlock Text="Open" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}"
+                        Command="{x:Bind ViewModel.CloseShutterCommand}"
+                        IsEnabled="{x:Bind ViewModel.IsConnected, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="4">
+                                <SymbolIcon Symbol="ClosePane" Width="16" Height="16"/>
+                                <TextBlock Text="Close" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Laser Operation Group -->
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Spacing="4" Margin="4,8,4,0">
+                    <TextBlock Text="Laser Operation" Style="{StaticResource StatusLabelTextStyle}" Margin="0,0,0,4"/>
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Button Style="{StaticResource IconButtonStyle}"
+                        Command="{x:Bind ViewModel.RunLaserCommand}"
+                        Background="{ThemeResource SystemFillColorCritical}"
+                        Foreground="White"
+                        IsEnabled="{x:Bind ViewModel.IsArmed, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="4">
+                                <SymbolIcon Symbol="Play" Width="16" Height="16" Foreground="White"/>
+                                <TextBlock Text="Fire" VerticalAlignment="Center" Foreground="White"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}"
+                        Command="{x:Bind ViewModel.PauseLaserCommand}"
+                        Background="{ThemeResource SystemFillColorCaution}"
+                        IsEnabled="{x:Bind ViewModel.IsRunning, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="4">
+                                <SymbolIcon Symbol="Pause" Width="16" Height="16"/>
+                                <TextBlock Text="Pause" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}"
+                        Command="{x:Bind ViewModel.ResumeLaserCommand}"
+                        Background="{ThemeResource SystemFillColorSuccess}"
+                        Foreground="White"
+                        IsEnabled="{x:Bind ViewModel.IsPaused, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="4">
+                                <SymbolIcon Symbol="Play" Width="16" Height="16" Foreground="White"/>
+                                <TextBlock Text="Resume" VerticalAlignment="Center" Foreground="White"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Configuration and Safety Group -->
+                <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" Spacing="4" Margin="8,8,0,0">
+                    <TextBlock Text="Configuration" Style="{StaticResource StatusLabelTextStyle}" Margin="0,0,0,4"/>
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Button Style="{StaticResource IconButtonStyle}"
+                        Command="{x:Bind ViewModel.OpenPulseSettingsCommand}"
+                        IsEnabled="{x:Bind ViewModel.IsConnected, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="4">
+                                <SymbolIcon Symbol="Setting" Width="16" Height="16"/>
+                                <TextBlock Text="Settings" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}"
+                        Command="{x:Bind ViewModel.ResetSystemCommand}"
+                        IsEnabled="{x:Bind ViewModel.IsConnected, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="4">
+                                <SymbolIcon Symbol="Refresh" Width="16" Height="16"/>
+                                <TextBlock Text="Reset" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Style="{StaticResource IconButtonStyle}"
+                        Command="{x:Bind ViewModel.EmergencyStopCommand}"
+                        Background="{ThemeResource SystemFillColorCritical}"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        IsEnabled="{x:Bind ViewModel.IsArmed, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal" Spacing="4">
+                                <SymbolIcon Symbol="Clear" Width="16" Height="16" Foreground="White"/>
+                                <TextBlock Text="E-Stop" VerticalAlignment="Center" Foreground="White"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <!-- Event Log -->
+        <Border Grid.Row="3" Style="{StaticResource CompactCardStyle}" Margin="0,0,0,8">
+            <StackPanel Spacing="8">
+                <TextBlock Text="Event Log" FontSize="14" FontWeight="SemiBold"
+                           Foreground="{ThemeResource TextFillColorPrimaryBrush}"/>
+                <Border Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}" 
+                        CornerRadius="4" Padding="1" Height="120">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                  x:Name="LogScrollViewer"
+                                  ViewChanged="LogScrollViewer_ViewChanged">
+                        <ItemsControl ItemsSource="{x:Bind ViewModel.LogMessages, Mode=OneWay}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Padding="8,4" BorderThickness="0,0,0,1" 
+                                            BorderBrush="{ThemeResource DividerStrokeColorDefault}">
+                                        <TextBlock Text="{Binding}" FontSize="11" 
+                                                   Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                                   TextWrapping="Wrap"/>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Border>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Page>

@@ -1,0 +1,62 @@
+<ContentDialog
+    x:Class="LaserControllerApp.Views.PulseSettingsDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Pulse Settings"
+    PrimaryButtonText="Save"
+    CloseButtonText="Cancel"
+    DefaultButton="Primary"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick">
+
+    <StackPanel Padding="12" Spacing="12">
+        <StackPanel Orientation="Horizontal" Spacing="6">
+            <TextBlock Text="Voltage (V):" Width="120" VerticalAlignment="Center"/>
+            <TextBox x:Name="VoltageTextBox"
+                     Text="{x:Bind VoltageText, Mode=TwoWay}"
+                     Width="120"
+                     BeforeTextChanging="NumericTextBox_BeforeTextChanging"
+                     InputScope="Number"/>
+            <TextBlock Text="(0-2000V)" Foreground="Gray" VerticalAlignment="Center" Margin="8,0,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Spacing="6">
+            <TextBlock Text="Energy (J):" Width="120" VerticalAlignment="Center"/>
+            <TextBox x:Name="EnergyTextBox"
+                     Text="{x:Bind EnergyText, Mode=TwoWay}"
+                     Width="120"
+                     BeforeTextChanging="NumericTextBox_BeforeTextChanging"
+                     InputScope="Number"/>
+            <TextBlock Text="(0-10J)" Foreground="Gray" VerticalAlignment="Center" Margin="8,0,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Spacing="6">
+            <TextBlock Text="Pulse Width (µs):" Width="120" VerticalAlignment="Center"/>
+            <TextBox x:Name="PulseWidthTextBox"
+                     Text="{x:Bind PulseWidthText, Mode=TwoWay}"
+                     Width="120"
+                     BeforeTextChanging="NumericTextBox_BeforeTextChanging"
+                     InputScope="Number"/>
+            <TextBlock Text="(1-1000µs)" Foreground="Gray" VerticalAlignment="Center" Margin="8,0,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Spacing="6">
+            <TextBlock Text="Shots:" Width="120" VerticalAlignment="Center"/>
+            <TextBox x:Name="ShotsTextBox"
+                     Text="{x:Bind ShotsText, Mode=TwoWay}"
+                     Width="120"
+                     BeforeTextChanging="NumericTextBox_BeforeTextChanging"
+                     InputScope="Number"/>
+            <TextBlock Text="(1-9999)" Foreground="Gray" VerticalAlignment="Center" Margin="8,0,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Spacing="6">
+            <TextBlock Text="Frequency (Hz):" Width="120" VerticalAlignment="Center"/>
+            <TextBox x:Name="FrequencyTextBox"
+                     Text="{x:Bind FrequencyText, Mode=TwoWay}"
+                     Width="120"
+                     BeforeTextChanging="NumericTextBox_BeforeTextChanging"
+                     InputScope="Number"/>
+            <TextBlock Text="(1-100Hz)" Foreground="Gray" VerticalAlignment="Center" Margin="8,0,0,0"/>
+        </StackPanel>
+    </StackPanel>
+</ContentDialog>

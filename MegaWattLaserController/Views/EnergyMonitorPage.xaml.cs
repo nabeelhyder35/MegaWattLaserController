@@ -54,7 +54,7 @@ namespace LaserControllerApp.Views
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             _updateTimer?.Start();
-            EnergyValueText.Text = _viewModel.CurrentEnergy.ToString("F2");
+           // EnergyValueText.Text = _viewModel.CurrentEnergy.ToString("F2");
         }
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)

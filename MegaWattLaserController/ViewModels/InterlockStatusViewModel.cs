@@ -8,14 +8,9 @@ namespace LaserControllerApp.ViewModels
     /// </summary>
     public partial class InterlockItemViewModel : ObservableObject
     {
-        [ObservableProperty]
-        private string name = "";
-
-        [ObservableProperty]
-        private string status = "";
-
-        [ObservableProperty]
-        private string statusColor = "Gray";
+        [ObservableProperty] private string name = "";
+        [ObservableProperty] private string status = "";
+        [ObservableProperty] private string statusColor = "Gray";
     }
 
     /// <summary>
@@ -27,7 +22,7 @@ namespace LaserControllerApp.ViewModels
 
         /// <summary>
         /// Updates the collection of interlock items based on byte data.
-        /// 0 = OK, 1 = FAULT.
+        /// 0 = OK, 1 = FAULT
         /// </summary>
         /// <param name="data">Byte array representing interlock states.</param>
         public void UpdateInterlockStatus(byte[] data)

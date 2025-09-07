@@ -9,7 +9,6 @@ namespace LaserControllerApp.ViewModels
     {
         private readonly SerialPortManager _serialPortManager;
 
-        // ✅ Inject SerialPortManager via constructor
         public SettingsViewModel(SerialPortManager serialPortManager)
         {
             _serialPortManager = serialPortManager;
@@ -22,8 +21,14 @@ namespace LaserControllerApp.ViewModels
         public void RefreshPorts()
         {
             var ports = _serialPortManager.GetAvailablePorts();
-            AvailablePorts = new ObservableCollection<string>(ports.OrderBy(p => p));
-            SelectedPort = AvailablePorts.FirstOrDefault();
+            var ordered = ports.OrderBy(p => p).ToList();
+            AvailablePorts = new ObservableCollection<string>(ordered);
+
+            // Preserve previous selection if still present, else select first
+            if (SelectedPort is null || !ordered.Contains(SelectedPort))
+            {
+                SelectedPort = AvailablePorts.FirstOrDefault();
+            }
         }
     }
 }

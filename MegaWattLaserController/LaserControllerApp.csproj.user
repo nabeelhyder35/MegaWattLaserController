@@ -11,10 +11,10 @@
     <None Update="App.xaml">
       <SubType>Designer</SubType>
     </None>
-    <Page Update="Views\InterlockStatusPage.xaml">
+    <Page Update="Views\PulseSettingsDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\VoltagePage.xaml">
+    <Page Update="Views\InterlockStatusPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <None Update="MainWindow.xaml">
